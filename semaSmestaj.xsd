@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="Objekat">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Lokacija"/>
+                <xs:element ref="TipSmestaja"/>
+                <xs:element name="OpisSmestaja">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="1000"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="SlikaSmestaja"/>
+                <xs:element name="KapacitetSmestaja">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:int">
+                            <xs:minInclusive value="50"/>
+                            <xs:maxInclusive value="10000"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="Cena">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:int">
+                            <xs:minInclusive value="15"/>
+                            <xs:maxInclusive value="10000"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="OtkazniPeriod">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:int">
+                            <xs:minInclusive value="7"/>
+                            <xs:maxInclusive value="2147483647"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element ref="DodatneUsluge"/>
+                <xs:element name="FamilyFriendly" type="xs:boolean"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Pansion">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Polupansion"/>
+                <xs:element name="PunPansion"/>
+                <xs:element name="AllInclusive"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Lokacija">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Ulica" type="xs:string"/>
+                <xs:element name="Broj"/>
+                <xs:element name="Mesto" type="xs:string"/>
+                <xs:element name="PostanskiBroj" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="DodatneUsluge">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="PosebniZahtevi">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="500"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="Hendikep" type="xs:boolean"/>
+                <xs:element name="Pogled" type="xs:boolean"/>
+                <xs:element ref="KoriscenjeRekreativnihSsadrzaja"/>
+                <xs:element ref="Pansion"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="TipSmestaja">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Soba">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="BrojKreveta">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:int">
+                                        <xs:minInclusive value="1"/>
+                                        <xs:maxInclusive value="7"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Apartman">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Kvadartura">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:int">
+                                        <xs:minInclusive value="30"/>
+                                        <xs:maxInclusive value="300"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="KoriscenjeRekreativnihSsadrzaja">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Spa" type="xs:boolean"/>
+                <xs:element name="Teretana" type="xs:boolean"/>
+                <xs:element name="SportskiTereni" type="xs:boolean"/>
+                <xs:element name="Bazeni" type="xs:boolean"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

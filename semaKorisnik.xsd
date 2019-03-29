@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:complexType abstract="true" name="TLice">
+        <xs:sequence>
+            <xs:element name="Ime" type="xs:string"/>
+            <xs:element name="Prezime" type="xs:string"/>
+            <xs:element name="Korisnicko_ime"/>
+            <xs:element name="Lozinka"/>
+            <xs:element name="Email"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType abstract="false" name="TAdmin">
+        <xs:complexContent>
+            <xs:extension base="TLice">
+                <xs:sequence>
+                    <xs:element name="Poslovni_maticni_broj" type="xs:int"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="TAgent">
+        <xs:complexContent>
+            <xs:extension base="TLice"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="TKlijent">
+        <xs:complexContent>
+            <xs:extension base="TLice"/>
+        </xs:complexContent>
+    </xs:complexType>
+</xs:schema>
