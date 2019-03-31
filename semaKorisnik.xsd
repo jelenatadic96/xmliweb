@@ -1,31 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    targetNamespace="https://github.com/JelenaAndjela/xmliweb/semaKorisnik"
+    xmlns:mt="https://github.com/JelenaAndjela/xmliweb/semaKorisnik"
+    xmlns:mts="https://github.com/JelenaAndjela/xmliweb/semaSmestaj">
+    <xs:import namespace="https://github.com/JelenaAndjela/xmliweb/semaSmestaj"
+        schemaLocation="semaSmestaj.xsd"/>
     <xs:complexType abstract="true" name="TLice">
         <xs:sequence>
             <xs:element name="Ime" type="xs:string"/>
-            <xs:element name="Prezime" type="xs:string"/>
+            <xs:element name="Prezime">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value=""/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
             <xs:element name="Korisnicko_ime"/>
             <xs:element name="Lozinka"/>
             <xs:element name="Email"/>
         </xs:sequence>
     </xs:complexType>
-    <xs:complexType abstract="false" name="TAdmin">
-        <xs:complexContent>
-            <xs:extension base="TLice">
-                <xs:sequence>
-                    <xs:element name="Poslovni_maticni_broj" type="xs:int"/>
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
-    <xs:complexType name="TAgent">
-        <xs:complexContent>
-            <xs:extension base="TLice"/>
-        </xs:complexContent>
-    </xs:complexType>
-    <xs:complexType name="TKlijent">
-        <xs:complexContent>
-            <xs:extension base="TLice"/>
-        </xs:complexContent>
-    </xs:complexType>
+    <xs:element abstract="false" name="admin" type="mt:TLice">
+        <xs:key name="adminKey">
+            <xs:selector xpath=".//admin"/>
+            <xs:field xpath="id"/>
+        </xs:key>
+    </xs:element>
+    <xs:element name="agent">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="mt:TLice">
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="mts:Komentar"/>
+                    </xs:sequence>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+        <xs:key name="agentKey">
+            <xs:selector xpath=".//agent"/>
+            <xs:field xpath="id"/>
+        </xs:key>
+    </xs:element>
+    <xs:element name="klijent">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="mt:TLice">
+                    <xs:sequence>
+                        <xs:element ref="mts:Ocena" minOccurs="0"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="mts:Komentar"/>
+                        <xs:element maxOccurs="1" minOccurs="0" ref="mts:Rezervacija"/>
+                    </xs:sequence>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+        <xs:key name="klijentKey">
+            <xs:selector xpath=".//klijent"/>
+            <xs:field xpath="id"/>
+        </xs:key>
+    </xs:element>
 </xs:schema>
