@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    targetNamespace="https://github.com/JelenaAndjela/xmliweb/semaSmestaj"
+    xmlns:mtk="https://github.com/JelenaAndjela/xmliweb/semaKorisnik"
+    xmlns:mts="https://github.com/JelenaAndjela/xmliweb/semaSmestaj">
+    <xs:import namespace="https://github.com/JelenaAndjela/xmliweb/semaKorisnik"
+        schemaLocation="semaKorisnik.xsd"/>
     <xs:element name="Objekat">
         <xs:complexType>
             <xs:sequence>
-                <xs:element ref="Lokacija"/>
-                <xs:element ref="TipSmestaja"/>
+                <xs:element ref="mts:Lokacija"/>
+                <xs:element ref="mts:TipSmestaja"/>
                 <xs:element name="OpisSmestaja">
                     <xs:simpleType>
                         <xs:restriction base="xs:string">
@@ -12,7 +17,7 @@
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:element>
-                <xs:element name="SlikaSmestaja"/>
+                <xs:element name="SlikaSmestaja" maxOccurs="unbounded"/>
                 <xs:element name="KapacitetSmestaja">
                     <xs:simpleType>
                         <xs:restriction base="xs:int">
@@ -37,19 +42,36 @@
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:element>
-                <xs:element ref="DodatneUsluge"/>
+                <xs:element ref="mts:DodatneUsluge"/>
+                <xs:element maxOccurs="unbounded" ref="mts:Ocena"/>
                 <xs:element name="FamilyFriendly" type="xs:boolean"/>
             </xs:sequence>
         </xs:complexType>
+        <xs:key name="objekatKey">
+            <xs:selector xpath=".//objekatKey"/>
+            <xs:field xpath="id"/>
+        </xs:key>
+        <xs:keyref name="lokacijaObjektaKey" refer="mts:lokacijaKey">
+            <xs:selector xpath=".//objekat"/>
+            <xs:field xpath="idLokacija"/>
+        </xs:keyref>
+        <xs:keyref name="agentKeyRef" refer="mtk:agentKey">
+            <xs:selector xpath=".//agentObj"/>
+            <xs:field xpath="idAgentObj"/>
+        </xs:keyref>
     </xs:element>
     <xs:element name="Pansion">
         <xs:complexType>
-            <xs:sequence>
+            <xs:choice>
                 <xs:element name="Polupansion"/>
-                <xs:element name="PunPansion"/>
+                <xs:element name="Pansion"/>
                 <xs:element name="AllInclusive"/>
-            </xs:sequence>
+            </xs:choice>
         </xs:complexType>
+        <xs:key name="pansionKey">
+            <xs:selector xpath=".//pansion"/>
+            <xs:field xpath="id"/>
+        </xs:key>
     </xs:element>
     <xs:element name="Lokacija">
         <xs:complexType>
@@ -60,6 +82,10 @@
                 <xs:element name="PostanskiBroj" type="xs:int"/>
             </xs:sequence>
         </xs:complexType>
+        <xs:key name="lokacijaKey">
+            <xs:selector xpath=".//lokacija"/>
+            <xs:field xpath="id"/>
+        </xs:key>
     </xs:element>
     <xs:element name="DodatneUsluge">
         <xs:complexType>
@@ -73,14 +99,26 @@
                 </xs:element>
                 <xs:element name="Hendikep" type="xs:boolean"/>
                 <xs:element name="Pogled" type="xs:boolean"/>
-                <xs:element ref="KoriscenjeRekreativnihSsadrzaja"/>
-                <xs:element ref="Pansion"/>
+                <xs:element ref="mts:KoriscenjeRekreativnihSadrzaja"/>
+                <xs:element ref="mts:Pansion"/>
             </xs:sequence>
         </xs:complexType>
+        <xs:key name="dodatneUslugeKey">
+            <xs:selector xpath=".//dodatneUsluge"/>
+            <xs:field xpath="id"/>
+        </xs:key>
+        <xs:keyref name="pansionDodatneUKey" refer="mts:dodatneUslugeKey">
+            <xs:selector xpath=".//pansionDU"/>
+            <xs:field xpath="idPdu"/>
+        </xs:keyref>
+        <xs:keyref name="krsDodatnoKey" refer="mts:krsKey">
+            <xs:selector xpath=".//krsDodatno"/>
+            <xs:field xpath="idKrsD"/>
+        </xs:keyref>
     </xs:element>
     <xs:element name="TipSmestaja">
         <xs:complexType>
-            <xs:sequence>
+            <xs:choice>
                 <xs:element name="Soba">
                     <xs:complexType>
                         <xs:sequence>
@@ -109,10 +147,62 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
+            </xs:choice>
+        </xs:complexType>
+        <xs:key name="tipSmestajaKey">
+            <xs:selector xpath=".//tipSmestaja"/>
+            <xs:field xpath="id"/>
+        </xs:key>
+        <xs:keyref name="smestajDodatneUslugeKey" refer="mts:dodatneUslugeKey">
+            <xs:selector xpath=".//smestajDodatneUsluge"/>
+            <xs:field xpath="idSmestajDU"/>
+        </xs:keyref>
+    </xs:element>
+    <xs:element name="Ocena">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="mts:Komentar"/>
+                <xs:element name="username" type="xs:string"/>
+                <xs:element name="IdObjekta" type="xs:ID"/>
+                <xs:element name="Vrednost" type="xs:int"/>
             </xs:sequence>
         </xs:complexType>
+        <xs:key name="procenaKey">
+            <xs:selector xpath=".//procena"/>
+            <xs:field xpath="id"/>
+        </xs:key>
+        <xs:keyref name="procenaObjKey" refer="mts:objekatKey">
+            <xs:selector xpath=".//procenaObj"/>
+            <xs:field xpath="idPO"/>
+        </xs:keyref>
+        <xs:keyref name="procenaKlijentKey" refer="mtk:klijentKey">
+            <xs:selector xpath=".//procenaKlijent"/>
+            <xs:field xpath="idPK"/>
+        </xs:keyref>
     </xs:element>
-    <xs:element name="KoriscenjeRekreativnihSsadrzaja">
+    <xs:element name="Komentar">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="mtk:klijent"/>
+                <xs:element ref="mts:Objekat"/>
+                <xs:element name="Vidljiv" type="xs:boolean"/>
+                <xs:element name="Komentar" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+        <xs:key name="komentarKey">
+            <xs:selector xpath=".//komentar"/>
+            <xs:field xpath="id"/>
+        </xs:key>
+        <xs:keyref name="komentarKlijentKey" refer="mtk:klijentKey">
+            <xs:selector xpath=".//klijentKom"/>
+            <xs:field xpath="idKK"/>
+        </xs:keyref>
+        <xs:keyref name="komObjKey" refer="mts:objekatKey">
+            <xs:selector xpath=".//komObj"/>
+            <xs:field xpath="idKO"/>
+        </xs:keyref>
+    </xs:element>
+    <xs:element name="KoriscenjeRekreativnihSadrzaja">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="Spa" type="xs:boolean"/>
@@ -121,5 +211,49 @@
                 <xs:element name="Bazeni" type="xs:boolean"/>
             </xs:sequence>
         </xs:complexType>
+        <xs:key name="krsKey">
+            <xs:selector xpath=".//koriscenjeRekreativnihSadrzaja"/>
+            <xs:field xpath="id"/>
+        </xs:key>
+        <xs:keyref name="krsLokacijaKey" refer="mts:lokacijaKey">
+            <xs:selector xpath=".//krsLokacija"/>
+            <xs:field xpath="idKLok"/>
+        </xs:keyref>
+    </xs:element>
+    <xs:element name="Poruka">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="idKlijent" type="xs:ID"/>
+                <xs:element name="poruka" type="xs:string"/>
+                <xs:element name="idAgent" type="xs:ID"/>
+            </xs:sequence>
+        </xs:complexType>
+        <xs:keyref name="porukaKlijentKey" refer="mtk:klijentKey">
+            <xs:selector xpath=".//klijentPoruka"/>
+            <xs:field xpath="idPK"/>
+        </xs:keyref>
+        <xs:keyref name="porukaAgentKey" refer="mtk:agentKey">
+            <xs:selector xpath="./agentPoruka"/>
+            <xs:field xpath="idPA"/>
+        </xs:keyref>
+    </xs:element>
+    <xs:element name="Rezervacija">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="od" type="xs:date"/>
+                <xs:element name="do" type="xs:date"/>
+                <xs:element name="datumRezervacije" type="xs:date"/>
+                <xs:element name="id" type="xs:ID"/>
+                <xs:element name="mogucnostOtkazivanja" type="xs:boolean"/>
+            </xs:sequence>
+        </xs:complexType>
+        <xs:key name="rezervacijaKey">
+            <xs:selector xpath=".//rezervacija"/>
+            <xs:field xpath="id"/>
+        </xs:key>
+        <xs:keyref name="rezerKlijentKey" refer="mtk:klijentKey">
+            <xs:selector xpath="./rezervacijaKlijent"/>
+            <xs:field xpath="idRK"/>
+        </xs:keyref>
     </xs:element>
 </xs:schema>
