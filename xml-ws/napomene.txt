@@ -1,3 +1,0 @@
-Odredena ogranicenja još nisu implementirana.
-Neke funkcionalnosti nisu testirane (npr pretraga).
-Login još nije funkcionalan, ispisuje samo syso.
