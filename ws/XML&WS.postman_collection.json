@@ -1,0 +1,272 @@
+{
+	"info": {
+		"_postman_id": "a365da34-0179-429a-afd7-48effa0358e8",
+		"name": "XML&WS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Korisnici service",
+			"item": [
+				{
+					"name": "Upravljanje korisnicima",
+					"item": [
+						{
+							"name": "Preuzmi jednog korisnika",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8762/korisnici-service/rest/korisnici/10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8762",
+									"path": [
+										"korisnici-service",
+										"rest",
+										"korisnici",
+										"10"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Preuzmi sve korisnike",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8762/korisnici-service/rest/korisnici",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8762",
+									"path": [
+										"korisnici-service",
+										"rest",
+										"korisnici"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Kreiraj korisnika",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ime\": \"Kelsy\",\r\n    \"prezime\": \"Bomfield\",\r\n    \"mejl\": \"kbomfield9@sciencedaily.asdf\",\r\n    \"lozinka\": \"ijYH2O5E\",\r\n    \"status\": \"AKTIVAN\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8762/korisnici-service/rest/korisnici",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8762",
+									"path": [
+										"korisnici-service",
+										"rest",
+										"korisnici"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Promeni status korisnika",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8762/korisnici-service/rest/korisnici/11?status=BLOKIRAN",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8762",
+									"path": [
+										"korisnici-service",
+										"rest",
+										"korisnici",
+										"11"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "BLOKIRAN"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				
+				{
+					"name": "Login zahtev",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"mejl\": \"primer@mejl.com\",\n\t\"lozinka\": \"asdf123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8762/korisnici-service/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8762",
+							"path": [
+								"korisnici-service",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		
+		
+		
+				
+				{
+					"name": "Rezervacije",
+					"item": [
+						{
+							"name": "Kreiraj rezervaciju kao agent",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"prviDanRezervacije\": \"2019-05-16\",\n\t\"poslednjiDanRezervacije\": \"2019-05-17\",\n\t\"smestajnaJedinicaDTO\": {\n\t\t\"id\": 3\n\t}\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8763/rest/rezervacije/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8763",
+									"path": [
+										"rest",
+										"rezervacije",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Preuzmi rezervacije smeštaja",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8763/rest/smestaj/2/rezervacije",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8763",
+									"path": [
+										"rest",
+										"smestaj",
+										"2",
+										"rezervacije"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Potvrdi realizaciju rezervacije",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8763/rest/rezervacije/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8763",
+									"path": [
+										"rest",
+										"rezervacije",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Login agenta",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"mejl\": \"primer@mejl.com\",\n\t\"lozinka\": \"asdf123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8763/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8763",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
