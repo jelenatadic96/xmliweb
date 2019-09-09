@@ -236,7 +236,555 @@
 				}
 			]
 		},
-		
+		{
+			"name": "Poruke service",
+			"item": [
+				{
+					"name": "Preuzmi \"cetove\" korisnika",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8762/poruke-service/rest/korisnici/3/poruke",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8762",
+							"path": [
+								"poruke-service",
+								"rest",
+								"korisnici",
+								"3",
+								"poruke"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Preuzmi poruke izmedu korisnika i agenta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8762/poruke-service/rest/korisnici/3/poruke/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8762",
+							"path": [
+								"poruke-service",
+								"rest",
+								"korisnici",
+								"3",
+								"poruke",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pošalji poruku agentu",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"sadrzaj\": \"Druga probna poruka korisnika 3 agentu 1\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8762/poruke-service/rest/korisnici/3/poruke?agent-id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8762",
+							"path": [
+								"poruke-service",
+								"rest",
+								"korisnici",
+								"3",
+								"poruke"
+							],
+							"query": [
+								{
+									"key": "agent-id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Smestaj service",
+			"item": [
+				{
+					"name": "Upravljanje uslugama",
+					"item": [
+						{
+							"name": "Preuzmi sve usluge",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8762/smestaj-service/rest/usluge",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8762",
+									"path": [
+										"smestaj-service",
+										"rest",
+										"usluge"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Kreiraj novu uslugu",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"naziv\": \"modular\",\n\t\"opis\": \"Phased scalable project\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8762/smestaj-service/rest/usluge",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8762",
+									"path": [
+										"smestaj-service",
+										"rest",
+										"usluge"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Izmeni postojecu uslugu",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"naziv\": \"semi-modular\",\n\t\"opis\": \"Phased scalable project\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8762/smestaj-service/rest/usluge/21",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8762",
+									"path": [
+										"smestaj-service",
+										"rest",
+										"usluge",
+										"21"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Obriši uslugu",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8762/smestaj-service/rest/usluge/5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8762",
+									"path": [
+										"smestaj-service",
+										"rest",
+										"usluge",
+										"5"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Upravljanje tipovima smeštaja",
+					"item": [
+						{
+							"name": "Preuzmi sve tipove smeštaja",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8762/smestaj-service/rest/tipovi",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8762",
+									"path": [
+										"smestaj-service",
+										"rest",
+										"tipovi"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Kreiraj novu uslugu",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"naziv\": \"Hotel\",\n\t\"opis\": \"Luxurios rooms and good views\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8762/smestaj-service/rest/tipovi",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8762",
+									"path": [
+										"smestaj-service",
+										"rest",
+										"tipovi"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Izmeni postojeci tip smeštaja",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"naziv\": \"Hotel\",\n\t\"opis\": \"Luxurios rooms and good views...\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8762/smestaj-service/rest/tipovi/5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8762",
+									"path": [
+										"smestaj-service",
+										"rest",
+										"tipovi",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Obriši tip smeštaja",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8762/smestaj-service/rest/tipovi/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8762",
+									"path": [
+										"smestaj-service",
+										"rest",
+										"tipovi",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Upravljanje smestajnim jedinicama",
+					"item": [
+						{
+							"name": "Preuzmi sve smeštajne jedinice",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8762/smestaj-service/rest/smestaj",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8762",
+									"path": [
+										"smestaj-service",
+										"rest",
+										"smestaj"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Pretraga smeštajnih jedinica",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"grad\": \"\",\n\t\"zemlja\": \"\",\n\t\"prviDan\": \"\",\n\t\"poslednjiDan\": \"\",\n\t\"brojOsoba\": 0,\n\t\"tipSmestajaDTO\": {\n\t\t\"id\": 1\n\t},\n\t\"kategorija\": \"\",\n\t\"uslugeDTO\": [\n\t\t{\n\t\t\t\"id\": 1\n\t\t},\n\t\t{\n\t\t\t\"id\": 2\n\t\t}\n\t\t]\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8762/smestaj-service/rest/smestaj/pretraga",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8762",
+									"path": [
+										"smestaj-service",
+										"rest",
+										"smestaj",
+										"pretraga"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Koriguj ocenu smeštajne jedinice",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8762/smestaj-service/rest/smestaj/23?ocena=1.4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8762",
+									"path": [
+										"smestaj-service",
+										"rest",
+										"smestaj",
+										"23"
+									],
+									"query": [
+										{
+											"key": "ocena",
+											"value": "1.4"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Upravljanje rezervacijama",
+					"item": [
+						{
+							"name": "Preuzmi aktivne rezervacije korisnika",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8762/smestaj-service/rest/korisnici/5/rezervacije/aktivne",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8762",
+									"path": [
+										"smestaj-service",
+										"rest",
+										"korisnici",
+										"5",
+										"rezervacije",
+										"aktivne"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Preuzmi istoriju rezervacija korisnika",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8762/smestaj-service/rest/korisnici/5/rezervacije/istorija",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8762",
+									"path": [
+										"smestaj-service",
+										"rest",
+										"korisnici",
+										"5",
+										"rezervacije",
+										"istorija"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Preuzmi rezervacije smeštaja",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8762/smestaj-service/rest/smestaj/3/rezervacije",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8762",
+									"path": [
+										"smestaj-service",
+										"rest",
+										"smestaj",
+										"3",
+										"rezervacije"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Kreiraj rezervaciju kao korisnik",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"prviDanRezervacije\": \"2019-05-04\",\n\t\"poslednjiDanRezervacije\": \"2019-05-16\",\n\t\"smestajnaJedinicaDTO\": {\n\t\t\"id\": 3\n\t}\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8762/smestaj-service/rest/korisnici/3/rezervacije",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8762",
+									"path": [
+										"smestaj-service",
+										"rest",
+										"korisnici",
+										"3",
+										"rezervacije"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Otkaži rezervaciju",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8762/smestaj-service/rest/rezervacije/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8762",
+									"path": [
+										"smestaj-service",
+										"rest",
+										"rezervacije",
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
 		
 		{
 			"name": "Agentska aplikacija",
@@ -323,6 +871,98 @@
 											"key": "korisnik-id",
 											"value": "1"
 										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Smeštajne jedinice",
+					"item": [
+						{
+							"name": "Kreiraj smeštajnu jedinicu",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"opis\": \"Novi smestaj\",\r\n        \"kapacitet\": 1,\r\n        \"brojDanaZaOtkazivanje\": 5,\r\n        \"ocena\": 1.0,\r\n        \"kategorija\": \"NEKATEGORISAN\",\r\n        \"adresaDTO\": {\r\n            \"zemlja\": \"Srbija\",\r\n            \"grad\": \"Beograd\",\r\n            \"geografskaDuzina\": 39.672791,\r\n            \"geografskaSirina\": 113.732809\r\n        },\r\n        \"cenovnici\": [\r\n            {\r\n                \"cenaPoNoci\": 45.85,\r\n                \"prviDanVazenja\": \"2019-01-01\",\r\n                \"poslednjiDanVazenja\": \"2019-01-31\"\r\n            },\r\n            {\r\n                \"cenaPoNoci\": 36.72,\r\n                \"prviDanVazenja\": \"2019-02-01\",\r\n                \"poslednjiDanVazenja\": \"2019-02-28\"\r\n            },\r\n            {\r\n                \"cenaPoNoci\": 46.95,\r\n                \"prviDanVazenja\": \"2019-03-01\",\r\n                \"poslednjiDanVazenja\": \"2019-03-31\"\r\n            },\r\n            {\r\n                \"cenaPoNoci\": 30.78,\r\n                \"prviDanVazenja\": \"2019-04-01\",\r\n                \"poslednjiDanVazenja\": \"2019-04-30\"\r\n            },\r\n            {\r\n                \"cenaPoNoci\": 40.93,\r\n                \"prviDanVazenja\": \"2019-05-01\",\r\n                \"poslednjiDanVazenja\": \"2019-05-31\"\r\n            },\r\n            {\r\n                \"cenaPoNoci\": 48.27,\r\n                \"prviDanVazenja\": \"2019-06-01\",\r\n                \"poslednjiDanVazenja\": \"2019-06-30\"\r\n            },\r\n            {\r\n                \"cenaPoNoci\": 45.95,\r\n                \"prviDanVazenja\": \"2019-07-01\",\r\n                \"poslednjiDanVazenja\": \"2019-07-31\"\r\n            },\r\n            {\r\n                \"cenaPoNoci\": 40.57,\r\n                \"prviDanVazenja\": \"2019-08-01\",\r\n                \"poslednjiDanVazenja\": \"2019-08-31\"\r\n            },\r\n            {\r\n                \"cenaPoNoci\": 26.01,\r\n                \"prviDanVazenja\": \"2019-09-01\",\r\n                \"poslednjiDanVazenja\": \"2019-09-30\"\r\n            },\r\n            {\r\n                \"cenaPoNoci\": 40.63,\r\n                \"prviDanVazenja\": \"2019-10-01\",\r\n                \"poslednjiDanVazenja\": \"2019-10-31\"\r\n            },\r\n            {\r\n                \"cenaPoNoci\": 32.88,\r\n                \"prviDanVazenja\": \"2019-11-01\",\r\n                \"poslednjiDanVazenja\": \"2019-11-30\"\r\n            },\r\n            {\r\n                \"cenaPoNoci\": 47.19,\r\n                \"prviDanVazenja\": \"2019-12-01\",\r\n                \"poslednjiDanVazenja\": \"2019-12-31\"\r\n            }\r\n        ],\r\n        \"tipDTO\": {\r\n            \"id\": 3\r\n        },\r\n        \"usluge\": [\r\n            {\r\n                \"id\": 10\r\n            },\r\n            {\r\n            \t\"id\": 1\r\n            }\r\n        ]\r\n    }"
+								},
+								"url": {
+									"raw": "http://localhost:8763/rest/smestaj",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8763",
+									"path": [
+										"rest",
+										"smestaj"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Preuzmi sve smeštajne jedinice",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8763/rest/smestaj",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8763",
+									"path": [
+										"rest",
+										"smestaj"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Pretraži smeštajne jedinice",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"grad\": \"Domoni\",\n\t\"zemlja\": \"Comoros\",\n\t\"prviDan\": \"2019-03-10\",\n\t\"poslednjiDan\": \"2019-04-11\",\n\t\"brojOsoba\": 2,\n\t\"kategorija\": \"NEKATEGORISAN\",\n\t\"tipSmestajaDTO\": {\n\t\t\"id\": 2\n\t}\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8763/rest/smestaj/pretraga",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8763",
+									"path": [
+										"rest",
+										"smestaj",
+										"pretraga"
 									]
 								}
 							},
