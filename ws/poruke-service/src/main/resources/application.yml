@@ -8,8 +8,8 @@ spring:
       ddl-auto: update
   datasource:
     url: jdbc:mysql://localhost:3306/xmlws_schema_poruke_service?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-    username: root
-    password: stefan
+    username: admin
+    password: admin
 eureka:
   instance:
     preferIpAddress: true

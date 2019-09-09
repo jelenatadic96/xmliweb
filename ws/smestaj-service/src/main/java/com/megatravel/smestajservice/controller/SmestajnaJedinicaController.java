@@ -1,6 +1,7 @@
 package com.megatravel.smestajservice.controller;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -31,7 +32,7 @@ public class SmestajnaJedinicaController {
 		return new ResponseEntity<List<SmestajnaJedinicaDTO>>(SmestajnaJedinicaDTO.transformisi(this.smestajnaJedinicaService.preuzmiSve()), HttpStatus.OK);
 	}
 	
-	@RequestMapping(value = "/pretraga", method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/pretraga", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<SmestajnaJedinicaDTO>> pretraziSveSmestajneJedinice(@RequestBody UpitPretrageDTO upitPretrageDTO) {
 		return new ResponseEntity<List<SmestajnaJedinicaDTO>>(SmestajnaJedinicaDTO.transformisi(this.smestajnaJedinicaService.pretrazi(upitPretrageDTO)), HttpStatus.OK);
 	}
@@ -40,6 +41,11 @@ public class SmestajnaJedinicaController {
 	public ResponseEntity<SmestajnaJedinicaDTO> korigujOcenu(@PathVariable("id") Long id,
 			@RequestParam("ocena") double ocena) {
 		return new ResponseEntity<SmestajnaJedinicaDTO>(new SmestajnaJedinicaDTO(this.smestajnaJedinicaService.korigujOcenu(id, ocena)), HttpStatus.ACCEPTED);
+	}
+	
+	@RequestMapping(value = "/poseceni-smestaji", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Set<Long>> poseceniSmestaji(@RequestParam("korisnik-id") Long korisnikId) {
+		return new ResponseEntity<Set<Long>>(this.smestajnaJedinicaService.preuzmiSmestajeKojeJePosetioKorisnik(korisnikId), HttpStatus.OK);
 	}
 	
 }

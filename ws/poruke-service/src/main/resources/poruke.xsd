@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	xmlns:tns="http://www.megatravel.com/porukeservice/gen"
-	targetNamespace="http://www.megatravel.com/porukeservice/gen"
+	xmlns:tns="http://www.megatravel.com/porukeservice/soap/dto"
+	targetNamespace="http://www.megatravel.com/porukeservice/soap/dto"
 	elementFormDefault="qualified">
 
-	<xs:element name="getCurrentDatabaseStateRequest">
+	<xs:element name="getStanjeBazePodatakaPorukaRequest">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="vreme" type="xs:dateTime"/>
@@ -12,11 +12,19 @@
 		</xs:complexType>
 	</xs:element>
 
-	<xs:element name="getCurrentDatabaseStateResponse">
+	<xs:element name="getStanjeBazePodatakaPorukaResponse">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element maxOccurs="unbounded" minOccurs="0"
 					name="poruke" type="tns:PorukaDTO" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="posaljiPorukuRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="poruka" type="tns:PorukaDTO" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

@@ -1,4 +1,4 @@
-package com.megatravel.porukeservice.config;
+package com.megatravel.smestajservice.config;
 
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.ApplicationContext;
@@ -24,19 +24,19 @@ public class WebServiceConfig extends WsConfigurerAdapter {
         return new ServletRegistrationBean<MessageDispatcherServlet>(servlet, "/services/*");
     }
 
-    @Bean(name = "poruke")
-    public DefaultWsdl11Definition defaultWsdl11DefinitionCountries(XsdSchema countriesSchema) {
+    @Bean(name = "smestaji")
+    public DefaultWsdl11Definition defaultWsdl11DefinitionSmestaji(XsdSchema smestajiSchema) {
         DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
-        wsdl11Definition.setPortTypeName("PorukePort");
+        wsdl11Definition.setPortTypeName("SmestajiPort");
         wsdl11Definition.setLocationUri("/services");
-        wsdl11Definition.setTargetNamespace("http://www.megatravel.com/porukeservice/soap/dto");
-        wsdl11Definition.setSchema(countriesSchema);
+        wsdl11Definition.setTargetNamespace("http://www.megatravel.com/smestajservice/soap/dto");
+        wsdl11Definition.setSchema(smestajiSchema);
         return wsdl11Definition;
     }
 
-    @Bean(name = "porukeSchema")
-    public XsdSchema countriesSchema() {
-        return new SimpleXsdSchema(new ClassPathResource("poruke.xsd"));
+    @Bean(name = "smestajiSchema")
+    public XsdSchema smestajiSchema() {
+        return new SimpleXsdSchema(new ClassPathResource("smestaj.xsd"));
     }
     
 }

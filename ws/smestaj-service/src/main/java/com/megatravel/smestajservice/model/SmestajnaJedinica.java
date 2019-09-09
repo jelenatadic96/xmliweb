@@ -6,11 +6,13 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Transient;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 
@@ -40,7 +42,7 @@ public class SmestajnaJedinica {
     @Enumerated(EnumType.STRING)
     private Kategorija kategorija;
     
-    @OneToMany(mappedBy = "smestajnaJedinica")
+    @OneToMany(mappedBy = "smestajnaJedinica", fetch = FetchType.EAGER)
     private List<Cenovnik> cenovnici;
     
     @ManyToOne
@@ -55,15 +57,24 @@ public class SmestajnaJedinica {
     @OneToMany(mappedBy = "smestajnaJedinica")
     private List<Rezervacija> rezervacije;
     
+    @Transient
+    private double trenutnaCenaPoNoci;
+    
     public SmestajnaJedinica() { }
 
 	public SmestajnaJedinica(SmestajnaJedinicaDTO smestajnaJedinicaDTO) {
-    	this.id = smestajnaJedinicaDTO.getId();
     	this.opis = smestajnaJedinicaDTO.getOpis();
     	this.kapacitet = smestajnaJedinicaDTO.getKapacitet();
     	this.brojDanaZaOtkazivanje = smestajnaJedinicaDTO.getBrojDanaZaOtkazivanje();
     	this.ocena = smestajnaJedinicaDTO.getOcena();
     	this.kategorija = smestajnaJedinicaDTO.getKategorija();
+	}
+
+	public SmestajnaJedinica(com.megatravel.smestajservice.soap.dto.SmestajnaJedinicaDTO smestajDTO) {
+    	this.opis = smestajDTO.getOpis();
+    	this.kapacitet = smestajDTO.getKapacitet();
+    	this.brojDanaZaOtkazivanje = smestajDTO.getBrojDanaZaOtkazivanje();
+    	this.ocena = smestajDTO.getOcena();
 	}
 
 	public Long getId() {
@@ -160,6 +171,14 @@ public class SmestajnaJedinica {
 
 	public void setRezervacije(List<Rezervacija> rezervacije) {
 		this.rezervacije = rezervacije;
+	}
+
+	public double getTrenutnaCenaPoNoci() {
+		return trenutnaCenaPoNoci;
+	}
+
+	public void setTrenutnaCenaPoNoci(double trenutnaCenaPoNoci) {
+		this.trenutnaCenaPoNoci = trenutnaCenaPoNoci;
 	}
     
 }
