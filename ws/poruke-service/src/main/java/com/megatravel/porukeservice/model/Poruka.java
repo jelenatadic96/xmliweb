@@ -41,6 +41,13 @@ public class Poruka {
     	this.agentId = porukaDTO.getAgentId();
 	}
 
+	public Poruka(com.megatravel.porukeservice.soap.dto.PorukaDTO porukaDTO) {
+    	this.id = porukaDTO.getId();
+    	this.sadrzaj = porukaDTO.getSadrzaj();
+    	this.korisnikId = porukaDTO.getKorisnikId();
+    	this.agentId = porukaDTO.getAgentId();
+	}
+
 	public Long getId() {
 		return id;
 	}

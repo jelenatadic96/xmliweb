@@ -14,6 +14,7 @@ import org.springframework.web.server.ResponseStatusException;
 import com.megatravel.porukeservice.dto.AgentDTO;
 import com.megatravel.porukeservice.dto.KorisnikDTO;
 import com.megatravel.porukeservice.interfaces.KorisnikInterface;
+import com.megatravel.porukeservice.interfaces.SmestajInterface;
 import com.megatravel.porukeservice.model.Poruka;
 import com.megatravel.porukeservice.repository.PorukaRepository;
 
@@ -25,6 +26,9 @@ public class PorukaService {
 
 	@Autowired
 	private KorisnikInterface korisnikInterface;
+	
+	@Autowired
+	private SmestajInterface smestajInterface;
 	
 	public List<Poruka> preuzmiPorukeAgenta(Long id) {
 		return this.porukaRepository.findAllByAgentId(id);
@@ -43,13 +47,29 @@ public class PorukaService {
 	}
 	
 	public Poruka posaljiPoruku(Poruka poruka, Long agentId, Long korisnikId) {
-		// TODO : Proveriti da li je dozvoljena komunikacija izmedju agenta i korisnika. Za to je neophodno
-		// da korisnik ima rezervaciju u smestajnoj jedinici za koju je agent povezan.
-		poruka.setAgentId(agentId);
-		poruka.setKorisnikId(korisnikId);
-		return this.porukaRepository.save(poruka);
+		if(this.dozvoljenaKomunikacija(agentId, korisnikId)) {
+			poruka.setAgentId(agentId);
+			poruka.setKorisnikId(korisnikId);
+			return this.porukaRepository.save(poruka);	
+		} else {
+			throw new ResponseStatusException(HttpStatus.CONFLICT);
+		}
 	}
 
+	private boolean dozvoljenaKomunikacija(Long agentId, Long korisnikId) {
+		ResponseEntity<Set<Long>> odgovorPoseceniSmestaji = this.smestajInterface.poseceniSmestaji(korisnikId);
+		ResponseEntity<Set<Long>> odgovorUpravljaniSmestaji = this.korisnikInterface.preuzmiUpravljaneSmestaje(agentId);
+		if(odgovorPoseceniSmestaji.getStatusCode().is2xxSuccessful() &&
+				odgovorUpravljaniSmestaji.getStatusCode().is2xxSuccessful()) {
+			Set<Long> poseceniSmestaji = odgovorPoseceniSmestaji.getBody();
+			Set<Long> smestajiKojimaAgentUpravlja = odgovorUpravljaniSmestaji.getBody();
+			poseceniSmestaji.retainAll(smestajiKojimaAgentUpravlja);
+			return !poseceniSmestaji.isEmpty();
+		} else {
+			throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
+	
 	public List<KorisnikDTO> preuzmiKorisnikeSaKojimaCetujeAgent(Long id) {
 		List<Poruka> poruke = this.preuzmiPorukeAgenta(id);
 		Set<Long> korisnici = new HashSet<Long>();

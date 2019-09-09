@@ -1,6 +1,7 @@
 package com.megatravel.smestajservice.model;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -31,11 +32,20 @@ public class Cenovnik {
     
     public Cenovnik() { }
 
-	public Cenovnik(CenovnikDTO cenovnik) {
+    public Cenovnik(CenovnikDTO cenovnik) {
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		this.id = cenovnik.getId();
 		this.cenaPoNoci = cenovnik.getCenaPoNoci();
-		this.prviDanVazenja = cenovnik.getPrviDanVazenja();
-		this.poslednjiDanVazenja = cenovnik.getPoslednjiDanVazenja();
+		this.prviDanVazenja = LocalDate.parse(cenovnik.getPrviDanVazenja(), formatter);
+		this.poslednjiDanVazenja = LocalDate.parse(cenovnik.getPoslednjiDanVazenja(), formatter);
+	}
+
+	public Cenovnik(com.megatravel.smestajservice.soap.dto.CenovnikDTO cenovnik) {
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		this.id = cenovnik.getId();
+		this.cenaPoNoci = cenovnik.getCenaPoNoci();
+		this.prviDanVazenja = LocalDate.parse(cenovnik.getPrviDanVazenja().toGregorianCalendar().getTime().toString(), formatter);
+		this.poslednjiDanVazenja = LocalDate.parse(cenovnik.getPoslednjiDanVazenja().toGregorianCalendar().getTime().toString(), formatter);
 	}
 
 	public Long getId() {

@@ -45,4 +45,8 @@ public class RezervacijaController {
 		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
 	
+	@RequestMapping(value = "/rest/rezervacije/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<RezervacijaDTO> preuzmiRezervaciju(@PathVariable("id") Long id) {
+		return new ResponseEntity<RezervacijaDTO>(new RezervacijaDTO(this.rezervacijaService.preuzmiJednu(id)), HttpStatus.OK);
+	}
 }

@@ -47,7 +47,7 @@ public class RezervacijaService {
 		return rezervacije;
 	}
 
-	private Rezervacija preuzmiJednu(Long id) {
+	public Rezervacija preuzmiJednu(Long id) {
 		Optional<Rezervacija> rezervacija = this.rezervacijaRepository.findById(id);
 		if(rezervacija.isPresent()) {
 			return rezervacija.get();
@@ -111,6 +111,29 @@ public class RezervacijaService {
 		LocalDate trenutniDatum = LocalDate.now();
 		int brojDana = rezervacija.getSmestajnaJedinica().getBrojDanaZaOtkazivanje();
 		return ChronoUnit.DAYS.between(trenutniDatum, rezervacija.getPrviDanRezervacije()) >= brojDana + 1;
+	}
+
+	public List<Rezervacija> preuzmiSveNaKojimaJeKorisnik(Long korisnikId) {
+		return this.rezervacijaRepository.findAllByKorisnikId(korisnikId);
+	}
+	
+	public List<Rezervacija> preuzmiSveRezervacije() {
+		return this.rezervacijaRepository.findAll();
+	}
+
+	public Rezervacija potvrdiRezervaciju(Long id) {
+		Rezervacija rezervacija = this.preuzmiJednu(id);
+		if(this.dozvoljenoPotvrdjivanje(rezervacija)) {
+			rezervacija.setRealizovana(true);
+			return this.rezervacijaRepository.save(rezervacija);
+		} else {
+			throw new ResponseStatusException(HttpStatus.CONFLICT);
+		}
+	}
+
+	private boolean dozvoljenoPotvrdjivanje(Rezervacija rezervacija) {
+		LocalDate trenutniDatum = LocalDate.now();
+		return rezervacija.getPoslednjiDanRezervacije().isBefore(trenutniDatum);
 	}
 	
 }

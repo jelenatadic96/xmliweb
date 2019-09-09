@@ -20,6 +20,7 @@ public class SmestajnaJedinicaDTO {
     private List<CenovnikDTO> cenovnici;
     private TipSmestajaDTO tipDTO;
     private List<UslugaDTO> usluge;
+    private double trenutnaCena;
     
     public SmestajnaJedinicaDTO() { }
     
@@ -29,11 +30,12 @@ public class SmestajnaJedinicaDTO {
     	this.kapacitet = smestajnaJedinica.getKapacitet();
     	this.brojDanaZaOtkazivanje = smestajnaJedinica.getBrojDanaZaOtkazivanje();
     	this.ocena = smestajnaJedinica.getOcena();
-    	this.adresaDTO = new AdresaDTO(smestajnaJedinica.getAdresa());
+    	if(smestajnaJedinica.getAdresa() != null) this.adresaDTO = new AdresaDTO(smestajnaJedinica.getAdresa());
     	this.cenovnici = CenovnikDTO.transformisi(smestajnaJedinica.getCenovnici());
     	this.tipDTO = new TipSmestajaDTO(smestajnaJedinica.getTip());
     	this.kategorija = smestajnaJedinica.getKategorija();
     	this.usluge = UslugaDTO.transformisi(this.preuzmiUsluge(smestajnaJedinica.getSpojeviSaUslugama()));
+    	this.trenutnaCena = smestajnaJedinica.getTrenutnaCenaPoNoci();
     }
 
 	public Long getId() {
@@ -132,6 +134,14 @@ public class SmestajnaJedinicaDTO {
 			}
 		}
 		return rezultat;
+	}
+
+	public double getTrenutnaCena() {
+		return trenutnaCena;
+	}
+
+	public void setTrenutnaCena(double trenutnaCena) {
+		this.trenutnaCena = trenutnaCena;
 	}
 	
 }

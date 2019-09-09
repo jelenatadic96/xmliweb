@@ -63,10 +63,10 @@ export class LoginComponent implements OnInit {
         res => 
         {
           console.log(res);
-          alert("evo ga")
-          localStorage.setItem('token', res);
+          //alert("evo ga")
+          localStorage.setItem('token', JSON.stringify(res));
           //let role = this.auth.getRoles(res);
-
+          this.router.navigate(['poruke']);
           
           // //samo da bi postavio ulogo naog korisnika
           // this.userService.findByEmail(this.user.email).subscribe(
