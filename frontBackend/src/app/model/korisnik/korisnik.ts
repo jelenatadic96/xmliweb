@@ -1,3 +1,5 @@
+import { Poruka } from "./poruka";
+
 export class Korisnik{
 
     public id: number;
@@ -7,6 +9,8 @@ export class Korisnik{
 	public lozinka: string;
     public status: string;
     
+    public porukeSaAgentom: Poruka[]; 
+    
     constructor(){
         this.id = 0;
         this.ime = "";
@@ -14,5 +18,6 @@ export class Korisnik{
         this.mejl = "";
         this.lozinka = "";
         this.status = "";
+        this.porukeSaAgentom = [];
     }
 }
