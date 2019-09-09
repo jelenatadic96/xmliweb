@@ -42,5 +42,9 @@ public class UslugaService {
 			this.spojUslugaJedinicaRepository.save(spoj);
 		}
 	}
+
+	public List<Usluga> preuzmiSve() {
+		return this.uslugaRepository.findAll();
+	}
 	
 }

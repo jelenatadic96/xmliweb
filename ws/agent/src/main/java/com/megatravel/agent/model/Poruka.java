@@ -1,5 +1,7 @@
 package com.megatravel.agent.model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -37,8 +39,13 @@ public class Poruka {
     public Poruka() { }
 
 	public Poruka(PorukaDTO porukaDTO) {
+		//DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
     	this.id = porukaDTO.getId();
-    	this.vreme = porukaDTO.getVreme();
+    	try {
+			this.vreme = new SimpleDateFormat("yyyy-MM-dd").parse(porukaDTO.getVreme());
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
     	this.sadrzaj = porukaDTO.getSadrzaj();
 	}
 

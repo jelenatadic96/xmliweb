@@ -1,16 +1,17 @@
 package com.megatravel.agent.dto;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.megatravel.agent.model.Poruka;
 import com.megatravel.agent.model.PorukaComparator;
 
 public class PorukaDTO {
 
     private Long id;
-	private Date vreme;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+	private String vreme;
     private String sadrzaj;
     private KorisnikDTO korisnikDTO;
     private AgentDTO agentDTO;
@@ -19,7 +20,7 @@ public class PorukaDTO {
     
     public PorukaDTO(Poruka poruka) {
     	this.id = poruka.getId();
-    	this.vreme = poruka.getVreme();
+    	this.vreme = poruka.getVreme().toString();
     	this.sadrzaj = poruka.getSadrzaj();
     	this.korisnikDTO = new KorisnikDTO(poruka.getKorisnik());
     	this.agentDTO = new AgentDTO(poruka.getAgent());
@@ -33,11 +34,11 @@ public class PorukaDTO {
 		this.id = id;
 	}
 
-	public Date getVreme() {
+	public String getVreme() {
 		return vreme;
 	}
 
-	public void setVreme(Date vreme) {
+	public void setVreme(String vreme) {
 		this.vreme = vreme;
 	}
 

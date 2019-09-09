@@ -1,4 +1,4 @@
-{
+﻿{
 	"info": {
 		"_postman_id": "a365da34-0179-429a-afd7-48effa0358e8",
 		"name": "XML&WS",
@@ -117,7 +117,92 @@
 					],
 					"_postman_isSubFolder": true
 				},
-				
+{
+					"name": "Upravljanje agentima",
+					"item": [
+						{
+							"name": "Preuzmi jednog agenta",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8762/korisnici-service/rest/agenti/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8762",
+									"path": [
+										"korisnici-service",
+										"rest",
+										"agenti",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Preuzmi sve agente",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8762/korisnici-service/rest/agenti",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8762",
+									"path": [
+										"korisnici-service",
+										"rest",
+										"agenti"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Kreiraj agenta",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"id\": 2,\r\n    \"ime\": \"Gustie\",\r\n    \"prezime\": \"Kilpatrick\",\r\n    \"mejl\": \"gkilpatrick1@admin.sui\",\r\n    \"lozinka\": \"qui5gc\",\r\n    \"poslovniMaticniBroj\": \"2807335705\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8762/korisnici-service/rest/agenti",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8762",
+									"path": [
+										"korisnici-service",
+										"rest",
+										"agenti"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},				
+
+
+
+
+
 				{
 					"name": "Login zahtev",
 					"request": {
@@ -153,7 +238,99 @@
 		},
 		
 		
-		
+		{
+			"name": "Agentska aplikacija",
+			"item": [
+				{
+					"name": "Poruke",
+					"item": [
+						{
+							"name": "Preuzmi \"cetove\" agenta",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8763/rest/agenti/1/poruke",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8763",
+									"path": [
+										"rest",
+										"agenti",
+										"1",
+										"poruke"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Preuzmi poruke izmedu agenta i korisnika",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8763/rest/agenti/1/poruke/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8763",
+									"path": [
+										"rest",
+										"agenti",
+										"1",
+										"poruke",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Pošalji poruku korisniku",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"sadrzaj\": \"Probna poruka korisnika 3 agentu 1\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8763/rest/agenti/3/poruke?korisnik-id=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8763",
+									"path": [
+										"rest",
+										"agenti",
+										"3",
+										"poruke"
+									],
+									"query": [
+										{
+											"key": "korisnik-id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
 				
 				{
 					"name": "Rezervacije",
