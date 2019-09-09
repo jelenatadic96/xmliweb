@@ -1,0 +1,71 @@
+<app-meni-bar></app-meni-bar>
+
+<div class="container" style="justify-content:space-around;">
+  <div class="col-md-6 col-md-offset-2">
+    <div class="panel panel-login">
+      <div class="panel-heading">
+          <h1 id="register-form-link">Registruj se</h1>
+        <hr>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <form id="register-form" method="post" role="form"  #formRegister="ngForm" style="display: block;">
+              <div class="form-group">
+                <input type="email" minlength="10" maxlength="60" [(ngModel)]="user.email" #email="ngModel" name="email" id="email" class="input pass" placeholder="Email" value="">
+                <small [hidden]="email.valid || (email.pristine && !formRegister.submitted)"  class="input text-danger">
+                 Email is required
+                 </small>
+                 <small [hidden]="mailNotUnique"  class="text-danger">
+                  Email already exist
+                  </small>
+              </div>
+              <div class="form-group">
+                <input type="password" minlength="3" maxlength="30" [(ngModel)]="user.password" name="password" id="password" class="input pass" placeholder="Password"  
+                  validateEqual="confirmPassword" #password="ngModel" minlength="3">       
+                <small [hidden]="password.valid || (password.pristine && !formRegister.submitted)" class="input text-danger">
+                  Password is required. Minimum 12 characters, at least one uppercase letter, one lowercase letter, one number and one special character
+                </small>
+              </div>
+              <div class="form-group">
+                <input type="password" [(ngModel)]="user.repeatPassword" name="confirmPassword" id="confirmPassword" class="input pass" placeholder="Repeat password" required #confirmPassword="ngModel">
+                <small [hidden]="confirmPassword.valid || (confirmPassword.pristine && !formRegister.submitted)" class="input text-danger">
+                  Password doesn't match
+                </small>
+              </div>
+              <div class="form-group">
+                <input type="text" minlength="3"  maxlength="30" #uname="ngModel" [(ngModel)]="user.firstName" name="name" id="name"  class="input pass" placeholder="Name" value="">
+                <small [hidden]="uname.valid || (uname.pristine && !formRegister.submitted)"  class="input text-danger">
+                 Name is required
+                </small>
+              </div>
+              <div class="form-group">
+                <input type="text" minlength="3"  maxlength="30" #lastName="ngModel" [(ngModel)]="user.lastName" name="lastName" id="lastName"  class="input pass" placeholder="Last name">
+                <small [hidden]="lastName.valid || (lastName.pristine && !formRegister.submitted)"  class="input text-danger">
+                  Last name is required
+                 </small>
+              </div>
+              <div *ngIf = "!postojiDugme">
+              <div  class="form-group">
+                <input type="text" minlength="3"  maxlength="30" #workNumber="ngModel" [(ngModel)]="user.workCertificateNumber" name="workNumber" id="workNumber"  class="input pass" placeholder="Work certificate number">
+              </div>
+              <div  class="form-group">
+                <input type="text" minlength="3"  maxlength="30" #grad="ngModel" [(ngModel)]="user.adresaDTO.grad" name="grad" id="grad"  class="input pass" placeholder="City">
+              </div>
+              <div  class="form-group">
+                <input type="text" minlength="3"  maxlength="30" #workNumber="ngModel" [(ngModel)]="user.adresaDTO.zemlja" name="zemlja" id="zemlja"  class="input pass" placeholder="Country">
+              </div>
+              <!-- <div  class="form-group">
+                <input type="text" minlength="3"  maxlength="30" #workNumber="ngModel" [(ngModel)]="user.workCertificateNumber" name="workNumber" id="workNumber"  class="input pass" placeholder="Work certificate number">
+              </div> -->
+            </div>
+              <div class="form-group">
+                    <input type="button" (click)="register()" name="register-submit" id="register-submit" class="inputButton" value="Register">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

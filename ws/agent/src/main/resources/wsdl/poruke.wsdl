@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://www.megatravel.com/porukeservice/soap/dto" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.megatravel.com/porukeservice/soap/dto" targetNamespace="http://www.megatravel.com/porukeservice/soap/dto">
+    <wsdl:types>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.megatravel.com/porukeservice/soap/dto">
+            <xs:element name="getStanjeBazePodatakaPorukaRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="vreme" type="xs:dateTime"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getStanjeBazePodatakaPorukaResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="poruke" type="tns:PorukaDTO"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="posaljiPorukuRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="poruka" type="tns:PorukaDTO"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:complexType name="PorukaDTO">
+                <xs:sequence>
+                    <xs:element name="id" type="xs:long"/>
+                    <xs:element name="vreme" type="xs:dateTime"/>
+                    <xs:element name="sadrzaj" type="xs:string"/>
+                    <xs:element name="korisnikId" type="xs:long"/>
+                    <xs:element name="agentId" type="xs:long"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="getStanjeBazePodatakaPorukaResponse">
+        <wsdl:part element="tns:getStanjeBazePodatakaPorukaResponse" name="getStanjeBazePodatakaPorukaResponse">
+    </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getStanjeBazePodatakaPorukaRequest">
+        <wsdl:part element="tns:getStanjeBazePodatakaPorukaRequest" name="getStanjeBazePodatakaPorukaRequest">
+    </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="posaljiPorukuRequest">
+        <wsdl:part element="tns:posaljiPorukuRequest" name="posaljiPorukuRequest">
+    </wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="PorukePort">
+        <wsdl:operation name="getStanjeBazePodatakaPoruka">
+            <wsdl:input message="tns:getStanjeBazePodatakaPorukaRequest" name="getStanjeBazePodatakaPorukaRequest">
+    </wsdl:input>
+            <wsdl:output message="tns:getStanjeBazePodatakaPorukaResponse" name="getStanjeBazePodatakaPorukaResponse">
+    </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="posaljiPoruku">
+            <wsdl:input message="tns:posaljiPorukuRequest" name="posaljiPorukuRequest">
+    </wsdl:input>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="PorukePortSoap11" type="tns:PorukePort">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="getStanjeBazePodatakaPoruka">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getStanjeBazePodatakaPorukaRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getStanjeBazePodatakaPorukaResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="posaljiPoruku">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="posaljiPorukuRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="PorukePortService">
+        <wsdl:port binding="tns:PorukePortSoap11" name="PorukePortSoap11">
+            <soap:address location="http://localhost:8762/poruke-service/services"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

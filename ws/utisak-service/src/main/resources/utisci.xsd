@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.megatravel.com/utisakservice/soap/dto"
+	targetNamespace="http://www.megatravel.com/utisakservice/soap/dto"
+	elementFormDefault="qualified">
+
+	<xs:element name="getStanjeBazePodatakaUtisakaRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="vreme" type="xs:dateTime"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getStanjeBazePodatakaUtisakaResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="utisci" type="tns:UtisakDTO"
+					maxOccurs="unbounded" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="UtisakDTO">
+		<xs:sequence>
+			<xs:element name="id" type="xs:long" />
+			<xs:element name="komentar" type="xs:string" />
+			<xs:element name="komentarOdobren" type="xs:boolean" />
+			<xs:element name="ocena" type="xs:int" />
+			<xs:element name="rezervacijaId" type="xs:long" />
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>

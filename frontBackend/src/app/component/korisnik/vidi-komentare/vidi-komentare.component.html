@@ -1,0 +1,20 @@
+<app-meni-bar></app-meni-bar>
+
+<div class="container">
+    <div class="container justify-content-md-center" style="padding-top: 10px;" >
+      <div class="col-lg-12 p-0">
+        <div class="card" style="margin-bottom: 5px;" *ngFor = "let i = index; let comment of commentsToApprove | paginate: { itemsPerPage: 10, currentPage: p }">
+            <div class="card-body">
+                <div class="row">
+                      <p style="width: 90%">{{comment.komentar}}</p>
+                      <div style="display: -webkit-box;">
+                        <div class="hearts">
+                          <button class="btn btn-primary" (click) = "approveComment(comment)" > Approve </button>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>

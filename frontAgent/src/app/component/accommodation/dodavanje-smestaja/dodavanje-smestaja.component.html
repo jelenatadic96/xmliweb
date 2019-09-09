@@ -1,0 +1,79 @@
+<div class="container register">
+    <div class="row justify-content-md-center">
+        <div class="col-md-9 register-right">
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <h3 class="register-heading">Add new accommodation</h3>
+                    <form class="row register-form" #formAddAccommodation="ngForm">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" [(ngModel)] = "accommodation.adresaDTO.zemlja" placeholder="Country" name = "country"  #country="ngModel" value="" required minlength="3" maxlength="20"/>
+                            </div>
+                            <small [hidden]="country.valid || (country.pristine && !formAddAccommodation.submitted)"  class="input text-danger">
+                              Country is required
+                              </small>
+                            <div class="form-group">
+                                <input type="text" class="form-control" [(ngModel)] = "accommodation.adresaDTO.grad" placeholder="City" value=""  name = "city"  #city="ngModel" value="" required minlength="3" maxlength="20" />
+                            </div>
+                            <small [hidden]="city.valid || (city.pristine && !formAddAccommodation.submitted)"  class="input text-danger">
+                              City is required
+                              </small>
+                            <div class="form-group">
+                                <input type="text" class="form-control" [(ngModel)] = "accommodation.adresaDTO.geografskaDuzina" placeholder="Latitude" value=""  name = "latitude"  #latitude="ngModel" value="" required minlength="1" maxlength="20"/>
+                            </div>
+                            <small [hidden]="latitude.valid || (latitude.pristine && !formAddAccommodation.submitted)"  class="input text-danger">
+                              Latitude is required
+                              </small>
+                            <div class="form-group">
+                                <input type="text" class="form-control" [(ngModel)] = "accommodation.adresaDTO.geografskaSirina" placeholder="Longitude" value=""  name = "longitude"  #longitude="ngModel" value="" required minlength="1" maxlength="20"/>
+                            </div>
+                            <small [hidden]="longitude.valid || (longitude.pristine && !formAddAccommodation.submitted)"  class="input text-danger">
+                              Longitude is required
+                              </small>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <textarea type="text" class="form-control" [(ngModel)] = "accommodation.opis" placeholder="Description" value="" name="description" #description="ngModel" maxlength="150"></textarea>
+                            </div>
+                            <small [hidden]="description.valid || (description.pristine && !formAddAccommodation.submitted)"  class="input text-danger">
+                              Description too long. Max length is 150 characters.  
+                            </small>
+                            <div class="form-group">
+                                <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" [(ngModel)] = "accommodation.kapacitet" class="form-control" placeholder="Capacity" value="" name="capacity" #capacity="ngModel" required maxlength="3" minlength="1"/>
+                            </div>
+                            <small [hidden]="capacity.valid || (capacity.pristine && !formAddAccommodation.submitted)"  class="input text-danger">
+                              Capacity is required.  
+                            </small>
+                            <div class="form-group">
+                                <ng-multiselect-dropdown  [placeholder]="'Accommodation type'" [settings]="dropdownSettingsAccommodationType" [data]="accommodationTypeDropDown" [(ngModel)] = "selectedAccommodationType" [ngModelOptions]="{standalone: true}">
+                                </ng-multiselect-dropdown>
+                            </div>
+                            <div class="form-group">
+                                <ng-multiselect-dropdown  [placeholder]="'Additional services'" [settings]="dropdownSettingsAdditionalServices" [data]="additionalServicesDropDown" [(ngModel)] = "selectAdditionalServices" [ngModelOptions]="{standalone: true}">
+                                </ng-multiselect-dropdown>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" [(ngModel)] = "accommodation.brojDanaZaOtkazivanje" placeholder="Cancellation days" value="" name="cancellationDays"/>
+                            </div>
+                            <!-- <div class="form-group">
+                                <input type="text" class="form-control" [(ngModel)] = "newImageUrl" placeholder="Image url" name="imageUrl" >
+                            </div>
+                            <div class="form-group">
+                              <button class="btn btn-primary" (click) = "addPictureToAccommodation()">Add image</button>
+                              </div> -->
+                            <input type="submit" class="btnRegister" (click) = "managePrices()" [disabled]="!formAddAccommodation.valid"  value="Manage prices"/>
+                        </div>
+                        <!-- <div style="display: contents;">
+                          <div style="display: contents;" *ngFor = "let i = index; let image of accommodation.imageDTO">
+                              <img class="media-object img-rounded img-responsive"  src="{{image.filePath}}" 
+                              alt="image{{i}}" style="width: 300px; height: 250px; margin: 5px;">
+                              <i (click) = "removeImage(image)" class="fa fa-times"></i>
+                          </div>
+                      </div> -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+  </div>

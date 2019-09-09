@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://www.megatravel.com/smestajservice/soap/dto" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.megatravel.com/smestajservice/soap/dto" targetNamespace="http://www.megatravel.com/smestajservice/soap/dto">
+    <wsdl:types>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.megatravel.com/smestajservice/soap/dto">
+            <xs:element name="getSveAdreseRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="vreme" type="xs:dateTime"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getSveAdreseResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="adrese" type="tns:AdresaDTO"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:complexType name="AdresaDTO">
+                <xs:sequence>
+                    <xs:element name="id" type="xs:long"/>
+                    <xs:element name="zemlja" type="xs:string"/>
+                    <xs:element name="grad" type="xs:string"/>
+                    <xs:element name="geografskaDuzina" type="xs:double"/>
+                    <xs:element name="geografskaSirina" type="xs:double"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="getSviCenovniciRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="vreme" type="xs:dateTime"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getSviCenovniciResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="cenovnici" type="tns:CenovnikDTO"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:complexType name="CenovnikDTO">
+                <xs:sequence>
+                    <xs:element name="id" type="xs:long"/>
+                    <xs:element name="cenaPoNoci" type="xs:double"/>
+                    <xs:element name="prviDanVazenja" type="xs:dateTime"/>
+                    <xs:element name="poslednjiDanVazenja" type="xs:dateTime"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="getSviTipoviRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="vreme" type="xs:dateTime"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getSviTipoviResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="tipovi" type="tns:TipSmestajaDTO"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:complexType name="TipSmestajaDTO">
+                <xs:sequence>
+                    <xs:element name="id" type="xs:long"/>
+                    <xs:element name="naziv" type="xs:string"/>
+                    <xs:element name="opis" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="getSveUslugeRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="vreme" type="xs:dateTime"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getSveUslugeResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="usluge" type="tns:UslugaDTO"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:complexType name="UslugaDTO">
+                <xs:sequence>
+                    <xs:element name="id" type="xs:long"/>
+                    <xs:element name="naziv" type="xs:string"/>
+                    <xs:element name="opis" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="getSveSmestajneJediniceRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="vreme" type="xs:dateTime"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getSveSmestajneJediniceResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="smestaji" type="tns:SmestajnaJedinicaDTO"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:complexType name="SmestajnaJedinicaDTO">
+                <xs:sequence>
+                    <xs:element name="id" type="xs:long"/>
+                    <xs:element name="opis" type="xs:string"/>
+                    <xs:element name="kapacitet" type="xs:int"/>
+                    <xs:element name="brojDanaZaOtkazivanje" type="xs:int"/>
+                    <xs:element name="ocena" type="xs:double"/>
+                    <xs:element name="adresa" type="xs:long"/>
+                    <xs:element name="tip" type="xs:long"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="usluge" type="tns:UslugaDTO"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="cenovnici" type="tns:CenovnikDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="getSveRezervacijeRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="vreme" type="xs:dateTime"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getSveRezervacijeResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="rezervacije" type="tns:RezervacijaDTO"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:complexType name="RezervacijaDTO">
+                <xs:sequence>
+                    <xs:element name="id" type="xs:long"/>
+                    <xs:element name="ukupnaCena" type="xs:double"/>
+                    <xs:element name="utisak" type="xs:long"/>
+                    <xs:element name="korisnik" type="xs:long"/>
+                    <xs:element name="realizovana" type="xs:boolean"/>
+                    <xs:element name="prviDanRezervacije" type="xs:date"/>
+                    <xs:element name="poslednjiDanRezervacije" type="xs:date"/>
+                    <xs:element name="smestaj" type="xs:long"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="unesiRezervacijuRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="rezervacija" type="tns:RezervacijaDTO"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="potvrdiRezervacijuRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="rezervacija" type="xs:long"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="dodavanjeSmestajneJediniceRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="smestaj" type="tns:SmestajnaJedinicaDTO"/>
+                        <xs:element name="agent" type="xs:long"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="dodavanjeSmestajneJediniceRequest">
+        <wsdl:part element="tns:dodavanjeSmestajneJediniceRequest" name="dodavanjeSmestajneJediniceRequest">
+    </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getSveSmestajneJediniceRequest">
+        <wsdl:part element="tns:getSveSmestajneJediniceRequest" name="getSveSmestajneJediniceRequest">
+    </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getSviCenovniciResponse">
+        <wsdl:part element="tns:getSviCenovniciResponse" name="getSviCenovniciResponse">
+    </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getSveAdreseRequest">
+        <wsdl:part element="tns:getSveAdreseRequest" name="getSveAdreseRequest">
+    </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getSveAdreseResponse">
+        <wsdl:part element="tns:getSveAdreseResponse" name="getSveAdreseResponse">
+    </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getSveRezervacijeRequest">
+        <wsdl:part element="tns:getSveRezervacijeRequest" name="getSveRezervacijeRequest">
+    </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getSveUslugeRequest">
+        <wsdl:part element="tns:getSveUslugeRequest" name="getSveUslugeRequest">
+    </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getSviTipoviResponse">
+        <wsdl:part element="tns:getSviTipoviResponse" name="getSviTipoviResponse">
+    </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getSveRezervacijeResponse">
+        <wsdl:part element="tns:getSveRezervacijeResponse" name="getSveRezervacijeResponse">
+    </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getSveUslugeResponse">
+        <wsdl:part element="tns:getSveUslugeResponse" name="getSveUslugeResponse">
+    </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getSviCenovniciRequest">
+        <wsdl:part element="tns:getSviCenovniciRequest" name="getSviCenovniciRequest">
+    </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getSveSmestajneJediniceResponse">
+        <wsdl:part element="tns:getSveSmestajneJediniceResponse" name="getSveSmestajneJediniceResponse">
+    </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="unesiRezervacijuRequest">
+        <wsdl:part element="tns:unesiRezervacijuRequest" name="unesiRezervacijuRequest">
+    </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="potvrdiRezervacijuRequest">
+        <wsdl:part element="tns:potvrdiRezervacijuRequest" name="potvrdiRezervacijuRequest">
+    </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getSviTipoviRequest">
+        <wsdl:part element="tns:getSviTipoviRequest" name="getSviTipoviRequest">
+    </wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="SmestajiPort">
+        <wsdl:operation name="dodavanjeSmestajneJedinice">
+            <wsdl:input message="tns:dodavanjeSmestajneJediniceRequest" name="dodavanjeSmestajneJediniceRequest">
+    </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="getSveSmestajneJedinice">
+            <wsdl:input message="tns:getSveSmestajneJediniceRequest" name="getSveSmestajneJediniceRequest">
+    </wsdl:input>
+            <wsdl:output message="tns:getSveSmestajneJediniceResponse" name="getSveSmestajneJediniceResponse">
+    </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSviCenovnici">
+            <wsdl:input message="tns:getSviCenovniciRequest" name="getSviCenovniciRequest">
+    </wsdl:input>
+            <wsdl:output message="tns:getSviCenovniciResponse" name="getSviCenovniciResponse">
+    </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSveAdrese">
+            <wsdl:input message="tns:getSveAdreseRequest" name="getSveAdreseRequest">
+    </wsdl:input>
+            <wsdl:output message="tns:getSveAdreseResponse" name="getSveAdreseResponse">
+    </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSveRezervacije">
+            <wsdl:input message="tns:getSveRezervacijeRequest" name="getSveRezervacijeRequest">
+    </wsdl:input>
+            <wsdl:output message="tns:getSveRezervacijeResponse" name="getSveRezervacijeResponse">
+    </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSveUsluge">
+            <wsdl:input message="tns:getSveUslugeRequest" name="getSveUslugeRequest">
+    </wsdl:input>
+            <wsdl:output message="tns:getSveUslugeResponse" name="getSveUslugeResponse">
+    </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSviTipovi">
+            <wsdl:input message="tns:getSviTipoviRequest" name="getSviTipoviRequest">
+    </wsdl:input>
+            <wsdl:output message="tns:getSviTipoviResponse" name="getSviTipoviResponse">
+    </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="unesiRezervaciju">
+            <wsdl:input message="tns:unesiRezervacijuRequest" name="unesiRezervacijuRequest">
+    </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="potvrdiRezervaciju">
+            <wsdl:input message="tns:potvrdiRezervacijuRequest" name="potvrdiRezervacijuRequest">
+    </wsdl:input>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="SmestajiPortSoap11" type="tns:SmestajiPort">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="dodavanjeSmestajneJedinice">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="dodavanjeSmestajneJediniceRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="getSveSmestajneJedinice">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getSveSmestajneJediniceRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getSveSmestajneJediniceResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSviCenovnici">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getSviCenovniciRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getSviCenovniciResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSveAdrese">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getSveAdreseRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getSveAdreseResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSveRezervacije">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getSveRezervacijeRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getSveRezervacijeResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSveUsluge">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getSveUslugeRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getSveUslugeResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSviTipovi">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getSviTipoviRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getSviTipoviResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="unesiRezervaciju">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="unesiRezervacijuRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="potvrdiRezervaciju">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="potvrdiRezervacijuRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="SmestajiPortService">
+        <wsdl:port binding="tns:SmestajiPortSoap11" name="SmestajiPortSoap11">
+            <soap:address location="http://localhost:8762/smestaj-service/services"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
