@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,14 +28,14 @@ public class SmestajnaJedinicaController {
 		return new ResponseEntity<List<SmestajnaJedinicaDTO>>(SmestajnaJedinicaDTO.transformisi(this.smestajnaJedinicaService.preuzmiSve()), HttpStatus.OK);
 	}
 	
-	@RequestMapping(value = "/pretraga", method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/pretraga", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<SmestajnaJedinicaDTO>> pretraziSveSmestajneJedinice(@RequestBody UpitPretrageDTO upitPretrageDTO) {
 		return new ResponseEntity<List<SmestajnaJedinicaDTO>>(SmestajnaJedinicaDTO.transformisi(this.smestajnaJedinicaService.pretrazi(upitPretrageDTO)), HttpStatus.OK);
 	}
 	
-	@RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<SmestajnaJedinicaDTO> kreiraj(@RequestBody SmestajnaJedinicaDTO smestajnaJedinicaDTO) {
-		return new ResponseEntity<SmestajnaJedinicaDTO>(new SmestajnaJedinicaDTO(this.smestajnaJedinicaService.kreiraj(smestajnaJedinicaDTO)), HttpStatus.CREATED);
+	@RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, value = "/agent/{id}")
+	public ResponseEntity<SmestajnaJedinicaDTO> kreiraj(@RequestBody SmestajnaJedinicaDTO smestajnaJedinicaDTO, @PathVariable("id") Long id) {
+		return new ResponseEntity<SmestajnaJedinicaDTO>(new SmestajnaJedinicaDTO(this.smestajnaJedinicaService.kreiraj(smestajnaJedinicaDTO, id)), HttpStatus.CREATED);
 	}
 	
 }

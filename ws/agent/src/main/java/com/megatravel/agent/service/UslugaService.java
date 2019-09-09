@@ -46,5 +46,16 @@ public class UslugaService {
 	public List<Usluga> preuzmiSve() {
 		return this.uslugaRepository.findAll();
 	}
+
+	public void dodajZaSinhronizaciju(com.megatravel.agent.soap.generated.UslugaDTO uslugaDTO) {
+		try {
+			this.preuzmiJednu(uslugaDTO.getId());
+		} catch(Exception e) {
+			Usluga usluga = new Usluga();
+			usluga.setNaziv(uslugaDTO.getNaziv());
+			usluga.setOpis(uslugaDTO.getOpis());
+			this.uslugaRepository.save(usluga);
+		}
+	}
 	
 }

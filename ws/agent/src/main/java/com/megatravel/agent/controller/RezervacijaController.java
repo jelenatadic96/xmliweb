@@ -26,7 +26,7 @@ public class RezervacijaController {
 		return new ResponseEntity<List<RezervacijaDTO>>(RezervacijaDTO.transformisi(this.rezervacijaService.preuzmiRezervacijeSmestaja(id)), HttpStatus.OK);
 	}
 	
-	@RequestMapping(value = "/rest/rezervacije/{id}", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/rest/rezervacije/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<RezervacijaDTO> potvrdiRealizacijuRezervacije(@PathVariable("id") Long id) {
 		return new ResponseEntity<RezervacijaDTO>(new RezervacijaDTO(this.rezervacijaService.potvrdiRezervaciju(id)), HttpStatus.ACCEPTED);
 	}

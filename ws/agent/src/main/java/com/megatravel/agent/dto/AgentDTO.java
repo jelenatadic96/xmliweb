@@ -21,7 +21,7 @@ public class AgentDTO {
 		this.mejl = agent.getMejl();
 		this.lozinka = agent.getLozinka();
 		this.poslovniMaticniBroj = agent.getPoslovniMaticniBroj();
-		this.adresaDTO = new AdresaDTO(agent.getAdresa());
+		if(agent.getAdresa() != null) this.adresaDTO = new AdresaDTO(agent.getAdresa());
 	}
 
 	public Long getId() {
