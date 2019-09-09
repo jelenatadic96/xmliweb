@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import com.megatravel.korisniciservice.dto.AgentDTO;
+import com.megatravel.korisniciservice.dto.RegistracijaDTO;
 
 @Entity
 public class Agent {
@@ -40,6 +41,15 @@ public class Agent {
 		this.mejl = agentDTO.getMejl();
 		this.lozinka = agentDTO.getLozinka();
 		this.poslovniMaticniBroj = agentDTO.getPoslovniMaticniBroj();
+	}
+	
+	public Agent(RegistracijaDTO agentDTO) {
+		this.id = agentDTO.getId();
+		this.ime = agentDTO.getFirstName();
+		this.prezime = agentDTO.getLastName();
+		this.mejl = agentDTO.getEmail();
+		this.lozinka = agentDTO.getPassword();
+		this.poslovniMaticniBroj = agentDTO.getWorkCertificateNumber();
 	}
 
 	public Long getId() {

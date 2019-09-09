@@ -1,0 +1,44 @@
+<div class="container">
+  <form action="#" method="post" novalidate="novalidate" style="margin: 10px;">
+      <div class="row">
+          <div class="col-lg-12">
+              <div class="row">
+                  <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input class="form-control search-slt" placeholder="Pocetni datum"
+                                    name="dp1" [(ngModel)]="beginDate" [minDate] = "minDate" [maxDate] = "maxDate" ngbDatepicker #d1="ngbDatepicker" (click)="d1.toggle()" [ngModelOptions]="{standalone: true}" required>
+                        </div>
+                    </div>            
+                  </div>
+                  <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                    <div class="form-group">
+                        <div class="input-group">
+                          <input class="form-control search-slt" placeholder="Krajnji datum"
+                                 name="dp2" [(ngModel)]="endDate" [minDate] = "minDate" [maxDate] = "maxDate" ngbDatepicker #d2="ngbDatepicker" (click)="d2.toggle()" [ngModelOptions]="{standalone: true}" required>
+                        </div>
+                      </div>            
+                  </div>
+              </div>
+          </div>
+      </div>
+  </form>
+  <div class="container justify-content-md-center" style="display: -webkit-box;">
+      <div class="col-lg-12 p-0">
+            <a class="list-group-item" style="min-height: 220px; max-height: 350px;" *ngFor = "let i = index; let accommodation of accommodationToShow | paginate: { itemsPerPage: 10, currentPage: p }">
+                <div style="display: inline-flex; width: 100%;">
+                    <h4 class="col-lg-11">{{accommodation.adresaDTO.zemlja}}</h4>
+                    <h3 class="col-md-1" style="max-width: 25%" (click) = "orderByType('RATING')">{{accommodation.ocena}}</h3>       
+                </div>
+                <label class="col-lg-10">{{accommodation.opis}}</label>
+                <h4 class="col-lg-12">{{accommodation.tipDTO.naziv}}</h4>
+                <div class="col-lg-12" style="text-align: end;">
+                    <button class="btn book-btn" (click) = "book(accommodation)" >Book</button>
+                </div>
+            </a>
+            <div class="item col-lg-10 col-lg-10" style="width: 100%; text-align: center;">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
+    </div>
+  </div>
+</div>

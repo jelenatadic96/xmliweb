@@ -1,70 +1,8 @@
-#
-#server:
-#  port: ${PORT:4567}
-#  ssl:
-#    enabled: false
-#    key-store: classpath:booker.p12
-#    key-store-password: sifra
-#    key-store-type: PKCS12
-#    key-alias: booker
-#    trust-store: classpath:bookerTrust.p12
-#    trust-store-password: sifra
-#    trust-store-type: PKCS12
-#
-#spring:
-#  application:
-#    name: containerized-front
-#  datasource:
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-#    #12. konekcija ka bazi koja se nalazi u dockeru
-#    #url: jdbc:mysql://megabooker-mysql:3306/db_megabooker
-#    
-#    #12. konekcija ka lokalnoj bazi u MySql
-#    url: jdbc:mysql://localhost:3306/db_megabooker?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false
-#    
-#    username: root
-#    password: stefan
-#    initialization-mode: always
-#    continue-on-error: true
-#  jpa:
-#    show-sql: false
-#    generate-ddl: true
-#    hibernate:
-#      dialect: org.hibernate.dialect.MySQLDialect
-#      ddl-auto: update
-#
-#eureka:
-#  client:
-#    serviceUrl:
-#      #13. konekcija ka dockeru
-#      #defaultZone: http://discovery:8761/eureka/
-#      
-#      #13. konekcija ka eclipsu
-#      #defaultZone: http://localhost:8761/eureka/
-#      
-#      #13. konekcija na google cloud
-#      defaultZone: http://35.239.99.194:8761/eureka/
-#  instance:
-#    leaseRenewalIntervalInSeconds: 1
-#    leaseExpirationDurationInSeconds: 2
-#
-#ribbon:
-#  eureka:
-#    enabled: true
-
-
 server:
   port: 8443
 spring:
   application:
     name: front
-  jpa:
-    hibernate:
-      ddl-auto: update
-  datasource:
-    url: jdbc:mysql://localhost:3306/xmlws_schema_poruke_service?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-    username: root
-    password: stefan
 eureka:
   instance:
     preferIpAddress: true

@@ -8,6 +8,7 @@ import { AuthService } from 'app/service/korisnik/auth.service';
 import { KorisnikService } from 'app/service/korisnik/korisnik.service';
 import { Agent } from 'app/model/korisnik/agent';
 import { Image } from 'app/model/global-parameters/image';
+import { AccommodationService } from 'app/service/accommodation.service';
 
 @Component({
   selector: 'app-dodavanje-smestaja',
@@ -32,7 +33,7 @@ export class DodavanjeSmestajaComponent implements OnInit {
   currentFileUpload: File;
   newImageUrl: string = "";
 
-  constructor(/*private hotelService: HotelService,*/ private router: Router, private authService: AuthService, 
+  constructor(private accommodationService: AccommodationService, private router: Router, private authService: AuthService, 
     private userService: KorisnikService) { 
     let res = localStorage.getItem('token');
   //   if(res != null){
@@ -60,26 +61,26 @@ export class DodavanjeSmestajaComponent implements OnInit {
       allowSearchFilter: true
     };
 
-  //   this.hotelService.getAllAddiionalServices().subscribe(
-  //     s => {
-  //       this.additionalServices = s;
-  //       let pom = [];
-  //       s.forEach(element => {
-  //         pom.push(element.name);
-  //       })
-  //       this.additionalServicesDropDown = pom;
-  //     }
-  //   )
-  //   this.hotelService.getAllAccomodationTypes().subscribe(
-  //     s => {
-  //       this.accommodationTypes = s;
-  //       let pom = [];
-  //       s.forEach(element => {
-  //         pom.push(element.name);
-  //       })
-  //       this.accommodationTypeDropDown = pom;
-  //     }
-  //   )
+    this.accommodationService.findAllUsluge().subscribe(
+      s => {
+        this.additionalServices = s;
+        let pom = [];
+        s.forEach(element => {
+          pom.push(element.naziv);
+        })
+        this.additionalServicesDropDown = pom;
+      }
+    )
+    this.accommodationService.findAllTipovi().subscribe(
+      s => {
+        this.accommodationTypes = s;
+        let pom = [];
+        s.forEach(element => {
+          pom.push(element.naziv);
+        })
+        this.accommodationTypeDropDown = pom;
+      }
+    )
    }
 
   managePrices(){  //pozove da sacuva
@@ -138,14 +139,14 @@ export class DodavanjeSmestajaComponent implements OnInit {
       alert("You must enter city for accommodation");
       return false;
     }
-    if(this.accommodation.adresaDTO.geografskaDuzina == 0){
-      alert("You must enter longitude for accommodation");
-      return false;
-    }
-    if(this.accommodation.adresaDTO.geografskaSirina == 0){
-      alert("You must enter latitude for accommodation");
-      return false;
-    }
+    // if(this.accommodation.adresaDTO.geografskaDuzina == 0){
+    //   alert("You must enter longitude for accommodation");
+    //   return false;
+    // }
+    // if(this.accommodation.adresaDTO.geografskaSirina == 0){
+    //   alert("You must enter latitude for accommodation");
+    //   return false;
+    // }
     if(this.accommodation.kapacitet == 0){
       alert("You must enter capacity for accommodation");
       return false;
@@ -154,10 +155,10 @@ export class DodavanjeSmestajaComponent implements OnInit {
       alert("You must select accommodation type for accommodation");
       return false;
     }
-    if(this.accommodation.putanjaDoSlike.length == 0){
-      alert("You must add at least one image for accommodation");
-      return false;
-    }
+    // if(this.accommodation.putanjaDoSlike.length == 0){
+    //   alert("You must add at least one image for accommodation");
+    //   return false;
+    // }
 
     return true;
   }

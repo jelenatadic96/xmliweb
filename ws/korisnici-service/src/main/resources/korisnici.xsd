@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.megatravel.com/korisniciservice/soap/dto"
+	targetNamespace="http://www.megatravel.com/korisniciservice/soap/dto"
+	elementFormDefault="qualified">
+
+	<xs:element name="getSviAgentiRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="vreme" type="xs:dateTime" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getSviAgentiResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" minOccurs="0"
+					name="agenti" type="tns:AgentDTO" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="AgentDTO">
+		<xs:sequence>
+			<xs:element name="id" type="xs:long" />
+			<xs:element name="ime" type="xs:string" />
+			<xs:element name="prezime" type="xs:string" />
+			<xs:element name="mejl" type="xs:string" />
+			<xs:element name="lozinka" type="xs:string" />
+			<xs:element name="poslovniMaticniBroj" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="getSviKorisniciRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="vreme" type="xs:dateTime" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getSviKorisniciResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" minOccurs="0"
+					name="korisnici" type="tns:KorisnikDTO" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="KorisnikDTO">
+		<xs:sequence>
+			<xs:element name="id" type="xs:long" />
+			<xs:element name="ime" type="xs:string" />
+			<xs:element name="prezime" type="xs:string" />
+			<xs:element name="mejl" type="xs:string" />
+			<xs:element name="lozinka" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="getSviSpojeviAgentSmestajRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="vreme" type="xs:dateTime" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getSviSpojeviAgentSmestajResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" minOccurs="0"
+					name="spojevi" type="tns:SpojAgentSmestajDTO" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="SpojAgentSmestajDTO">
+		<xs:sequence>
+			<xs:element name="id" type="xs:long" />
+			<xs:element name="smestajId" type="xs:long" />
+			<xs:element name="agentId" type="xs:long" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="getAgentLoginRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="mejl" type="xs:string" />
+				<xs:element name="lozinka" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getAgentLoginResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="agent" type="tns:AgentDTO" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>

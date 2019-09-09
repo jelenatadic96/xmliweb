@@ -1,14 +1,14 @@
 export class Cenovnik{
 
     id: number;
-    prviDanVazenja: Date;
-    poslednjiDanVazenja: Date;
+    prviDanVazenja: string;
+    poslednjiDanVazenja: string;
     cenaPoNoci: number;
     
     constructor(){
         this.id = 0;
-        this.prviDanVazenja = new Date();
-        this.poslednjiDanVazenja = new Date();
-        this.cenaPoNoci = 0;
+        this.prviDanVazenja = "";
+        this.poslednjiDanVazenja = "";
+        this.cenaPoNoci = undefined;
     }
 }
