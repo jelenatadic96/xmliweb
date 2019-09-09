@@ -36,12 +36,17 @@ export class AuthService {
     login(mejl:string, lozinka:string): Observable<string>{
       const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
       return this.http
-        .post<string>(this.baseUrl + '/login', {mejl, lozinka});
+        .post<string>(this.baseUrl + '/rest/korisnici/login', {mejl, lozinka});
     }
 
     signup(registration: Registracija): Observable<{}>{
       return this.http
-        .post<{}>(this.baseUrl + '/signup', registration);
+        .post<{}>(this.baseUrl + '/rest/korisnici/signup', registration);
+    }
+
+    signupAgent(registration: Registracija): Observable<{}>{
+      return this.http
+        .post<{}>(this.baseUrl + '/rest/agenti', registration);
     }
 
     registerAdmin(id: number, registration: Registracija): Observable<string>{
@@ -50,10 +55,10 @@ export class AuthService {
     }
 
     logout(): void {
-      // localStorage.removeItem('token');
-      // localStorage.removeItem('reservation');
-      // localStorage.removeItem('beginDate');
-      // localStorage.removeItem('endDate');
+      localStorage.removeItem('token');
+      localStorage.removeItem('reservation');
+      localStorage.removeItem('beginDate');
+      localStorage.removeItem('endDate');
       this.router.navigate(['login']);
     }
 

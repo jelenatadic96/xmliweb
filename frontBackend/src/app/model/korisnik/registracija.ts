@@ -1,3 +1,4 @@
+import { Adresa } from "../global-parameters/adresa";
 
 export class Registracija{
 
@@ -7,6 +8,7 @@ export class Registracija{
 	password: string;
     repeatPassword: string;
     workCertificateNumber: string;
+    adresaDTO: Adresa;
     email: string;
 
 
@@ -17,7 +19,8 @@ export class Registracija{
         this.password = "";
         this.repeatPassword = "";
         this.workCertificateNumber = "";
-        this.email = "";
+        this.email = ""; 
+        this.adresaDTO = new Adresa();
     }
 
 }

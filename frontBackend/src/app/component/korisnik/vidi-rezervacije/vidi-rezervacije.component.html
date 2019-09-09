@@ -1,0 +1,55 @@
+<app-meni-bar></app-meni-bar>
+
+<div class="container">
+  <div class="container justify-content-md-center">
+    <div class="col-lg-12 p-0">
+      <h2>Istorija rezervacija</h2>
+      <a class="list-group-item" style="min-height: 220px; max-height: 350px;" *ngFor = "let i = index; let accommodationReservation of accommodationToShow">
+          <div class="col-lg-12">
+              <div style="display: inline-flex; width: 100%;">
+                <h4 class="col-lg-11">{{accommodationReservation.smestajnaJedinicaDTO.adresaDTO.zemlja}} - {{accommodationReservation.smestajnaJedinicaDTO.adresaDTO.grad}}</h4>
+                <h3 class="col-md-1" style="max-width: 25%" (click) = "orderByType('RATING')">{{accommodationReservation.smestajnaJedinicaDTO.ocena}}</h3>     
+              </div>
+              <div style="display: inline-flex; width: 100%;">
+                <h4 class="list-group-item-text col-lg-11">{{accommodationReservation.prviDanRezervacije}} - {{accommodationReservation.poslednjiDanRezervacije}}</h4>
+                <ngb-rating [(rate)]="accommodationReservation.utisak.ocena" 
+                            (rateChange) = "saveRate(accommodationReservation.utisak, accommodationReservation)" [readonly]="neMozeOceniti(accommodationReservation)" max="5">
+                  <ng-template let-fill="fill" let-index="index">
+                    <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                  </ng-template>
+                </ngb-rating>
+              </div>
+              <label class="list-group-item-text col-lg-10">{{accommodationReservation.smestajnaJedinicaDTO.opis}}</label>
+              <h4 class="list-group-item-text col-lg-12">{{accommodationReservation.smestajnaJedinicaDTO.tipDTO.naziv}}</h4>
+              <h4 class="col-lg-12" style="text-align: right;">RSD {{accommodationReservation.ukupnaCena}}</h4>
+              <h4 class="col-lg-12">Add comment</h4>
+              <div class="col-lg-12" style="text-align: end;">
+              <div id = "{{accommodationReservation.id}}" class="comments displayTextArea">
+                <input class="commentArea" [(ngModel)] = "pomKomentari[i]" [readonly]="neMozeUnetiKomentar(accommodationReservation)" type="text">
+                <button class="msg_send_btn" type="button" (click) = "dodajKomentar(accommodationReservation, i)" [disabled] = "neMozeUnetiKomentar(accommodationReservation)" ><i class="fa fa-comment" aria-hidden="true"></i></button>
+              </div>
+            </div>
+          </div>
+      </a>
+    </div>
+    <div class="col-lg-12 p-0">
+        <h2>Aktivne rezervacije</h2>
+      <a class="list-group-item" style="min-height: 220px; max-height: 350px;" *ngFor = "let i = index; let accommodationReservation of activeReservations">
+        <div class="col-lg-12">
+            <div style="display: inline-flex; width: 100%;">
+              <h4 class="col-lg-11">{{accommodationReservation.smestajnaJedinicaDTO.adresaDTO.zemlja}} - {{accommodationReservation.smestajnaJedinicaDTO.adresaDTO.grad}}</h4>
+              <h3 class="col-md-1" style="max-width: 25%">{{accommodationReservation.smestajnaJedinicaDTO.ocena}}</h3>     
+            </div>
+            <div style="display: inline-flex; width: 100%;">
+              <h4 class="list-group-item-text col-lg-11">{{accommodationReservation.prviDanRezervacije}} - {{accommodationReservation.poslednjiDanRezervacije}}</h4>
+            </div>
+            <label class="list-group-item-text col-lg-10">{{accommodationReservation.smestajnaJedinicaDTO.opis}}</label>
+            <h4 class="list-group-item-text col-lg-12">{{accommodationReservation.smestajnaJedinicaDTO.tipDTO.naziv}}</h4>
+            <h4 class="col-lg-12" style="text-align: right;">RSD {{accommodationReservation.ukupnaCena}}</h4>
+            <button class="btn btn-primary" (click) = "otkaziRezervaciju(accommodationReservation)">Otkazi rezervaciju</button>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+  
