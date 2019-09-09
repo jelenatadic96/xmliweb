@@ -2,6 +2,7 @@ package com.megatravel.agent.dto;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import com.megatravel.agent.model.Kategorija;
 import com.megatravel.agent.model.SmestajnaJedinica;
@@ -130,6 +131,14 @@ public class SmestajnaJedinicaDTO {
 			for(SpojUslugaJedinica spoj : spojevi) {
 				rezultat.add(spoj.getUsluga());
 			}
+		}
+		return rezultat;
+	}
+
+	public static List<SmestajnaJedinicaDTO> transformisi(Set<SmestajnaJedinica> jedinice) {
+		List<SmestajnaJedinicaDTO> rezultat = new ArrayList<>();
+		for(SmestajnaJedinica jedinica : jedinice) {
+			rezultat.add(new SmestajnaJedinicaDTO(jedinica));
 		}
 		return rezultat;
 	}

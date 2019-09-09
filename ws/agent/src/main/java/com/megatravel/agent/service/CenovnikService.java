@@ -1,6 +1,8 @@
 package com.megatravel.agent.service;
 
 import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,11 +21,15 @@ public class CenovnikService {
 	@Autowired
 	private CenovnikRepository cenovnikRepository;
 	
+	@Autowired
+	private SmestajnaJedinicaService smestajnaJedinicaService;
+	
 	public List<Cenovnik> kreirajCenovnike(SmestajnaJedinica smestaj, List<CenovnikDTO> cenovnici) {
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		List<Cenovnik> rezultat = new ArrayList<>();
 		for(CenovnikDTO cenovnik : cenovnici) {
-			LocalDate poslednjiDan = cenovnik.getPoslednjiDanVazenja();
-			cenovnik.setPoslednjiDanVazenja(poslednjiDan.withDayOfMonth(poslednjiDan.lengthOfMonth()));
+			LocalDate poslednjiDan = LocalDate.parse(cenovnik.getPoslednjiDanVazenja(), formatter);
+			cenovnik.setPoslednjiDanVazenja(poslednjiDan.withDayOfMonth(poslednjiDan.lengthOfMonth()).toString());
 			Cenovnik trenutni = new Cenovnik(cenovnik);
 			trenutni.setSmestajnaJedinica(smestaj);
 			rezultat.add(trenutni);
@@ -44,6 +50,17 @@ public class CenovnikService {
 			}
 		}
 		return cena;
+	}
+
+	public void dodajZaSinhronizaciju(com.megatravel.agent.soap.generated.CenovnikDTO cenovnikDTO) {
+		if(!this.cenovnikRepository.findById(cenovnikDTO.getId()).isPresent()) {
+			Cenovnik cenovnik = new Cenovnik();
+			cenovnik.setCenaPoNoci(cenovnikDTO.getCenaPoNoci());
+			cenovnik.setPrviDanVazenja(cenovnikDTO.getPrviDanVazenja().toGregorianCalendar().getTime().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
+			cenovnik.setPoslednjiDanVazenja(cenovnikDTO.getPoslednjiDanVazenja().toGregorianCalendar().getTime().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
+			cenovnik.setSmestajnaJedinica(this.smestajnaJedinicaService.preuzmiJednu(cenovnikDTO.getSmestaj()));
+			this.cenovnikRepository.save(cenovnik);
+		}
 	}
 	
 }

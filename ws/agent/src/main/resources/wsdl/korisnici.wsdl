@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://www.megatravel.com/korisniciservice/soap/dto" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.megatravel.com/korisniciservice/soap/dto" targetNamespace="http://www.megatravel.com/korisniciservice/soap/dto">
+    <wsdl:types>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.megatravel.com/korisniciservice/soap/dto">
+            <xs:element name="getSviAgentiRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="vreme" type="xs:dateTime"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getSviAgentiResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="agenti" type="tns:AgentDTO"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:complexType name="AgentDTO">
+                <xs:sequence>
+                    <xs:element name="id" type="xs:long"/>
+                    <xs:element name="ime" type="xs:string"/>
+                    <xs:element name="prezime" type="xs:string"/>
+                    <xs:element name="mejl" type="xs:string"/>
+                    <xs:element name="lozinka" type="xs:string"/>
+                    <xs:element name="poslovniMaticniBroj" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="getSviKorisniciRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="vreme" type="xs:dateTime"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getSviKorisniciResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="korisnici" type="tns:KorisnikDTO"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:complexType name="KorisnikDTO">
+                <xs:sequence>
+                    <xs:element name="id" type="xs:long"/>
+                    <xs:element name="ime" type="xs:string"/>
+                    <xs:element name="prezime" type="xs:string"/>
+                    <xs:element name="mejl" type="xs:string"/>
+                    <xs:element name="lozinka" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="getSviSpojeviAgentSmestajRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="vreme" type="xs:dateTime"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getSviSpojeviAgentSmestajResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="spojevi" type="tns:SpojAgentSmestajDTO"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:complexType name="SpojAgentSmestajDTO">
+                <xs:sequence>
+                    <xs:element name="id" type="xs:long"/>
+                    <xs:element name="smestajId" type="xs:long"/>
+                    <xs:element name="agentId" type="xs:long"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="getAgentLoginRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="mejl" type="xs:string"/>
+                        <xs:element name="lozinka" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAgentLoginResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="agent" type="tns:AgentDTO"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="getSviKorisniciResponse">
+        <wsdl:part element="tns:getSviKorisniciResponse" name="getSviKorisniciResponse">
+    </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getSviAgentiRequest">
+        <wsdl:part element="tns:getSviAgentiRequest" name="getSviAgentiRequest">
+    </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getSviSpojeviAgentSmestajRequest">
+        <wsdl:part element="tns:getSviSpojeviAgentSmestajRequest" name="getSviSpojeviAgentSmestajRequest">
+    </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getSviAgentiResponse">
+        <wsdl:part element="tns:getSviAgentiResponse" name="getSviAgentiResponse">
+    </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getAgentLoginRequest">
+        <wsdl:part element="tns:getAgentLoginRequest" name="getAgentLoginRequest">
+    </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getSviKorisniciRequest">
+        <wsdl:part element="tns:getSviKorisniciRequest" name="getSviKorisniciRequest">
+    </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getSviSpojeviAgentSmestajResponse">
+        <wsdl:part element="tns:getSviSpojeviAgentSmestajResponse" name="getSviSpojeviAgentSmestajResponse">
+    </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getAgentLoginResponse">
+        <wsdl:part element="tns:getAgentLoginResponse" name="getAgentLoginResponse">
+    </wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="KorisniciPort">
+        <wsdl:operation name="getSviKorisnici">
+            <wsdl:input message="tns:getSviKorisniciRequest" name="getSviKorisniciRequest">
+    </wsdl:input>
+            <wsdl:output message="tns:getSviKorisniciResponse" name="getSviKorisniciResponse">
+    </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSviAgenti">
+            <wsdl:input message="tns:getSviAgentiRequest" name="getSviAgentiRequest">
+    </wsdl:input>
+            <wsdl:output message="tns:getSviAgentiResponse" name="getSviAgentiResponse">
+    </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSviSpojeviAgentSmestaj">
+            <wsdl:input message="tns:getSviSpojeviAgentSmestajRequest" name="getSviSpojeviAgentSmestajRequest">
+    </wsdl:input>
+            <wsdl:output message="tns:getSviSpojeviAgentSmestajResponse" name="getSviSpojeviAgentSmestajResponse">
+    </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAgentLogin">
+            <wsdl:input message="tns:getAgentLoginRequest" name="getAgentLoginRequest">
+    </wsdl:input>
+            <wsdl:output message="tns:getAgentLoginResponse" name="getAgentLoginResponse">
+    </wsdl:output>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="KorisniciPortSoap11" type="tns:KorisniciPort">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="getSviKorisnici">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getSviKorisniciRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getSviKorisniciResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSviAgenti">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getSviAgentiRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getSviAgentiResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSviSpojeviAgentSmestaj">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getSviSpojeviAgentSmestajRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getSviSpojeviAgentSmestajResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAgentLogin">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getAgentLoginRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getAgentLoginResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="KorisniciPortService">
+        <wsdl:port binding="tns:KorisniciPortSoap11" name="KorisniciPortSoap11">
+            <soap:address location="http://localhost:8762/korisnici-service/services"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

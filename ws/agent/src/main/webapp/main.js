@@ -9361,7 +9361,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n\t<div>\n\t\t<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\n\t\t\t\t<a href=\"#\" *ngIf = \"loggedIn\" class=\"navbar-brand\">Megatravel</a>\n\t\t\t\t<button class=\"navbar-toggler\" data-target=\"#navigation\" data-control=\"navigation\" data-toggle=\"collapse\">\n\t\t\t\t\t<span class=\"navbar-toggler-icon\"></span>\n\t\t\t\t</button>\n\t\t\t\t<div class=\"collapse navbar-collapse\" id=\"navigation\" style=\"width: 95%;\">\n\t\t\t\t\t<ul class=\"nav navbar-nav\">\t\n\t\t\t\t\t\t<li class=\"nav-item\">\n\t\t\t\t\t\t\t<a class=\"nav-link\" *ngIf = \"!loggedIn\" [routerLink]=\"['/login']\">Login</a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t<li class=\"nav-item\">\n\t\t\t\t\t\t\t<a class=\"nav-link\" [routerLink]=\"['/poruke']\">Inbox</a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t<li class=\"nav-item\">\n\t\t\t\t\t\t\t<a class=\"nav-link\" *ngIf = \"loggedIn\" [routerLink]=\"['/reservation']\">Reservations</a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t<li class=\"nav-item\">\n\t\t\t\t\t\t\t<a class=\"nav-link\" *ngIf = \"loggedIn\" [routerLink]=\"['/addaccomodation']\">Add accommodation</a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t</ul>\n\t\t\t\t</div>\n\t\t\t\t<div id=\"navbar\" class=\"navbar-collapse collapse\" style=\"width: 5%;\">\n\t\t\t\t\t<ul class=\"nav navbar-nav navbar-right\">\n\t\t\t\t\t\t<li *ngIf=\"loggedIn\" class=\"nav-item\" >\n\t\t\t\t\t\t\t<a class=\"nav-link\" (click) = \"logOut()\">Log out</a></li>\n\t\t\t\t\t</ul>\n\t\t\t\t</div>\n\t\t\t</nav>\n\t\t<router-outlet></router-outlet>\n\t</div>\n</div>"
+module.exports = "<div>\r\n\t<div>\r\n\t\t<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n\t\t\t\t<a href=\"#\" *ngIf = \"loggedIn\" class=\"navbar-brand\">Megatravel</a>\r\n\t\t\t\t<button class=\"navbar-toggler\" data-target=\"#navigation\" data-control=\"navigation\" data-toggle=\"collapse\">\r\n\t\t\t\t\t<span class=\"navbar-toggler-icon\"></span>\r\n\t\t\t\t</button>\r\n\t\t\t\t<div class=\"collapse navbar-collapse\" id=\"navigation\" style=\"width: 95%;\">\r\n\t\t\t\t\t<ul class=\"nav navbar-nav\">\t\r\n\t\t\t\t\t\t<li class=\"nav-item\">\r\n\t\t\t\t\t\t\t<a class=\"nav-link\" *ngIf = \"!loggedIn\" [routerLink]=\"['/login']\">Login</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li class=\"nav-item\">\r\n\t\t\t\t\t\t\t<a class=\"nav-link\" *ngIf = \"loggedIn\" [routerLink]=\"['/poruke']\">Inbox</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li class=\"nav-item\">\r\n\t\t\t\t\t\t\t<a class=\"nav-link\" *ngIf = \"loggedIn\" [routerLink]=\"['/vidiRezervacije']\">Reservations</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li class=\"nav-item\">\r\n\t\t\t\t\t\t\t<a class=\"nav-link\" *ngIf = \"loggedIn\" [routerLink]=\"['/vidiSmestaj']\">Accommodation</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li class=\"nav-item\">\r\n\t\t\t\t\t\t\t<a class=\"nav-link\" *ngIf = \"loggedIn\" [routerLink]=\"['/addaccomodation']\">Add accommodation</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t</ul>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div id=\"navbar\" class=\"navbar-collapse collapse\" style=\"width: 5%;\">\r\n\t\t\t\t\t<ul class=\"nav navbar-nav navbar-right\">\r\n\t\t\t\t\t\t<li *ngIf=\"loggedIn\" class=\"nav-item\" >\r\n\t\t\t\t\t\t\t<a class=\"nav-link\" (click) = \"logOut()\">Log out</a></li>\r\n\t\t\t\t\t</ul>\r\n\t\t\t\t</div>\r\n\t\t\t</nav>\r\n\t\t<router-outlet></router-outlet>\r\n\t</div>\r\n</div>"
 
 /***/ }),
 
@@ -9444,6 +9444,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _service_korisnik_poruke_service__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./service/korisnik/poruke.service */ "./src/app/service/korisnik/poruke.service.ts");
 /* harmony import */ var _service_korisnik_korisnik_service__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./service/korisnik/korisnik.service */ "./src/app/service/korisnik/korisnik.service.ts");
 /* harmony import */ var _component_accommodation_sredi_cene_sredi_cene_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./component/accommodation/sredi-cene/sredi-cene.component */ "./src/app/component/accommodation/sredi-cene/sredi-cene.component.ts");
+/* harmony import */ var _service_accommodation_service__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./service/accommodation.service */ "./src/app/service/accommodation.service.ts");
+/* harmony import */ var _component_accommodation_vidi_smestaj_vidi_smestaj_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./component/accommodation/vidi-smestaj/vidi-smestaj.component */ "./src/app/component/accommodation/vidi-smestaj/vidi-smestaj.component.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/esm5/common.js");
+/* harmony import */ var _component_accommodation_vidi_rezervacije_vidi_rezervacije_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./component/accommodation/vidi-rezervacije/vidi-rezervacije.component */ "./src/app/component/accommodation/vidi-rezervacije/vidi-rezervacije.component.ts");
+
+
+
+
 
 
 
@@ -9471,6 +9479,8 @@ var appRoutes = [
     { path: 'login', component: _component_korisnik_login_login_component__WEBPACK_IMPORTED_MODULE_18__["LoginComponent"] },
     { path: 'poruke', component: _component_korisnik_poruke_poruke_component__WEBPACK_IMPORTED_MODULE_16__["PorukeComponent"] },
     { path: 'addaccomodation', component: _component_accommodation_dodavanje_smestaja_dodavanje_smestaja_component__WEBPACK_IMPORTED_MODULE_17__["DodavanjeSmestajaComponent"] },
+    { path: 'vidiSmestaj', component: _component_accommodation_vidi_smestaj_vidi_smestaj_component__WEBPACK_IMPORTED_MODULE_23__["VidiSmestajComponent"] },
+    { path: 'vidiRezervacije', component: _component_accommodation_vidi_rezervacije_vidi_rezervacije_component__WEBPACK_IMPORTED_MODULE_25__["VidiRezervacijeComponent"] },
     { path: 'managePrices', component: _component_accommodation_sredi_cene_sredi_cene_component__WEBPACK_IMPORTED_MODULE_21__["SrediCeneComponent"] },
     { path: '', redirectTo: 'login', pathMatch: 'full' },
     { path: '**', component: _page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_13__["PageNotFoundComponent"] }
@@ -9486,7 +9496,9 @@ var AppModule = /** @class */ (function () {
                 _component_korisnik_login_login_component__WEBPACK_IMPORTED_MODULE_18__["LoginComponent"],
                 _component_korisnik_poruke_poruke_component__WEBPACK_IMPORTED_MODULE_16__["PorukeComponent"],
                 _component_accommodation_dodavanje_smestaja_dodavanje_smestaja_component__WEBPACK_IMPORTED_MODULE_17__["DodavanjeSmestajaComponent"],
-                _component_accommodation_sredi_cene_sredi_cene_component__WEBPACK_IMPORTED_MODULE_21__["SrediCeneComponent"]
+                _component_accommodation_sredi_cene_sredi_cene_component__WEBPACK_IMPORTED_MODULE_21__["SrediCeneComponent"],
+                _component_accommodation_vidi_smestaj_vidi_smestaj_component__WEBPACK_IMPORTED_MODULE_23__["VidiSmestajComponent"],
+                _component_accommodation_vidi_rezervacije_vidi_rezervacije_component__WEBPACK_IMPORTED_MODULE_25__["VidiRezervacijeComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -9507,6 +9519,8 @@ var AppModule = /** @class */ (function () {
                 _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_9__["NgbActiveModal"],
                 _service_korisnik_poruke_service__WEBPACK_IMPORTED_MODULE_19__["PorukeService"],
                 _service_korisnik_korisnik_service__WEBPACK_IMPORTED_MODULE_20__["KorisnikService"],
+                _service_accommodation_service__WEBPACK_IMPORTED_MODULE_22__["AccommodationService"],
+                _angular_common__WEBPACK_IMPORTED_MODULE_24__["DatePipe"],
                 {
                     provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HTTP_INTERCEPTORS"],
                     useClass: _h_interceptor_service__WEBPACK_IMPORTED_MODULE_14__["HInterceptorService"],
@@ -9541,7 +9555,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container register\">\n    <div class=\"row justify-content-md-center\">\n        <div class=\"col-md-9 register-right\">\n            <div class=\"tab-content\" id=\"myTabContent\">\n                <div class=\"tab-pane fade show active\" id=\"home\" role=\"tabpanel\" aria-labelledby=\"home-tab\">\n                    <h3 class=\"register-heading\">Add new accommodation</h3>\n                    <form class=\"row register-form\" #formAddAccommodation=\"ngForm\">\n                        <div class=\"col-md-6\">\n                            <div class=\"form-group\">\n                                <input type=\"text\" class=\"form-control\" [(ngModel)] = \"accommodation.adresaDTO.zemlja\" placeholder=\"Country\" name = \"country\"  #country=\"ngModel\" value=\"\" required minlength=\"3\" maxlength=\"20\"/>\n                            </div>\n                            <small [hidden]=\"country.valid || (country.pristine && !formAddAccommodation.submitted)\"  class=\"input text-danger\">\n                              Country is required\n                              </small>\n                            <div class=\"form-group\">\n                                <input type=\"text\" class=\"form-control\" [(ngModel)] = \"accommodation.adresaDTO.grad\" placeholder=\"City\" value=\"\"  name = \"city\"  #city=\"ngModel\" value=\"\" required minlength=\"3\" maxlength=\"20\" />\n                            </div>\n                            <small [hidden]=\"city.valid || (city.pristine && !formAddAccommodation.submitted)\"  class=\"input text-danger\">\n                              City is required\n                              </small>\n                            <div class=\"form-group\">\n                                <input type=\"text\" class=\"form-control\" [(ngModel)] = \"accommodation.adresaDTO.latitude\" placeholder=\"Latitude\" value=\"\"  name = \"latitude\"  #latitude=\"ngModel\" value=\"\" required minlength=\"1\" maxlength=\"20\"/>\n                            </div>\n                            <small [hidden]=\"latitude.valid || (latitude.pristine && !formAddAccommodation.submitted)\"  class=\"input text-danger\">\n                              Latitude is required\n                              </small>\n                            <div class=\"form-group\">\n                                <input type=\"text\" class=\"form-control\" [(ngModel)] = \"accommodation.adresaDTO.longitude\" placeholder=\"Longitude\" value=\"\"  name = \"longitude\"  #longitude=\"ngModel\" value=\"\" required minlength=\"1\" maxlength=\"20\"/>\n                            </div>\n                            <small [hidden]=\"longitude.valid || (longitude.pristine && !formAddAccommodation.submitted)\"  class=\"input text-danger\">\n                              Longitude is required\n                              </small>\n                        </div>\n                        <div class=\"col-md-6\">\n                            <div class=\"form-group\">\n                                <textarea type=\"text\" class=\"form-control\" [(ngModel)] = \"accommodation.opis\" placeholder=\"Description\" value=\"\" name=\"description\" #description=\"ngModel\" maxlength=\"150\"></textarea>\n                            </div>\n                            <small [hidden]=\"description.valid || (description.pristine && !formAddAccommodation.submitted)\"  class=\"input text-danger\">\n                              Description too long. Max length is 150 characters.  \n                            </small>\n                            <div class=\"form-group\">\n                                <input type=\"text\" minlength=\"10\" maxlength=\"10\" name=\"txtEmpPhone\" [(ngModel)] = \"accommodation.kapacitet\" class=\"form-control\" placeholder=\"Capacity\" value=\"\" name=\"capacity\" #capacity=\"ngModel\" required maxlength=\"3\" minlength=\"1\"/>\n                            </div>\n                            <small [hidden]=\"capacity.valid || (capacity.pristine && !formAddAccommodation.submitted)\"  class=\"input text-danger\">\n                              Capacity is required.  \n                            </small>\n                            <div class=\"form-group\">\n                                <ng-multiselect-dropdown  [placeholder]=\"'Accommodation type'\" [settings]=\"dropdownSettingsAccommodationType\" [data]=\"accommodationTypeDropDown\" [(ngModel)] = \"selectedAccommodationType\" [ngModelOptions]=\"{standalone: true}\">\n                                </ng-multiselect-dropdown>\n                            </div>\n                            <div class=\"form-group\">\n                                <ng-multiselect-dropdown  [placeholder]=\"'Additional services'\" [settings]=\"dropdownSettingsAdditionalServices\" [data]=\"additionalServicesDropDown\" [(ngModel)] = \"selectAdditionalServices\" [ngModelOptions]=\"{standalone: true}\">\n                                </ng-multiselect-dropdown>\n                            </div>\n                            <div class=\"form-group\">\n                                <input type=\"text\" class=\"form-control\" [(ngModel)] = \"accommodation.brojDanaZaOtkazivanje\" placeholder=\"Cancellation days\" value=\"\" name=\"cancellationDays\"/>\n                            </div>\n                            <div class=\"form-group\">\n                                <input type=\"text\" class=\"form-control\" [(ngModel)] = \"newImageUrl\" placeholder=\"Image url\" name=\"imageUrl\" >\n                            </div>\n                            <div class=\"form-group\">\n                              <button class=\"btn btn-primary\" (click) = \"addPictureToAccommodation()\">Add image</button>\n                              </div>\n                            <input type=\"submit\" class=\"btnRegister\" (click) = \"managePrices()\" [disabled]=\"!formAddAccommodation.valid\"  value=\"Manage prices\"/>\n                        </div>\n                        <div style=\"display: contents;\">\n                          <div style=\"display: contents;\" *ngFor = \"let i = index; let image of accommodation.imageDTO\">\n                              <img class=\"media-object img-rounded img-responsive\"  src=\"{{image.filePath}}\" \n                              alt=\"image{{i}}\" style=\"width: 300px; height: 250px; margin: 5px;\">\n                              <i (click) = \"removeImage(image)\" class=\"fa fa-times\"></i>\n                          </div>\n                      </div>\n                    </form>\n                </div>\n            </div>\n        </div>\n    </div>\n  \n  </div>"
+module.exports = "<div class=\"container register\">\r\n    <div class=\"row justify-content-md-center\">\r\n        <div class=\"col-md-9 register-right\">\r\n            <div class=\"tab-content\" id=\"myTabContent\">\r\n                <div class=\"tab-pane fade show active\" id=\"home\" role=\"tabpanel\" aria-labelledby=\"home-tab\">\r\n                    <h3 class=\"register-heading\">Add new accommodation</h3>\r\n                    <form class=\"row register-form\" #formAddAccommodation=\"ngForm\">\r\n                        <div class=\"col-md-6\">\r\n                            <div class=\"form-group\">\r\n                                <input type=\"text\" class=\"form-control\" [(ngModel)] = \"accommodation.adresaDTO.zemlja\" placeholder=\"Country\" name = \"country\"  #country=\"ngModel\" value=\"\" required minlength=\"3\" maxlength=\"20\"/>\r\n                            </div>\r\n                            <small [hidden]=\"country.valid || (country.pristine && !formAddAccommodation.submitted)\"  class=\"input text-danger\">\r\n                              Country is required\r\n                              </small>\r\n                            <div class=\"form-group\">\r\n                                <input type=\"text\" class=\"form-control\" [(ngModel)] = \"accommodation.adresaDTO.grad\" placeholder=\"City\" value=\"\"  name = \"city\"  #city=\"ngModel\" value=\"\" required minlength=\"3\" maxlength=\"20\" />\r\n                            </div>\r\n                            <small [hidden]=\"city.valid || (city.pristine && !formAddAccommodation.submitted)\"  class=\"input text-danger\">\r\n                              City is required\r\n                              </small>\r\n                            <div class=\"form-group\">\r\n                                <input type=\"text\" class=\"form-control\" [(ngModel)] = \"accommodation.adresaDTO.geografskaDuzina\" placeholder=\"Latitude\" value=\"\"  name = \"latitude\"  #latitude=\"ngModel\" value=\"\" required minlength=\"1\" maxlength=\"20\"/>\r\n                            </div>\r\n                            <small [hidden]=\"latitude.valid || (latitude.pristine && !formAddAccommodation.submitted)\"  class=\"input text-danger\">\r\n                              Latitude is required\r\n                              </small>\r\n                            <div class=\"form-group\">\r\n                                <input type=\"text\" class=\"form-control\" [(ngModel)] = \"accommodation.adresaDTO.geografskaSirina\" placeholder=\"Longitude\" value=\"\"  name = \"longitude\"  #longitude=\"ngModel\" value=\"\" required minlength=\"1\" maxlength=\"20\"/>\r\n                            </div>\r\n                            <small [hidden]=\"longitude.valid || (longitude.pristine && !formAddAccommodation.submitted)\"  class=\"input text-danger\">\r\n                              Longitude is required\r\n                              </small>\r\n                        </div>\r\n                        <div class=\"col-md-6\">\r\n                            <div class=\"form-group\">\r\n                                <textarea type=\"text\" class=\"form-control\" [(ngModel)] = \"accommodation.opis\" placeholder=\"Description\" value=\"\" name=\"description\" #description=\"ngModel\" maxlength=\"150\"></textarea>\r\n                            </div>\r\n                            <small [hidden]=\"description.valid || (description.pristine && !formAddAccommodation.submitted)\"  class=\"input text-danger\">\r\n                              Description too long. Max length is 150 characters.  \r\n                            </small>\r\n                            <div class=\"form-group\">\r\n                                <input type=\"text\" minlength=\"10\" maxlength=\"10\" name=\"txtEmpPhone\" [(ngModel)] = \"accommodation.kapacitet\" class=\"form-control\" placeholder=\"Capacity\" value=\"\" name=\"capacity\" #capacity=\"ngModel\" required maxlength=\"3\" minlength=\"1\"/>\r\n                            </div>\r\n                            <small [hidden]=\"capacity.valid || (capacity.pristine && !formAddAccommodation.submitted)\"  class=\"input text-danger\">\r\n                              Capacity is required.  \r\n                            </small>\r\n                            <div class=\"form-group\">\r\n                                <ng-multiselect-dropdown  [placeholder]=\"'Accommodation type'\" [settings]=\"dropdownSettingsAccommodationType\" [data]=\"accommodationTypeDropDown\" [(ngModel)] = \"selectedAccommodationType\" [ngModelOptions]=\"{standalone: true}\">\r\n                                </ng-multiselect-dropdown>\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <ng-multiselect-dropdown  [placeholder]=\"'Additional services'\" [settings]=\"dropdownSettingsAdditionalServices\" [data]=\"additionalServicesDropDown\" [(ngModel)] = \"selectAdditionalServices\" [ngModelOptions]=\"{standalone: true}\">\r\n                                </ng-multiselect-dropdown>\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <input type=\"text\" class=\"form-control\" [(ngModel)] = \"accommodation.brojDanaZaOtkazivanje\" placeholder=\"Cancellation days\" value=\"\" name=\"cancellationDays\"/>\r\n                            </div>\r\n                            <!-- <div class=\"form-group\">\r\n                                <input type=\"text\" class=\"form-control\" [(ngModel)] = \"newImageUrl\" placeholder=\"Image url\" name=\"imageUrl\" >\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                              <button class=\"btn btn-primary\" (click) = \"addPictureToAccommodation()\">Add image</button>\r\n                              </div> -->\r\n                            <input type=\"submit\" class=\"btnRegister\" (click) = \"managePrices()\" [disabled]=\"!formAddAccommodation.valid\"  value=\"Manage prices\"/>\r\n                        </div>\r\n                        <!-- <div style=\"display: contents;\">\r\n                          <div style=\"display: contents;\" *ngFor = \"let i = index; let image of accommodation.imageDTO\">\r\n                              <img class=\"media-object img-rounded img-responsive\"  src=\"{{image.filePath}}\" \r\n                              alt=\"image{{i}}\" style=\"width: 300px; height: 250px; margin: 5px;\">\r\n                              <i (click) = \"removeImage(image)\" class=\"fa fa-times\"></i>\r\n                          </div>\r\n                      </div> -->\r\n                    </form>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n  \r\n  </div>"
 
 /***/ }),
 
@@ -9563,6 +9577,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var app_service_korisnik_korisnik_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! app/service/korisnik/korisnik.service */ "./src/app/service/korisnik/korisnik.service.ts");
 /* harmony import */ var app_model_korisnik_agent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! app/model/korisnik/agent */ "./src/app/model/korisnik/agent.ts");
 /* harmony import */ var app_model_global_parameters_image__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! app/model/global-parameters/image */ "./src/app/model/global-parameters/image.ts");
+/* harmony import */ var app_service_accommodation_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! app/service/accommodation.service */ "./src/app/service/accommodation.service.ts");
+
 
 
 
@@ -9572,7 +9588,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var DodavanjeSmestajaComponent = /** @class */ (function () {
-    function DodavanjeSmestajaComponent(/*private hotelService: HotelService,*/ router, authService, userService) {
+    function DodavanjeSmestajaComponent(accommodationService, router, authService, userService) {
+        this.accommodationService = accommodationService;
         this.router = router;
         this.authService = authService;
         this.userService = userService;
@@ -9590,6 +9607,7 @@ var DodavanjeSmestajaComponent = /** @class */ (function () {
         // }
     }
     DodavanjeSmestajaComponent.prototype.ngOnInit = function () {
+        var _this = this;
         // this.userService.findByEmail(this.loggedUser.mejl).subscribe(
         //   e => {
         //     this.loggedUser = e;
@@ -9608,26 +9626,22 @@ var DodavanjeSmestajaComponent = /** @class */ (function () {
             itemsShowLimit: 3,
             allowSearchFilter: true
         };
-        //   this.hotelService.getAllAddiionalServices().subscribe(
-        //     s => {
-        //       this.additionalServices = s;
-        //       let pom = [];
-        //       s.forEach(element => {
-        //         pom.push(element.name);
-        //       })
-        //       this.additionalServicesDropDown = pom;
-        //     }
-        //   )
-        //   this.hotelService.getAllAccomodationTypes().subscribe(
-        //     s => {
-        //       this.accommodationTypes = s;
-        //       let pom = [];
-        //       s.forEach(element => {
-        //         pom.push(element.name);
-        //       })
-        //       this.accommodationTypeDropDown = pom;
-        //     }
-        //   )
+        this.accommodationService.findAllUsluge().subscribe(function (s) {
+            _this.additionalServices = s;
+            var pom = [];
+            s.forEach(function (element) {
+                pom.push(element.naziv);
+            });
+            _this.additionalServicesDropDown = pom;
+        });
+        this.accommodationService.findAllTipovi().subscribe(function (s) {
+            _this.accommodationTypes = s;
+            var pom = [];
+            s.forEach(function (element) {
+                pom.push(element.naziv);
+            });
+            _this.accommodationTypeDropDown = pom;
+        });
     };
     DodavanjeSmestajaComponent.prototype.managePrices = function () {
         var _this = this;
@@ -9679,14 +9693,14 @@ var DodavanjeSmestajaComponent = /** @class */ (function () {
             alert("You must enter city for accommodation");
             return false;
         }
-        if (this.accommodation.adresaDTO.geografskaDuzina == 0) {
-            alert("You must enter longitude for accommodation");
-            return false;
-        }
-        if (this.accommodation.adresaDTO.geografskaSirina == 0) {
-            alert("You must enter latitude for accommodation");
-            return false;
-        }
+        // if(this.accommodation.adresaDTO.geografskaDuzina == 0){
+        //   alert("You must enter longitude for accommodation");
+        //   return false;
+        // }
+        // if(this.accommodation.adresaDTO.geografskaSirina == 0){
+        //   alert("You must enter latitude for accommodation");
+        //   return false;
+        // }
         if (this.accommodation.kapacitet == 0) {
             alert("You must enter capacity for accommodation");
             return false;
@@ -9695,10 +9709,10 @@ var DodavanjeSmestajaComponent = /** @class */ (function () {
             alert("You must select accommodation type for accommodation");
             return false;
         }
-        if (this.accommodation.putanjaDoSlike.length == 0) {
-            alert("You must add at least one image for accommodation");
-            return false;
-        }
+        // if(this.accommodation.putanjaDoSlike.length == 0){
+        //   alert("You must add at least one image for accommodation");
+        //   return false;
+        // }
         return true;
     };
     DodavanjeSmestajaComponent.prototype.removeImage = function (image) {
@@ -9716,7 +9730,7 @@ var DodavanjeSmestajaComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./dodavanje-smestaja.component.html */ "./src/app/component/accommodation/dodavanje-smestaja/dodavanje-smestaja.component.html"),
             styles: [__webpack_require__(/*! ./dodavanje-smestaja.component.css */ "./src/app/component/accommodation/dodavanje-smestaja/dodavanje-smestaja.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], app_service_korisnik_auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"],
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [app_service_accommodation_service__WEBPACK_IMPORTED_MODULE_8__["AccommodationService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], app_service_korisnik_auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"],
             app_service_korisnik_korisnik_service__WEBPACK_IMPORTED_MODULE_5__["KorisnikService"]])
     ], DodavanjeSmestajaComponent);
     return DodavanjeSmestajaComponent;
@@ -9744,7 +9758,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container register\">\n    <div class=\"row justify-content-md-center\">\n        <div class=\"col-md-9 register-right\">\n            <div class=\"tab-content\" id=\"myTabContent\">\n                <div class=\"tab-pane fade show active\" id=\"home\" role=\"tabpanel\" aria-labelledby=\"home-tab\">\n                    <h3 class=\"register-heading\">Add new accommodation</h3>\n                    <div style=\"padding-top: 20%; margin-left: 30%; margin-right: 30%; margin-bottom: -15%;\" class=\"form-group\">\n                        <ng-multiselect-dropdown  [placeholder]=\"'Select year'\" [settings]=\"dropDownSettings\" [data]=\"years\" [(ngModel)] = \"selectedYear\" [ngModelOptions]=\"{standalone: true}\" (onSelect)=\"onSelectedYear($event)\">\n                        </ng-multiselect-dropdown>\n                    </div>\n                    <div class=\"row register-form\">\n                        <div class=\"col-md-6\">\n                            <div class=\"form-group\">\n                                <input type=\"text\" class=\"form-control\" placeholder=\"January\" [(ngModel)] = \"selectedPriceList[0].cenaPoNoci\" value=\"\" />\n                            </div>\n                            <div class=\"form-group\">\n                                <input type=\"text\" class=\"form-control\" placeholder=\"February\" [(ngModel)] = \"selectedPriceList[1].cenaPoNoci\" value=\"\" />\n                            </div>\n                            <div class=\"form-group\">\n                                <input type=\"text\" class=\"form-control\" placeholder=\"March\" [(ngModel)] = \"selectedPriceList[2].cenaPoNoci\" value=\"\" />\n                            </div>\n                            <div class=\"form-group\">\n                                <input type=\"text\" class=\"form-control\"  placeholder=\"April\" [(ngModel)] = \"selectedPriceList[3].cenaPoNoci\" value=\"\" />\n                            </div>\n                            <div class=\"form-group\">\n                                <input type=\"text\" class=\"form-control\"  placeholder=\"May\" [(ngModel)] = \"selectedPriceList[4].cenaPoNoci\" value=\"\" />\n                            </div>\n                            <div class=\"form-group\">\n                                <input type=\"text\" class=\"form-control\"  placeholder=\"June\" [(ngModel)] = \"selectedPriceList[5].cenaPoNoci\" value=\"\" />\n                            </div>\n                        </div>\n                        <div class=\"col-md-6\">\n                            <div class=\"form-group\">\n                                <input type=\"text\" class=\"form-control\" placeholder=\"July\" [(ngModel)] = \"selectedPriceList[6].cenaPoNoci\" value=\"\" />\n                            </div>\n                            <div class=\"form-group\">\n                                <input type=\"text\" class=\"form-control\" placeholder=\"August\" [(ngModel)] = \"selectedPriceList[7].cenaPoNoci\" value=\"\" />\n                            </div>\n                            <div class=\"form-group\">\n                                <input type=\"text\" class=\"form-control\" placeholder=\"September\" [(ngModel)] = \"selectedPriceList[8].cenaPoNoci\" value=\"\" />\n                            </div>\n                            <div class=\"form-group\">\n                                <input type=\"text\" class=\"form-control\"  placeholder=\"October\" [(ngModel)] = \"selectedPriceList[9].cenaPoNoci\" value=\"\" />\n                            </div>\n                            <div class=\"form-group\">\n                                <input type=\"text\" class=\"form-control\"  placeholder=\"November\" [(ngModel)] = \"selectedPriceList[10].cenaPoNoci\" value=\"\" />\n                            </div>\n                            <div class=\"form-group\">\n                                <input type=\"text\" class=\"form-control\"  placeholder=\"December\" [(ngModel)] = \"selectedPriceList[11].cenaPoNoci\" value=\"\" />\n                            </div>\n                            <input type=\"submit\" class=\"btnRegister\" (click) = \"saveAccommodation()\" value=\"Finish\"/>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n  \n  </div>"
+module.exports = "<div class=\"container register\">\r\n    <div class=\"row justify-content-md-center\">\r\n        <div class=\"col-md-9 register-right\">\r\n            <div class=\"tab-content\" id=\"myTabContent\">\r\n                <div class=\"tab-pane fade show active\" id=\"home\" role=\"tabpanel\" aria-labelledby=\"home-tab\">\r\n                    <h3 class=\"register-heading\">Add new accommodation</h3>\r\n                    <!-- <div style=\"padding-top: 20%; margin-left: 30%; margin-right: 30%; margin-bottom: -15%;\" class=\"form-group\">\r\n                        <ng-multiselect-dropdown  [placeholder]=\"'Select year'\" [settings]=\"dropDownSettings\" [data]=\"years\" [(ngModel)] = \"selectedYear\" [ngModelOptions]=\"{standalone: true}\" (onSelect)=\"onSelectedYear($event)\">\r\n                        </ng-multiselect-dropdown>\r\n                    </div> -->\r\n                    <div class=\"row register-form\">\r\n                        <div class=\"col-md-6\">\r\n                            <div class=\"form-group\">\r\n                                <input type=\"text\" class=\"form-control\" placeholder=\"January\" [(ngModel)] = \"selectedPriceList[0].cenaPoNoci\" value=\"\" />\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <input type=\"text\" class=\"form-control\" placeholder=\"February\" [(ngModel)] = \"selectedPriceList[1].cenaPoNoci\" value=\"\" />\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <input type=\"text\" class=\"form-control\" placeholder=\"March\" [(ngModel)] = \"selectedPriceList[2].cenaPoNoci\" value=\"\" />\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <input type=\"text\" class=\"form-control\"  placeholder=\"April\" [(ngModel)] = \"selectedPriceList[3].cenaPoNoci\" value=\"\" />\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <input type=\"text\" class=\"form-control\"  placeholder=\"May\" [(ngModel)] = \"selectedPriceList[4].cenaPoNoci\" value=\"\" />\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <input type=\"text\" class=\"form-control\"  placeholder=\"June\" [(ngModel)] = \"selectedPriceList[5].cenaPoNoci\" value=\"\" />\r\n                            </div>\r\n\r\n\r\n                            <div class=\"form-group\">\r\n                                <input type=\"text\" class=\"form-control\" placeholder=\"July\" [(ngModel)] = \"selectedPriceList[6].cenaPoNoci\" value=\"\" />\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <input type=\"text\" class=\"form-control\" placeholder=\"August\" [(ngModel)] = \"selectedPriceList[7].cenaPoNoci\" value=\"\" />\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <input type=\"text\" class=\"form-control\" placeholder=\"September\" [(ngModel)] = \"selectedPriceList[8].cenaPoNoci\" value=\"\" />\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <input type=\"text\" class=\"form-control\"  placeholder=\"October\" [(ngModel)] = \"selectedPriceList[9].cenaPoNoci\" value=\"\" />\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <input type=\"text\" class=\"form-control\"  placeholder=\"November\" [(ngModel)] = \"selectedPriceList[10].cenaPoNoci\" value=\"\" />\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <input type=\"text\" class=\"form-control\"  placeholder=\"December\" [(ngModel)] = \"selectedPriceList[11].cenaPoNoci\" value=\"\" />\r\n                            </div>\r\n                            <input type=\"submit\" class=\"btnRegister\" (click) = \"saveAccommodation()\" value=\"Finish\"/>\r\n                        </div>\r\n                        <div class=\"col-md-6\">\r\n                            \r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n  \r\n  </div>"
 
 /***/ }),
 
@@ -9765,6 +9779,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var app_service_korisnik_korisnik_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! app/service/korisnik/korisnik.service */ "./src/app/service/korisnik/korisnik.service.ts");
 /* harmony import */ var app_model_korisnik_agent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! app/model/korisnik/agent */ "./src/app/model/korisnik/agent.ts");
 /* harmony import */ var app_model_accommodation_cenovnik__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! app/model/accommodation/cenovnik */ "./src/app/model/accommodation/cenovnik.ts");
+/* harmony import */ var app_service_accommodation_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! app/service/accommodation.service */ "./src/app/service/accommodation.service.ts");
+
 
 
 
@@ -9773,7 +9789,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var SrediCeneComponent = /** @class */ (function () {
-    function SrediCeneComponent(/*private accommodationService: AccommodationService,*/ router, authService, userService) {
+    function SrediCeneComponent(accommodationService, router, authService, userService) {
+        this.accommodationService = accommodationService;
         this.router = router;
         this.authService = authService;
         this.userService = userService;
@@ -9782,9 +9799,9 @@ var SrediCeneComponent = /** @class */ (function () {
         this.unitPriceList = [];
         this.selectedPriceList = [];
         this.loggedUser = new app_model_korisnik_agent__WEBPACK_IMPORTED_MODULE_5__["Agent"]();
-        var res = localStorage.getItem('token');
+        var res = JSON.parse(localStorage.getItem('token'));
         if (res != null) {
-            this.loggedUser.mejl = this.authService.getUsername(res);
+            this.loggedUser.mejl = res.mejl; //this.authService.getUsername(res);
         }
         for (var i = 0; i < 12; i++) {
             var newPriceList = new app_model_accommodation_cenovnik__WEBPACK_IMPORTED_MODULE_6__["Cenovnik"]();
@@ -9811,8 +9828,13 @@ var SrediCeneComponent = /** @class */ (function () {
         this.years.forEach(function (element) {
             for (var i = 1; i <= 12; ++i) {
                 var newPriceList = new app_model_accommodation_cenovnik__WEBPACK_IMPORTED_MODULE_6__["Cenovnik"]();
-                newPriceList.prviDanVazenja = new Date(i + "-01-" + element);
-                newPriceList.poslednjiDanVazenja = new Date(i + "-31-" + element);
+                var d = new Date();
+                var datestring1 = d.getFullYear() + "-" + ("0" + (i)).slice(-2) + "-" + "01";
+                var datestring2 = d.getFullYear() + "-" + ("0" + (i)).slice(-2) + "-" + "02";
+                // newPriceList.prviDanVazenja = new Date(i + "-01-" + element);
+                // newPriceList.poslednjiDanVazenja = new Date(i + "-02-"+ element);
+                newPriceList.prviDanVazenja = datestring1;
+                newPriceList.poslednjiDanVazenja = datestring2;
                 var unitPrice = new app_model_accommodation_cenovnik__WEBPACK_IMPORTED_MODULE_6__["Cenovnik"];
                 //unitPrice.roomDTO = this.accommodation;
                 _this.accommodation.cenovnici.push(newPriceList);
@@ -9822,37 +9844,42 @@ var SrediCeneComponent = /** @class */ (function () {
         });
     };
     SrediCeneComponent.prototype.onSelectedYear = function (item) {
-        var _this = this;
-        this.selectedPriceList = [];
-        this.priceList.forEach(function (element) {
-            var year = element.prviDanVazenja.getFullYear().toString();
-            if (year == _this.selectedYear) {
-                _this.selectedPriceList.push(element);
-            }
-        });
-    };
-    SrediCeneComponent.prototype.saveAccommodation = function () {
-        // this.accommodationService.create(this.loggedUser.id, this.accommodation).subscribe(
-        //   s => {
-        //     this.id = s.id;
-        //      this.priceList.forEach(element =>{
-        //        this.accommodationService.createPriceList(this.loggedUser.id, element).subscribe(
-        //          ss => {
-        //            this.accommodationService.getRoom(this.id).subscribe(
-        //              room => {
-        //                element.unitPriceInformationDTO[0].roomDTO = room;
-        //                this.accommodationService.createPriceListUnit(ss.id, element.unitPriceInformationDTO[0]).subscribe(
-        //                  sss => {
-        //                  }
-        //                )
-        //              }
-        //            )
-        //          }
-        //       )
-        // //     })
-        //     this.router.navigate(['address']);
+        // this.selectedPriceList = [];
+        // this.priceList.forEach(element =>{
+        //   let year = element.prviDanVazenja.getFullYear().toString();
+        //     if(year == this.selectedYear){
+        //       this.selectedPriceList.push(element);
+        //     }
         //   }
         // )
+    };
+    SrediCeneComponent.prototype.saveAccommodation = function () {
+        var _this = this;
+        this.accommodation.kategorija = "NEKATEGORISAN";
+        for (var i = 0; i <= 11; ++i) {
+            this.accommodation.cenovnici[i].cenaPoNoci = this.selectedPriceList[i].cenaPoNoci;
+        }
+        // this.accommodation.cenovnici = this.selectedPriceList;
+        var res = JSON.parse(localStorage.getItem('token'));
+        this.accommodationService.add(this.accommodation, res.id).subscribe(function (s) {
+            // this.id = s.id;
+            //  this.priceList.forEach(element =>{
+            //  this.accommodationService.createPriceList(this.loggedUser.id, element).subscribe(
+            //    ss => {
+            //  this.accommodationService.getRoom(this.id).subscribe(
+            //    room => {
+            //      element.unitPriceInformationDTO[0].roomDTO = room;
+            //      this.accommodationService.createPriceListUnit(ss.id, element.unitPriceInformationDTO[0]).subscribe(
+            //        sss => {
+            //        }
+            //      )
+            //    }
+            //  )
+            //  }
+            //)
+            //     })
+            _this.router.navigate(['vidiSmestaj']);
+        });
     };
     SrediCeneComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -9860,9 +9887,282 @@ var SrediCeneComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./sredi-cene.component.html */ "./src/app/component/accommodation/sredi-cene/sredi-cene.component.html"),
             styles: [__webpack_require__(/*! ./sredi-cene.component.css */ "./src/app/component/accommodation/sredi-cene/sredi-cene.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], app_service_korisnik_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"], app_service_korisnik_korisnik_service__WEBPACK_IMPORTED_MODULE_4__["KorisnikService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [app_service_accommodation_service__WEBPACK_IMPORTED_MODULE_7__["AccommodationService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], app_service_korisnik_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"], app_service_korisnik_korisnik_service__WEBPACK_IMPORTED_MODULE_4__["KorisnikService"]])
     ], SrediCeneComponent);
     return SrediCeneComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/component/accommodation/vidi-rezervacije/vidi-rezervacije.component.css":
+/*!*****************************************************************************************!*\
+  !*** ./src/app/component/accommodation/vidi-rezervacije/vidi-rezervacije.component.css ***!
+  \*****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "a.list-group-item {\r\n    height:auto;\r\n    min-height:200px;\r\n}\r\na.list-group-item{\r\n    color: black;\r\n    background-color: ghostwhite;\r\n    border-color: dimgrey;\r\n    margin-top: 10px;\r\n  }\r\n.stars {\r\n    margin:20px auto 1px;    \r\n}\r\n.list-group-item-text{\r\n    color: black !important;\r\n}\r\n.search-slt{\r\n    display: table;\r\n    width: 100%;\r\n    font-size: 0.875rem;\r\n    line-height: 1.5;\r\n    color: #55595c;\r\n    background-color: #fff;\r\n    background-image: none;\r\n    border: 1px solid #ccc;\r\n    height: calc(3rem + 2px) !important;\r\n    border-radius:0;\r\n}\r\n.wrn-btn{\r\n    width: 100%;\r\n    font-size: 16px;\r\n    font-weight: 400;\r\n    text-transform: capitalize;\r\n    height: calc(3rem + 2px) !important;\r\n    border-radius:0;\r\n}\r\n.fiterForm {\r\n    border: lightgray 1px solid;\r\n    padding: 5px;\r\n}\r\n.list-group-item-heading{\r\n    border: 2px solid;\r\n    border-radius: 10px;\r\n    border-color: darkblue;\r\n    width: -webkit-fit-content;\r\n    width: -moz-fit-content;\r\n    width: fit-content;\r\n}\r\n.star {\r\n  font-size: 1.5rem;\r\n  color: #b0c4de;\r\n}\r\n.filled {\r\n  color: gold;\r\n}\r\n.comments {\r\n    margin-top: 10px;\r\n    background: white;\r\n    border: 1px solid;\r\n    min-width: 150px;\r\n  }\r\n.commentArea{\r\n    width: 100%;\r\n    height: 70px;\r\n    overflow-y: auto;\r\n    border: none;\r\n    background: transparent;\r\n    padding: 5px;\r\n  }\r\n.commentContent{\r\n    height: 50px;\r\n    width: 100%;\r\n    overflow-y: auto;\r\n    border: none;\r\n    background: transparent;\r\n    padding: 5px;\r\n    border-bottom: 1px solid #cdcdcd;\r\n  }\r\n.displayTextArea{\r\n    display: flex;\r\n    }\r\n.msg_send_btn {\r\n    background: repeating-linear-gradient(45deg, black, transparent 100px);\r\n    border: medium none;\r\n    border-radius: 50%;\r\n    color: #fff;\r\n    cursor: pointer;\r\n    font-size: 25px;\r\n    height: 50px;\r\n    right: 0;\r\n    top: 5px;\r\n    width: 50px;\r\n    margin-top: 1%;\r\n    margin-right: 10px;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50L2FjY29tbW9kYXRpb24vdmlkaS1yZXplcnZhY2lqZS92aWRpLXJlemVydmFjaWplLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxXQUFXO0lBQ1gsZ0JBQWdCO0FBQ3BCO0FBQ0E7SUFDSSxZQUFZO0lBQ1osNEJBQTRCO0lBQzVCLHFCQUFxQjtJQUNyQixnQkFBZ0I7RUFDbEI7QUFDRjtJQUNJLG9CQUFvQjtBQUN4QjtBQUVBO0lBQ0ksdUJBQXVCO0FBQzNCO0FBRUE7SUFDSSxjQUFjO0lBQ2QsV0FBVztJQUNYLG1CQUFtQjtJQUNuQixnQkFBZ0I7SUFDaEIsY0FBYztJQUNkLHNCQUFzQjtJQUN0QixzQkFBc0I7SUFDdEIsc0JBQXNCO0lBQ3RCLG1DQUFtQztJQUNuQyxlQUFlO0FBQ25CO0FBRUE7SUFDSSxXQUFXO0lBQ1gsZUFBZTtJQUNmLGdCQUFnQjtJQUNoQiwwQkFBMEI7SUFDMUIsbUNBQW1DO0lBQ25DLGVBQWU7QUFDbkI7QUFFQTtJQUNJLDJCQUEyQjtJQUMzQixZQUFZO0FBQ2hCO0FBRUE7SUFDSSxpQkFBaUI7SUFDakIsbUJBQW1CO0lBQ25CLHNCQUFzQjtJQUN0QiwwQkFBa0I7SUFBbEIsdUJBQWtCO0lBQWxCLGtCQUFrQjtBQUN0QjtBQUVBO0VBQ0UsaUJBQWlCO0VBQ2pCLGNBQWM7QUFDaEI7QUFDQTtFQUNFLFdBQVc7QUFDYjtBQUVFO0lBQ0UsZ0JBQWdCO0lBQ2hCLGlCQUFpQjtJQUNqQixpQkFBaUI7SUFDakIsZ0JBQWdCO0VBQ2xCO0FBRUE7SUFDRSxXQUFXO0lBQ1gsWUFBWTtJQUNaLGdCQUFnQjtJQUNoQixZQUFZO0lBQ1osdUJBQXVCO0lBQ3ZCLFlBQVk7RUFDZDtBQUVBO0lBQ0UsWUFBWTtJQUNaLFdBQVc7SUFDWCxnQkFBZ0I7SUFDaEIsWUFBWTtJQUNaLHVCQUF1QjtJQUN2QixZQUFZO0lBQ1osZ0NBQWdDO0VBQ2xDO0FBRUE7SUFDRSxhQUFhO0lBQ2I7QUFJRjtJQUNFLHNFQUFzRTtJQUN0RSxtQkFBbUI7SUFDbkIsa0JBQWtCO0lBQ2xCLFdBQVc7SUFDWCxlQUFlO0lBQ2YsZUFBZTtJQUNmLFlBQVk7SUFDWixRQUFRO0lBQ1IsUUFBUTtJQUNSLFdBQVc7SUFDWCxjQUFjO0lBQ2Qsa0JBQWtCO0VBQ3BCIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50L2FjY29tbW9kYXRpb24vdmlkaS1yZXplcnZhY2lqZS92aWRpLXJlemVydmFjaWplLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJhLmxpc3QtZ3JvdXAtaXRlbSB7XHJcbiAgICBoZWlnaHQ6YXV0bztcclxuICAgIG1pbi1oZWlnaHQ6MjAwcHg7XHJcbn1cclxuYS5saXN0LWdyb3VwLWl0ZW17XHJcbiAgICBjb2xvcjogYmxhY2s7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBnaG9zdHdoaXRlO1xyXG4gICAgYm9yZGVyLWNvbG9yOiBkaW1ncmV5O1xyXG4gICAgbWFyZ2luLXRvcDogMTBweDtcclxuICB9XHJcbi5zdGFycyB7XHJcbiAgICBtYXJnaW46MjBweCBhdXRvIDFweDsgICAgXHJcbn1cclxuXHJcbi5saXN0LWdyb3VwLWl0ZW0tdGV4dHtcclxuICAgIGNvbG9yOiBibGFjayAhaW1wb3J0YW50O1xyXG59XHJcblxyXG4uc2VhcmNoLXNsdHtcclxuICAgIGRpc3BsYXk6IHRhYmxlO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBmb250LXNpemU6IDAuODc1cmVtO1xyXG4gICAgbGluZS1oZWlnaHQ6IDEuNTtcclxuICAgIGNvbG9yOiAjNTU1OTVjO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjtcclxuICAgIGJhY2tncm91bmQtaW1hZ2U6IG5vbmU7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjY2NjO1xyXG4gICAgaGVpZ2h0OiBjYWxjKDNyZW0gKyAycHgpICFpbXBvcnRhbnQ7XHJcbiAgICBib3JkZXItcmFkaXVzOjA7XHJcbn1cclxuXHJcbi53cm4tYnRue1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBmb250LXNpemU6IDE2cHg7XHJcbiAgICBmb250LXdlaWdodDogNDAwO1xyXG4gICAgdGV4dC10cmFuc2Zvcm06IGNhcGl0YWxpemU7XHJcbiAgICBoZWlnaHQ6IGNhbGMoM3JlbSArIDJweCkgIWltcG9ydGFudDtcclxuICAgIGJvcmRlci1yYWRpdXM6MDtcclxufVxyXG5cclxuLmZpdGVyRm9ybSB7XHJcbiAgICBib3JkZXI6IGxpZ2h0Z3JheSAxcHggc29saWQ7XHJcbiAgICBwYWRkaW5nOiA1cHg7XHJcbn1cclxuXHJcbi5saXN0LWdyb3VwLWl0ZW0taGVhZGluZ3tcclxuICAgIGJvcmRlcjogMnB4IHNvbGlkO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMTBweDtcclxuICAgIGJvcmRlci1jb2xvcjogZGFya2JsdWU7XHJcbiAgICB3aWR0aDogZml0LWNvbnRlbnQ7XHJcbn1cclxuXHJcbi5zdGFyIHtcclxuICBmb250LXNpemU6IDEuNXJlbTtcclxuICBjb2xvcjogI2IwYzRkZTtcclxufVxyXG4uZmlsbGVkIHtcclxuICBjb2xvcjogZ29sZDtcclxufVxyXG5cclxuICAuY29tbWVudHMge1xyXG4gICAgbWFyZ2luLXRvcDogMTBweDtcclxuICAgIGJhY2tncm91bmQ6IHdoaXRlO1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQ7XHJcbiAgICBtaW4td2lkdGg6IDE1MHB4O1xyXG4gIH1cclxuXHJcbiAgLmNvbW1lbnRBcmVhe1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBoZWlnaHQ6IDcwcHg7XHJcbiAgICBvdmVyZmxvdy15OiBhdXRvO1xyXG4gICAgYm9yZGVyOiBub25lO1xyXG4gICAgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XHJcbiAgICBwYWRkaW5nOiA1cHg7XHJcbiAgfVxyXG5cclxuICAuY29tbWVudENvbnRlbnR7XHJcbiAgICBoZWlnaHQ6IDUwcHg7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIG92ZXJmbG93LXk6IGF1dG87XHJcbiAgICBib3JkZXI6IG5vbmU7XHJcbiAgICBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDtcclxuICAgIHBhZGRpbmc6IDVweDtcclxuICAgIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjY2RjZGNkO1xyXG4gIH1cclxuXHJcbiAgLmRpc3BsYXlUZXh0QXJlYXtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICB9XHJcblxyXG5cclxuXHJcbiAgLm1zZ19zZW5kX2J0biB7XHJcbiAgICBiYWNrZ3JvdW5kOiByZXBlYXRpbmctbGluZWFyLWdyYWRpZW50KDQ1ZGVnLCBibGFjaywgdHJhbnNwYXJlbnQgMTAwcHgpO1xyXG4gICAgYm9yZGVyOiBtZWRpdW0gbm9uZTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICAgIGNvbG9yOiAjZmZmO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgZm9udC1zaXplOiAyNXB4O1xyXG4gICAgaGVpZ2h0OiA1MHB4O1xyXG4gICAgcmlnaHQ6IDA7XHJcbiAgICB0b3A6IDVweDtcclxuICAgIHdpZHRoOiA1MHB4O1xyXG4gICAgbWFyZ2luLXRvcDogMSU7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDEwcHg7XHJcbiAgfSJdfQ== */"
+
+/***/ }),
+
+/***/ "./src/app/component/accommodation/vidi-rezervacije/vidi-rezervacije.component.html":
+/*!******************************************************************************************!*\
+  !*** ./src/app/component/accommodation/vidi-rezervacije/vidi-rezervacije.component.html ***!
+  \******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div (click) = \"out()\" class=\"container\">\n  <div class=\"container justify-content-md-center\">\n    <div class=\"col-lg-12 p-0\">\n      <a class=\"list-group-item\" style=\"min-height: 220px; max-height: 350px;\" *ngFor = \"let i = index; let accommodationReservation of accommodationToShow\">\n          <div (click) = \"out()\" class=\"col-lg-12\">\n              <div style=\"display: inline-flex; width: 100%;\">\n                <h4 class=\"col-lg-11\">{{accommodationReservation.smestajnaJedinicaDTO.adresaDTO.zemlja}} - {{accommodationReservation.smestajnaJedinicaDTO.adresaDTO.grad}}</h4>\n                <h3 class=\"col-md-1\" style=\"max-width: 25%\" (click) = \"orderByType('RATING')\">{{accommodationReservation.smestajnaJedinicaDTO.ocena}}</h3>     \n              </div>\n              <div style=\"display: inline-flex; width: 100%;\">\n                <h4 class=\"list-group-item-text col-lg-11\">{{accommodationReservation.prviDanRezervacije}} - {{accommodationReservation.poslednjiDanRezervacije}}</h4>\n              </div>\n              <label class=\"list-group-item-text col-lg-10\">{{accommodationReservation.smestajnaJedinicaDTO.opis}}</label>\n              <h4 class=\"list-group-item-text col-lg-12\">{{accommodationReservation.smestajnaJedinicaDTO.tipDTO.naziv}}</h4>\n              <h4 class=\"col-lg-12\" style=\"text-align: right;\">RSD price</h4>\n              <div class=\"col-lg-12\" style=\"text-align: end;\">\n                <button class=\"btn btn-primary\" (click) = \"realised(accommodationReservation)\" >Realised</button>\n              </div>\n          </div>\n      </a>\n    </div>\n  </div>\n</div>\n  "
+
+/***/ }),
+
+/***/ "./src/app/component/accommodation/vidi-rezervacije/vidi-rezervacije.component.ts":
+/*!****************************************************************************************!*\
+  !*** ./src/app/component/accommodation/vidi-rezervacije/vidi-rezervacije.component.ts ***!
+  \****************************************************************************************/
+/*! exports provided: VidiRezervacijeComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VidiRezervacijeComponent", function() { return VidiRezervacijeComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var app_model_korisnik_review__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! app/model/korisnik/review */ "./src/app/model/korisnik/review.ts");
+/* harmony import */ var app_model_accommodation_accommodationReservation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! app/model/accommodation/accommodationReservation */ "./src/app/model/accommodation/accommodationReservation.ts");
+/* harmony import */ var app_model_korisnik_korisnik__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! app/model/korisnik/korisnik */ "./src/app/model/korisnik/korisnik.ts");
+/* harmony import */ var app_service_accommodation_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! app/service/accommodation.service */ "./src/app/service/accommodation.service.ts");
+/* harmony import */ var app_service_korisnik_auth_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! app/service/korisnik/auth.service */ "./src/app/service/korisnik/auth.service.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/esm5/common.js");
+/* harmony import */ var app_service_korisnik_korisnik_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! app/service/korisnik/korisnik.service */ "./src/app/service/korisnik/korisnik.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/esm5/router.js");
+
+
+
+
+
+
+
+
+
+
+var VidiRezervacijeComponent = /** @class */ (function () {
+    function VidiRezervacijeComponent(accommodationService, userService, router, authService, datePipe) {
+        this.accommodationService = accommodationService;
+        this.userService = userService;
+        this.router = router;
+        this.authService = authService;
+        this.datePipe = datePipe;
+        this.selectedRate = -1;
+        this.selectedTextBox = -1;
+        this.selectedTextBoxMessage = -1;
+        this.newReview = new app_model_korisnik_review__WEBPACK_IMPORTED_MODULE_2__["Review"]();
+        this.accommodationToShow = [];
+        this.userReviews = [];
+        this.pomReviews = [];
+        this.currentRate = 4;
+        this.loggedUser = new app_model_korisnik_korisnik__WEBPACK_IMPORTED_MODULE_4__["Korisnik"]();
+        var res = JSON.parse(localStorage.getItem('token'));
+        if (res != null) {
+            this.loggedUser.mejl = res.mejl;
+        }
+        else {
+            this.router.navigate(['login']);
+        }
+    }
+    VidiRezervacijeComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        var res = JSON.parse(localStorage.getItem('token'));
+        /*this.userService.findByEmail(this.loggedUser.mejl).subscribe(
+          e => {*/
+        this.loggedUser = res;
+        this.accommodationService.getUserReservations(this.loggedUser.id).subscribe(function (s) {
+            _this.accommodationToShow = s;
+        });
+        //})
+        // let accomodationReservation = new AccommodationReservation();
+        // accomodationReservation.prviDanRezervacije = "02/01/2012"
+        // accomodationReservation.poslednjiDanRezervacije = "02/01/2014"
+        // accomodationReservation.ukupnaCena = 300
+        // this.accommodationToShow.push(accomodationReservation)
+        // this.accommodationToShow.push(accomodationReservation)
+        // this.accommodationToShow.push(accomodationReservation)
+        // this.accommodationToShow.push(accomodationReservation)
+        // this.accommodationToShow.push(accomodationReservation)
+    };
+    VidiRezervacijeComponent.prototype.realised = function (accommodation) {
+        var _this = this;
+        if (confirm("Reservation realised?")) {
+            accommodation.realizovana = true;
+            this.accommodationService.updateResevation(accommodation).subscribe(function (s) {
+                var pomReservation = new app_model_accommodation_accommodationReservation__WEBPACK_IMPORTED_MODULE_3__["AccommodationReservation"]();
+                _this.accommodationToShow.forEach(function (element) {
+                    if (element.id === accommodation.id) {
+                        pomReservation = element;
+                    }
+                });
+                _this.accommodationToShow.splice(_this.accommodationToShow.indexOf(pomReservation), 1);
+            });
+        }
+    };
+    VidiRezervacijeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-vidi-rezervacije',
+            template: __webpack_require__(/*! ./vidi-rezervacije.component.html */ "./src/app/component/accommodation/vidi-rezervacije/vidi-rezervacije.component.html"),
+            styles: [__webpack_require__(/*! ./vidi-rezervacije.component.css */ "./src/app/component/accommodation/vidi-rezervacije/vidi-rezervacije.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [app_service_accommodation_service__WEBPACK_IMPORTED_MODULE_5__["AccommodationService"], app_service_korisnik_korisnik_service__WEBPACK_IMPORTED_MODULE_8__["KorisnikService"], _angular_router__WEBPACK_IMPORTED_MODULE_9__["Router"],
+            app_service_korisnik_auth_service__WEBPACK_IMPORTED_MODULE_6__["AuthService"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["DatePipe"]])
+    ], VidiRezervacijeComponent);
+    return VidiRezervacijeComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/component/accommodation/vidi-smestaj/vidi-smestaj.component.css":
+/*!*********************************************************************************!*\
+  !*** ./src/app/component/accommodation/vidi-smestaj/vidi-smestaj.component.css ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "a.list-group-item {\r\n    height:auto;\r\n    min-height:200px;\r\n}\r\na.list-group-item{\r\n  color: black;\r\n  background-color: ghostwhite;\r\n  border-color: dimgrey;\r\n  margin-bottom: 10px;\r\n}\r\n.stars {\r\n    margin:20px auto 1px;    \r\n}\r\n.list-group-item-text{\r\n    color: darkblue !important;\r\n}\r\n.search-slt{\r\n    display: table;\r\n    width: 100%;\r\n    font-size: 0.875rem;\r\n    line-height: 1.5;\r\n    color: #55595c;\r\n    background-color: #fff;\r\n    background-image: none;\r\n    border: 1px solid #ccc;\r\n    height: calc(3rem + 2px) !important;\r\n    border-radius:0;\r\n}\r\n.wrn-btn{\r\n    width: 100%;\r\n    font-size: 16px;\r\n    font-weight: 400;\r\n    text-transform: capitalize;\r\n    height: calc(3rem + 2px) !important;\r\n    border-radius:0;\r\n    background-color: dimgrey;\r\n    border-color: black;\r\n}\r\n.book-btn{\r\n  width: 100%;\r\n  font-size: 25px;\r\n  font-weight: 400;\r\n  text-transform: capitalize;\r\n  height: calc(3rem + 2px) !important;\r\n  border-radius:0;\r\n  background-color: dimgrey;\r\n  border-color: black;\r\n  color: white;\r\n}\r\n.fiterForm {\r\n    border: lightgray 1px solid;\r\n    padding: 5px;\r\n}\r\n.list-group-item-heading{\r\n    border: 2px solid;\r\n    border-radius: 10px;\r\n    border-color: darkblue;\r\n    width: -webkit-fit-content;\r\n    width: -moz-fit-content;\r\n    width: fit-content;\r\n}\r\nh1 {\r\n    text-align: center;\r\n    font-size: 175%;\r\n    color: #757575;\r\n    font-weight: 300;\r\n  }\r\nh1, input {\r\n    font-family: \"Open Sans\", Helvetica, sans-serif;\r\n  }\r\n.input {\r\n    width: 75%;\r\n    height: 50px;\r\n    display: block;\r\n    margin: 0 auto 15px;\r\n    padding: 0 15px;\r\n    border: none;\r\n    border-bottom: 2px solid #ebebeb;\r\n  }\r\n.input:focus {\r\n    outline: none;\r\n    border-bottom-color: #3CC !important;\r\n  }\r\n.input:hover {\r\n    border-bottom-color: #dcdcdc;\r\n  }\r\n.input:invalid {\r\n    box-shadow: none;\r\n  }\r\n.pass:-webkit-autofill {\r\n    -webkit-box-shadow: 0 0 0 1000px white inset;\r\n  }\r\n.inputButton {\r\n    position: relative;\r\n    width: 85%;\r\n    height: 50px;\r\n    display: block;\r\n    margin: 30px auto 30px;\r\n    color: white;\r\n    background-color: #3CC;\r\n    border: none;\r\n    box-shadow: 0 5px 0 #2CADAD;\r\n  }\r\n.inputButton:hover {\r\n    top: 2px;\r\n    box-shadow: 0 3px 0 #2CADAD;\r\n  }\r\n.inputButton:active {\r\n    top: 5px;\r\n    box-shadow: none;\r\n  }\r\n.inputButton:focus {\r\n    outline: none;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50L2FjY29tbW9kYXRpb24vdmlkaS1zbWVzdGFqL3ZpZGktc21lc3Rhai5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksV0FBVztJQUNYLGdCQUFnQjtBQUNwQjtBQUNBO0VBQ0UsWUFBWTtFQUNaLDRCQUE0QjtFQUM1QixxQkFBcUI7RUFDckIsbUJBQW1CO0FBQ3JCO0FBQ0E7SUFDSSxvQkFBb0I7QUFDeEI7QUFFQTtJQUNJLDBCQUEwQjtBQUM5QjtBQUVBO0lBQ0ksY0FBYztJQUNkLFdBQVc7SUFDWCxtQkFBbUI7SUFDbkIsZ0JBQWdCO0lBQ2hCLGNBQWM7SUFDZCxzQkFBc0I7SUFDdEIsc0JBQXNCO0lBQ3RCLHNCQUFzQjtJQUN0QixtQ0FBbUM7SUFDbkMsZUFBZTtBQUNuQjtBQUVBO0lBQ0ksV0FBVztJQUNYLGVBQWU7SUFDZixnQkFBZ0I7SUFDaEIsMEJBQTBCO0lBQzFCLG1DQUFtQztJQUNuQyxlQUFlO0lBQ2YseUJBQXlCO0lBQ3pCLG1CQUFtQjtBQUN2QjtBQUVBO0VBQ0UsV0FBVztFQUNYLGVBQWU7RUFDZixnQkFBZ0I7RUFDaEIsMEJBQTBCO0VBQzFCLG1DQUFtQztFQUNuQyxlQUFlO0VBQ2YseUJBQXlCO0VBQ3pCLG1CQUFtQjtFQUNuQixZQUFZO0FBQ2Q7QUFFQTtJQUNJLDJCQUEyQjtJQUMzQixZQUFZO0FBQ2hCO0FBRUE7SUFDSSxpQkFBaUI7SUFDakIsbUJBQW1CO0lBQ25CLHNCQUFzQjtJQUN0QiwwQkFBa0I7SUFBbEIsdUJBQWtCO0lBQWxCLGtCQUFrQjtBQUN0QjtBQUlBO0lBQ0ksa0JBQWtCO0lBQ2xCLGVBQWU7SUFDZixjQUFjO0lBQ2QsZ0JBQWdCO0VBQ2xCO0FBRUE7SUFDRSwrQ0FBK0M7RUFDakQ7QUFFQTtJQUNFLFVBQVU7SUFDVixZQUFZO0lBQ1osY0FBYztJQUNkLG1CQUFtQjtJQUNuQixlQUFlO0lBQ2YsWUFBWTtJQUNaLGdDQUFnQztFQUNsQztBQUNBO0lBQ0UsYUFBYTtJQUNiLG9DQUFvQztFQUN0QztBQUNBO0lBQ0UsNEJBQTRCO0VBQzlCO0FBQ0E7SUFDRSxnQkFBZ0I7RUFDbEI7QUFFQTtJQUNFLDRDQUE0QztFQUM5QztBQUVBO0lBQ0Usa0JBQWtCO0lBQ2xCLFVBQVU7SUFDVixZQUFZO0lBQ1osY0FBYztJQUNkLHNCQUFzQjtJQUN0QixZQUFZO0lBQ1osc0JBQXNCO0lBQ3RCLFlBQVk7SUFHWiwyQkFBMkI7RUFDN0I7QUFDQTtJQUNFLFFBQVE7SUFHUiwyQkFBMkI7RUFDN0I7QUFDQTtJQUNFLFFBQVE7SUFDUixnQkFBZ0I7RUFDbEI7QUFDQTtJQUNFLGFBQWE7RUFDZiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudC9hY2NvbW1vZGF0aW9uL3ZpZGktc21lc3Rhai92aWRpLXNtZXN0YWouY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbImEubGlzdC1ncm91cC1pdGVtIHtcclxuICAgIGhlaWdodDphdXRvO1xyXG4gICAgbWluLWhlaWdodDoyMDBweDtcclxufVxyXG5hLmxpc3QtZ3JvdXAtaXRlbXtcclxuICBjb2xvcjogYmxhY2s7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogZ2hvc3R3aGl0ZTtcclxuICBib3JkZXItY29sb3I6IGRpbWdyZXk7XHJcbiAgbWFyZ2luLWJvdHRvbTogMTBweDtcclxufVxyXG4uc3RhcnMge1xyXG4gICAgbWFyZ2luOjIwcHggYXV0byAxcHg7ICAgIFxyXG59XHJcblxyXG4ubGlzdC1ncm91cC1pdGVtLXRleHR7XHJcbiAgICBjb2xvcjogZGFya2JsdWUgIWltcG9ydGFudDtcclxufVxyXG5cclxuLnNlYXJjaC1zbHR7XHJcbiAgICBkaXNwbGF5OiB0YWJsZTtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgZm9udC1zaXplOiAwLjg3NXJlbTtcclxuICAgIGxpbmUtaGVpZ2h0OiAxLjU7XHJcbiAgICBjb2xvcjogIzU1NTk1YztcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XHJcbiAgICBiYWNrZ3JvdW5kLWltYWdlOiBub25lO1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgI2NjYztcclxuICAgIGhlaWdodDogY2FsYygzcmVtICsgMnB4KSAhaW1wb3J0YW50O1xyXG4gICAgYm9yZGVyLXJhZGl1czowO1xyXG59XHJcblxyXG4ud3JuLWJ0bntcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgZm9udC1zaXplOiAxNnB4O1xyXG4gICAgZm9udC13ZWlnaHQ6IDQwMDtcclxuICAgIHRleHQtdHJhbnNmb3JtOiBjYXBpdGFsaXplO1xyXG4gICAgaGVpZ2h0OiBjYWxjKDNyZW0gKyAycHgpICFpbXBvcnRhbnQ7XHJcbiAgICBib3JkZXItcmFkaXVzOjA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBkaW1ncmV5O1xyXG4gICAgYm9yZGVyLWNvbG9yOiBibGFjaztcclxufVxyXG5cclxuLmJvb2stYnRue1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIGZvbnQtc2l6ZTogMjVweDtcclxuICBmb250LXdlaWdodDogNDAwO1xyXG4gIHRleHQtdHJhbnNmb3JtOiBjYXBpdGFsaXplO1xyXG4gIGhlaWdodDogY2FsYygzcmVtICsgMnB4KSAhaW1wb3J0YW50O1xyXG4gIGJvcmRlci1yYWRpdXM6MDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiBkaW1ncmV5O1xyXG4gIGJvcmRlci1jb2xvcjogYmxhY2s7XHJcbiAgY29sb3I6IHdoaXRlO1xyXG59XHJcblxyXG4uZml0ZXJGb3JtIHtcclxuICAgIGJvcmRlcjogbGlnaHRncmF5IDFweCBzb2xpZDtcclxuICAgIHBhZGRpbmc6IDVweDtcclxufVxyXG5cclxuLmxpc3QtZ3JvdXAtaXRlbS1oZWFkaW5ne1xyXG4gICAgYm9yZGVyOiAycHggc29saWQ7XHJcbiAgICBib3JkZXItcmFkaXVzOiAxMHB4O1xyXG4gICAgYm9yZGVyLWNvbG9yOiBkYXJrYmx1ZTtcclxuICAgIHdpZHRoOiBmaXQtY29udGVudDtcclxufVxyXG5cclxuXHJcbiAgXHJcbmgxIHtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIGZvbnQtc2l6ZTogMTc1JTtcclxuICAgIGNvbG9yOiAjNzU3NTc1O1xyXG4gICAgZm9udC13ZWlnaHQ6IDMwMDtcclxuICB9XHJcbiAgXHJcbiAgaDEsIGlucHV0IHtcclxuICAgIGZvbnQtZmFtaWx5OiBcIk9wZW4gU2Fuc1wiLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7XHJcbiAgfVxyXG4gIFxyXG4gIC5pbnB1dCB7XHJcbiAgICB3aWR0aDogNzUlO1xyXG4gICAgaGVpZ2h0OiA1MHB4O1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICBtYXJnaW46IDAgYXV0byAxNXB4O1xyXG4gICAgcGFkZGluZzogMCAxNXB4O1xyXG4gICAgYm9yZGVyOiBub25lO1xyXG4gICAgYm9yZGVyLWJvdHRvbTogMnB4IHNvbGlkICNlYmViZWI7XHJcbiAgfVxyXG4gIC5pbnB1dDpmb2N1cyB7XHJcbiAgICBvdXRsaW5lOiBub25lO1xyXG4gICAgYm9yZGVyLWJvdHRvbS1jb2xvcjogIzNDQyAhaW1wb3J0YW50O1xyXG4gIH1cclxuICAuaW5wdXQ6aG92ZXIge1xyXG4gICAgYm9yZGVyLWJvdHRvbS1jb2xvcjogI2RjZGNkYztcclxuICB9XHJcbiAgLmlucHV0OmludmFsaWQge1xyXG4gICAgYm94LXNoYWRvdzogbm9uZTtcclxuICB9XHJcbiAgXHJcbiAgLnBhc3M6LXdlYmtpdC1hdXRvZmlsbCB7XHJcbiAgICAtd2Via2l0LWJveC1zaGFkb3c6IDAgMCAwIDEwMDBweCB3aGl0ZSBpbnNldDtcclxuICB9XHJcbiAgXHJcbiAgLmlucHV0QnV0dG9uIHtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIHdpZHRoOiA4NSU7XHJcbiAgICBoZWlnaHQ6IDUwcHg7XHJcbiAgICBkaXNwbGF5OiBibG9jaztcclxuICAgIG1hcmdpbjogMzBweCBhdXRvIDMwcHg7XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjM0NDO1xyXG4gICAgYm9yZGVyOiBub25lO1xyXG4gICAgLXdlYmtpdC1ib3gtc2hhZG93OiAwIDVweCAwICMyQ0FEQUQ7XHJcbiAgICAtbW96LWJveC1zaGFkb3c6IDAgNXB4IDAgIzJDQURBRDtcclxuICAgIGJveC1zaGFkb3c6IDAgNXB4IDAgIzJDQURBRDtcclxuICB9XHJcbiAgLmlucHV0QnV0dG9uOmhvdmVyIHtcclxuICAgIHRvcDogMnB4O1xyXG4gICAgLXdlYmtpdC1ib3gtc2hhZG93OiAwIDNweCAwICMyQ0FEQUQ7XHJcbiAgICAtbW96LWJveC1zaGFkb3c6IDAgM3B4IDAgIzJDQURBRDtcclxuICAgIGJveC1zaGFkb3c6IDAgM3B4IDAgIzJDQURBRDtcclxuICB9XHJcbiAgLmlucHV0QnV0dG9uOmFjdGl2ZSB7XHJcbiAgICB0b3A6IDVweDtcclxuICAgIGJveC1zaGFkb3c6IG5vbmU7XHJcbiAgfVxyXG4gIC5pbnB1dEJ1dHRvbjpmb2N1cyB7XHJcbiAgICBvdXRsaW5lOiBub25lO1xyXG4gIH0iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/component/accommodation/vidi-smestaj/vidi-smestaj.component.html":
+/*!**********************************************************************************!*\
+  !*** ./src/app/component/accommodation/vidi-smestaj/vidi-smestaj.component.html ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n  <form action=\"#\" method=\"post\" novalidate=\"novalidate\" style=\"margin: 10px;\">\n      <div class=\"row\">\n          <div class=\"col-lg-12\">\n              <div class=\"row\">\n                  <div class=\"col-lg-3 col-md-3 col-sm-12 p-0\">\n                    <div class=\"form-group\">\n                        <div class=\"input-group\">\n                            <input class=\"form-control search-slt\" placeholder=\"Pocetni datum\"\n                                    name=\"dp1\" [(ngModel)]=\"beginDate\" [minDate] = \"minDate\" [maxDate] = \"maxDate\" ngbDatepicker #d1=\"ngbDatepicker\" (click)=\"d1.toggle()\" [ngModelOptions]=\"{standalone: true}\" required>\n                        </div>\n                    </div>            \n                  </div>\n                  <div class=\"col-lg-3 col-md-3 col-sm-12 p-0\">\n                    <div class=\"form-group\">\n                        <div class=\"input-group\">\n                          <input class=\"form-control search-slt\" placeholder=\"Krajnji datum\"\n                                 name=\"dp2\" [(ngModel)]=\"endDate\" [minDate] = \"minDate\" [maxDate] = \"maxDate\" ngbDatepicker #d2=\"ngbDatepicker\" (click)=\"d2.toggle()\" [ngModelOptions]=\"{standalone: true}\" required>\n                        </div>\n                      </div>            \n                  </div>\n              </div>\n          </div>\n      </div>\n  </form>\n  <div class=\"container justify-content-md-center\" style=\"display: -webkit-box;\">\n      <div class=\"col-lg-12 p-0\">\n            <a class=\"list-group-item\" style=\"min-height: 220px; max-height: 350px;\" *ngFor = \"let i = index; let accommodation of accommodationToShow | paginate: { itemsPerPage: 10, currentPage: p }\">\n                <div style=\"display: inline-flex; width: 100%;\">\n                    <h4 class=\"col-lg-11\">{{accommodation.adresaDTO.zemlja}}</h4>\n                    <h3 class=\"col-md-1\" style=\"max-width: 25%\" (click) = \"orderByType('RATING')\">{{accommodation.ocena}}</h3>       \n                </div>\n                <label class=\"col-lg-10\">{{accommodation.opis}}</label>\n                <h4 class=\"col-lg-12\">{{accommodation.tipDTO.naziv}}</h4>\n                <div class=\"col-lg-12\" style=\"text-align: end;\">\n                    <button class=\"btn book-btn\" (click) = \"book(accommodation)\" >Book</button>\n                </div>\n            </a>\n            <div class=\"item col-lg-10 col-lg-10\" style=\"width: 100%; text-align: center;\">\n                <pagination-controls (pageChange)=\"p = $event\"></pagination-controls>\n            </div>\n    </div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/component/accommodation/vidi-smestaj/vidi-smestaj.component.ts":
+/*!********************************************************************************!*\
+  !*** ./src/app/component/accommodation/vidi-smestaj/vidi-smestaj.component.ts ***!
+  \********************************************************************************/
+/*! exports provided: VidiSmestajComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VidiSmestajComponent", function() { return VidiSmestajComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var app_service_korisnik_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! app/service/korisnik/auth.service */ "./src/app/service/korisnik/auth.service.ts");
+/* harmony import */ var app_service_korisnik_korisnik_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! app/service/korisnik/korisnik.service */ "./src/app/service/korisnik/korisnik.service.ts");
+/* harmony import */ var app_service_accommodation_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! app/service/accommodation.service */ "./src/app/service/accommodation.service.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/esm5/common.js");
+/* harmony import */ var app_model_accommodation_accommodationSearch__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! app/model/accommodation/accommodationSearch */ "./src/app/model/accommodation/accommodationSearch.ts");
+/* harmony import */ var app_model_korisnik_korisnik__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! app/model/korisnik/korisnik */ "./src/app/model/korisnik/korisnik.ts");
+/* harmony import */ var app_model_accommodation_accommodationReservation__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! app/model/accommodation/accommodationReservation */ "./src/app/model/accommodation/accommodationReservation.ts");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators.js");
+
+
+
+
+
+
+
+
+
+
+
+var states = ['Maglic', 'Novi Sad', 'Beograd', 'Arizona', 'Arkansas', 'California', 'Colorado',
+    'Connecticut', 'Delaware', 'District Of Columbia', 'Federated States Of Micronesia', 'Florida', 'Georgia',
+    'Guam', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine',
+    'Marshall Islands', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana',
+    'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
+    'Northern Mariana Islands', 'Ohio', 'Oklahoma', 'Oregon', 'Palau', 'Pennsylvania', 'Puerto Rico', 'Rhode Island',
+    'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virgin Islands', 'Virginia',
+    'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
+var VidiSmestajComponent = /** @class */ (function () {
+    function VidiSmestajComponent(route, accomodationService, router, datepipe, authService, userService) {
+        this.route = route;
+        this.accomodationService = accomodationService;
+        this.router = router;
+        this.datepipe = datepipe;
+        this.authService = authService;
+        this.userService = userService;
+        this.accommodationSearch = new app_model_accommodation_accommodationSearch__WEBPACK_IMPORTED_MODULE_7__["AccommodationSearch"]();
+        this.accommodationToShow = [];
+        this.loggedUser = new app_model_korisnik_korisnik__WEBPACK_IMPORTED_MODULE_8__["Korisnik"]();
+        this.maxLength = 30;
+        this.now = new Date();
+        this.search = function (text$) {
+            return text$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_10__["debounceTime"])(200), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_10__["distinctUntilChanged"])(), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_10__["map"])(function (term) { return term.length < 2 ? []
+                : states.filter(function (v) { return v.toLowerCase().indexOf(term.toLowerCase()) > -1; }).slice(0, 10); }));
+        };
+        this.loggedUser = JSON.parse(localStorage.getItem('token'));
+        if (this.loggedUser != null) {
+            this.loggedUser.mejl = this.loggedUser.mejl; //this.authService.getUsername(res);
+        }
+        else {
+            this.loggedUser.mejl = "";
+        }
+    }
+    VidiSmestajComponent.prototype.getAll = function () {
+        var _this = this;
+        this.accomodationService.getAll(this.loggedUser.id).subscribe(function (s) {
+            _this.accommodationToShow = s;
+        });
+    };
+    VidiSmestajComponent.prototype.ngOnInit = function () {
+        if (this.loggedUser.mejl != "") {
+            this.getAll();
+        }
+    };
+    VidiSmestajComponent.prototype.book = function (accommodation) {
+        var reservation = new app_model_accommodation_accommodationReservation__WEBPACK_IMPORTED_MODULE_9__["AccommodationReservation"]();
+        reservation.prviDanRezervacije = this.toModel(this.beginDate);
+        reservation.poslednjiDanRezervacije = this.toModel(this.endDate);
+        reservation.smestajnaJedinicaDTO = accommodation;
+        var res = JSON.parse(localStorage.getItem('token'));
+        if (res == null) {
+            this.router.navigate(['login']);
+        }
+        else {
+            this.accomodationService.book(reservation).subscribe(function (succ) {
+            });
+        }
+    };
+    VidiSmestajComponent.prototype.fromModel = function (date) {
+        var parsedDate = /(\d\d\d\d)-(\d\d)-(\d\d)/.exec(date);
+        if (parsedDate) {
+            return { year: Number(parsedDate[1]), month: Number(parsedDate[2]), day: Number(parsedDate[3]) };
+        }
+        else {
+            return null;
+        }
+    };
+    VidiSmestajComponent.prototype.toModel = function (date) {
+        if (date) {
+            var dateString = date.year + '-' + date.month + '-' + date.day;
+            return this.datepipe.transform(dateString, 'yyyy-MM-dd');
+        }
+        else {
+            return null;
+        }
+    };
+    VidiSmestajComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-vidi-smestaj',
+            template: __webpack_require__(/*! ./vidi-smestaj.component.html */ "./src/app/component/accommodation/vidi-smestaj/vidi-smestaj.component.html"),
+            styles: [__webpack_require__(/*! ./vidi-smestaj.component.css */ "./src/app/component/accommodation/vidi-smestaj/vidi-smestaj.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], app_service_accommodation_service__WEBPACK_IMPORTED_MODULE_5__["AccommodationService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["DatePipe"],
+            app_service_korisnik_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"], app_service_korisnik_korisnik_service__WEBPACK_IMPORTED_MODULE_4__["KorisnikService"]])
+    ], VidiSmestajComponent);
+    return VidiSmestajComponent;
 }());
 
 
@@ -9887,7 +10187,7 @@ module.exports = "input[type=button], input[type=submit], input[type=reset]{\r\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" style=\"justify-content:space-around;\">\n  <div class=\"col-md-6 col-md-offset-2\">\n      <div class=\"panel panel-login\">\n          <div class=\"panel-heading\">\n              <h1>Login</h1>\n              <hr>\n          </div>\n          <div class=\"panel-body\">\n              <div class=\"row\">\n                  <div class=\"col-lg-12\">\n                      <form style=\"display: block;\">\n                          <div  class=\"form-group\">\n                              <div class=\"input-group-prepend\">\n                                  <input type=\"text\" minlength=\"5\" maxlength=\"40\" class=\"input pass\" placeholder=\"Email\" id=\"tbEmail\" name = \"email\" [(ngModel)] = \"user.mejl\" required>\n                              </div>         \n                          </div>\n                          <div class=\"form-group\">\n                              <div class=\"input-group-prepend\">\n                                  <input type=\"password\" minlength=\"5\" maxlength=\"30\" class=\"input pass\" placeholder=\"Password\" id=\"tbSifre\" name = \"password\" [(ngModel)] = \"user.lozinka\" required>\n                              </div>   \n                          </div>\n                          <div class=\"form-group\">\n                              <input type=\"submit\" value=\"Login\" class=\"inputButton\" id=\"btnGiris\" (click)=\"login()\" >    \n                          </div>\n                         \n                      </form>\n                  </div>\n              </div>\n          </div>\n      </div>\n  </div>\n</div>\n\n"
+module.exports = "<div class=\"container\" style=\"justify-content:space-around;\">\r\n  <div class=\"col-md-6 col-md-offset-2\">\r\n      <div class=\"panel panel-login\">\r\n          <div class=\"panel-heading\">\r\n              <h1>Login</h1>\r\n              <hr>\r\n          </div>\r\n          <div class=\"panel-body\">\r\n              <div class=\"row\">\r\n                  <div class=\"col-lg-12\">\r\n                      <form style=\"display: block;\">\r\n                          <div  class=\"form-group\">\r\n                              <div class=\"input-group-prepend\">\r\n                                  <input type=\"text\" minlength=\"5\" maxlength=\"40\" class=\"input pass\" placeholder=\"Email\" id=\"tbEmail\" name = \"email\" [(ngModel)] = \"user.mejl\" required>\r\n                              </div>         \r\n                          </div>\r\n                          <div class=\"form-group\">\r\n                              <div class=\"input-group-prepend\">\r\n                                  <input type=\"password\" minlength=\"5\" maxlength=\"30\" class=\"input pass\" placeholder=\"Password\" id=\"tbSifre\" name = \"password\" [(ngModel)] = \"user.lozinka\" required>\r\n                              </div>   \r\n                          </div>\r\n                          <div class=\"form-group\">\r\n                              <input type=\"submit\" value=\"Login\" class=\"inputButton\" id=\"btnGiris\" (click)=\"login()\" >    \r\n                          </div>\r\n                         \r\n                      </form>\r\n                  </div>\r\n              </div>\r\n          </div>\r\n      </div>\r\n  </div>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
@@ -9957,13 +10257,15 @@ var LoginComponent = /** @class */ (function () {
         }
     };
     LoginComponent.prototype.login = function () {
+        var _this = this;
         localStorage.removeItem('token');
         this.auth.login(this.user.mejl, this.user.lozinka)
             .subscribe(function (res) {
             console.log(res);
-            alert("evo ga");
-            localStorage.setItem('token', res);
+            //alert("evo ga")
+            localStorage.setItem('token', JSON.stringify(res));
             //let role = this.auth.getRoles(res);
+            _this.router.navigate(['poruke']);
             // //samo da bi postavio ulogo naog korisnika
             // this.userService.findByEmail(this.user.email).subscribe(
             //   s => {
@@ -10012,7 +10314,7 @@ module.exports = ".container{max-width:1170px; margin:auto;}\r\nimg{ max-width:1
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"messaging\">\n  <div class=\"inbox_msg\">\n    <div class=\"inbox_people\">\n      <div class=\"headind_srch\">\n        <div>\n          <h1>Poruke</h1>\n        </div>\n      </div>\n      <div class=\"inbox_chat\">\n          <div class=\"chat_list message_read\" *ngFor = \"let i = index; let chat of inboxKorisnika | paginate: { itemsPerPage: 10, currentPage: p }\">\n            <div class=\"chat_people\" (click) = \"changeActiveChat(chat)\">\n              <div class=\"chat_img\"> <img src=\"assets/user.png\" alt=\"nema\"> </div>\n              <div class=\"chat_ib\">\n                <h5>{{chat.mejl}}</h5>\n                <!-- <p *ngIf = \"chat.messages != undefiend\">{{chat.messages[0].caption}}</p> -->\n              </div>\n            </div>\n          </div>\n        </div>\n    </div>\n    <div class=\"mesgs\">\n      <!-- <div style=\"border-bottom: 1px solid #cdcdcd;\" class=\"input_msg_write\" >\n        <input *ngIf = \"chat.messages?.length != 0\" style=\"font-weight: bold;\"  type=\"text\" disabled =\"true\" value=\"{{chat.messages[0].caption}}\" >\n      </div> -->\n      <div class=\"msg_history\">\n        <div *ngFor = \"let i = index; let message of chat | paginate: { itemsPerPage: 20, currentPage: p }\">\n          <div *ngIf = \"!loggedUsersMessage(message)\" class=\"incoming_msg\">\n            \n            <div class=\"received_msg\">\n              <div class=\"container\">\n                  <div> <img  class=\"right\" src=\"assets/inbox.jpg\" alt=\"nema\"> </div>\n                <p>{{message.sadrzaj}}</p>\n                <span class=\"time-left\">{{message.vreme | date: 'dd/MM/yyyy hh:mm'}}</span></div>\n            </div>\n          </div>\n          <div *ngIf = \"loggedUsersMessage(message)\" class=\"outgoing_msg\">\n            <div class=\"container darker\">\n                <div> <img  class=\"left\" src=\"assets/inbox.jpg\" alt=\"nema\"> </div>\n              <p>{{message.sadrzaj}}</p>\n              <span class=\"time-right\">{{message.vreme | date: 'dd/MM/yyyy hh:mm'}}</span> </div>\n          </div>\n        </div>\n      </div>\n      <div *ngIf = \"chat.messages?.length != 0\" class=\"type_msg\">\n        <div class=\"container\">\n            <textarea style=\"width: 96%;\" class=\"form-control\" id=\"exampleFormControlTextarea1\" placeholder=\"Type a message \" [(ngModel)] = \"newMessage.sadrzaj\" rows=\"3\"></textarea>\n          <button class=\"msg_send_btn\" type=\"button\" (click) = \"sendMessage()\" ><i aria-hidden=\"true\"></i></button>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
+module.exports = "<div class=\"messaging\">\r\n  <div class=\"inbox_msg\">\r\n    <div class=\"inbox_people\">\r\n      <div class=\"headind_srch\">\r\n        <div>\r\n          <h1>Poruke</h1>\r\n        </div>\r\n      </div>\r\n      <div class=\"inbox_chat\">\r\n          <div class=\"chat_list message_read\" *ngFor = \"let i = index; let chat of inboxKorisnika | paginate: { itemsPerPage: 10, currentPage: p }\">\r\n            <div class=\"chat_people\" (click) = \"changeActiveChat(chat)\">\r\n              <div class=\"chat_img\"> <img src=\"assets/user.png\" alt=\"nema\"> </div>\r\n              <div class=\"chat_ib\">\r\n                <h5>{{chat.mejl}}</h5>\r\n                <!-- <p *ngIf = \"chat.messages != undefiend\">{{chat.messages[0].caption}}</p> -->\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"mesgs\">\r\n      <!-- <div style=\"border-bottom: 1px solid #cdcdcd;\" class=\"input_msg_write\" >\r\n        <input *ngIf = \"chat.messages?.length != 0\" style=\"font-weight: bold;\"  type=\"text\" disabled =\"true\" value=\"{{chat.messages[0].caption}}\" >\r\n      </div> -->\r\n      <div class=\"msg_history\">\r\n        <div *ngFor = \"let i = index; let message of chat | paginate: { itemsPerPage: 20, currentPage: p }\">\r\n          <div *ngIf = \"!loggedUsersMessage(message)\" class=\"incoming_msg\">\r\n            \r\n            <div class=\"received_msg\">\r\n              <div class=\"container\">\r\n                  <div> <img  class=\"right\" src=\"assets/inbox.jpg\" alt=\"nema\"> </div>\r\n                <p>{{message.sadrzaj}}</p>\r\n                <span class=\"time-left\">{{message.vreme | date: 'dd/MM/yyyy hh:mm'}}</span></div>\r\n            </div>\r\n          </div>\r\n          <div *ngIf = \"loggedUsersMessage(message)\" class=\"outgoing_msg\">\r\n            <div class=\"container darker\">\r\n                <div> <img  class=\"left\" src=\"assets/inbox.jpg\" alt=\"nema\"> </div>\r\n              <p>{{message.sadrzaj}}</p>\r\n              <span class=\"time-right\">{{message.vreme | date: 'dd/MM/yyyy hh:mm'}}</span> </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div *ngIf = \"chat.messages?.length != 0\" class=\"type_msg\">\r\n        <div class=\"container\">\r\n            <textarea style=\"width: 96%;\" class=\"form-control\" id=\"exampleFormControlTextarea1\" placeholder=\"Type a message \" [(ngModel)] = \"newMessage.sadrzaj\" rows=\"3\"></textarea>\r\n          <button class=\"msg_send_btn\" type=\"button\" (click) = \"sendMessage()\" ><i aria-hidden=\"true\"></i></button>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -10053,9 +10355,9 @@ var PorukeComponent = /** @class */ (function () {
         this.chat = [];
         this.loggedUser = new app_model_korisnik_korisnik__WEBPACK_IMPORTED_MODULE_7__["Korisnik"]();
         this.newMessage = new app_model_korisnik_poruka__WEBPACK_IMPORTED_MODULE_6__["Poruka"]();
-        var res = localStorage.getItem('token');
+        var res = JSON.parse(localStorage.getItem('token'));
         if (res != null) {
-            // this.loggedUser.mejl = this.authService.getUsername(res);
+            this.loggedUser = res; //this.authService.getUsername(res);
             // //this.chat.messages = [];
         }
     }
@@ -10102,6 +10404,7 @@ var PorukeComponent = /** @class */ (function () {
     PorukeComponent.prototype.changeActiveChat = function (chat) {
         var _this = this;
         this.chat = chat.porukeSaAgentom;
+        this.newMessage.korisnikDTO = chat.porukeSaAgentom[0].korisnikDTO;
         this.chatService.getMessages(this.loggedUser.id, chat.id).subscribe(function (s) {
             _this.chat = s;
         });
@@ -10205,6 +10508,66 @@ var Accommodation = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/model/accommodation/accommodationReservation.ts":
+/*!*****************************************************************!*\
+  !*** ./src/app/model/accommodation/accommodationReservation.ts ***!
+  \*****************************************************************/
+/*! exports provided: AccommodationReservation */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AccommodationReservation", function() { return AccommodationReservation; });
+/* harmony import */ var _accommodation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./accommodation */ "./src/app/model/accommodation/accommodation.ts");
+
+var AccommodationReservation = /** @class */ (function () {
+    function AccommodationReservation() {
+        this.id = 0;
+        this.prviDanRezervacije = "";
+        this.poslednjiDanRezervacije = "";
+        this.realizovana = false;
+        this.smestajnaJedinicaDTO = new _accommodation__WEBPACK_IMPORTED_MODULE_0__["Accommodation"]();
+        this.ukupnaCena = 0;
+        this.utisakId = 0;
+        this.korisnikId = 0;
+    }
+    return AccommodationReservation;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/model/accommodation/accommodationSearch.ts":
+/*!************************************************************!*\
+  !*** ./src/app/model/accommodation/accommodationSearch.ts ***!
+  \************************************************************/
+/*! exports provided: AccommodationSearch */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AccommodationSearch", function() { return AccommodationSearch; });
+/* harmony import */ var _global_parameters_tipSmestaja__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../global-parameters/tipSmestaja */ "./src/app/model/global-parameters/tipSmestaja.ts");
+
+var AccommodationSearch = /** @class */ (function () {
+    function AccommodationSearch() {
+        this.grad = "";
+        this.zemlja = "";
+        this.prviDan = "";
+        this.poslednjiDan = "";
+        this.brojOsoba = 0;
+        this.kategorija = "";
+        this.uslugeDTO = [];
+        this.tipSmestajaDTO = new _global_parameters_tipSmestaja__WEBPACK_IMPORTED_MODULE_0__["TipSmestaja"]();
+    }
+    return AccommodationSearch;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/model/accommodation/cenovnik.ts":
 /*!*************************************************!*\
   !*** ./src/app/model/accommodation/cenovnik.ts ***!
@@ -10218,9 +10581,9 @@ __webpack_require__.r(__webpack_exports__);
 var Cenovnik = /** @class */ (function () {
     function Cenovnik() {
         this.id = 0;
-        this.prviDanVazenja = new Date();
-        this.poslednjiDanVazenja = new Date();
-        this.cenaPoNoci = 0;
+        this.prviDanVazenja = "";
+        this.poslednjiDanVazenja = "";
+        this.cenaPoNoci = undefined;
     }
     return Cenovnik;
 }());
@@ -10406,6 +10769,37 @@ var Poruka = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/model/korisnik/review.ts":
+/*!******************************************!*\
+  !*** ./src/app/model/korisnik/review.ts ***!
+  \******************************************/
+/*! exports provided: Review */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Review", function() { return Review; });
+/* harmony import */ var _accommodation_accommodationReservation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../accommodation/accommodationReservation */ "./src/app/model/accommodation/accommodationReservation.ts");
+/* harmony import */ var _accommodation_accommodation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../accommodation/accommodation */ "./src/app/model/accommodation/accommodation.ts");
+
+
+var Review = /** @class */ (function () {
+    function Review() {
+        this.id = 0;
+        this.ocena = 0;
+        this.komentar = "";
+        this.timeStamp = new Date();
+        this.komentarOdobren = false;
+        this.rezervacijaDTO = new _accommodation_accommodationReservation__WEBPACK_IMPORTED_MODULE_0__["AccommodationReservation"]();
+        this.roomDTO = new _accommodation_accommodation__WEBPACK_IMPORTED_MODULE_1__["Accommodation"]();
+    }
+    return Review;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/page-not-found/page-not-found.component.css":
 /*!*************************************************************!*\
   !*** ./src/app/page-not-found/page-not-found.component.css ***!
@@ -10424,7 +10818,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>\n  There is nothing here!\n</h1>\n"
+module.exports = "<h1>\r\n  There is nothing here!\r\n</h1>\r\n"
 
 /***/ }),
 
@@ -10456,6 +10850,67 @@ var PageNotFoundComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], PageNotFoundComponent);
     return PageNotFoundComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/service/accommodation.service.ts":
+/*!**************************************************!*\
+  !*** ./src/app/service/accommodation.service.ts ***!
+  \**************************************************/
+/*! exports provided: AccommodationService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AccommodationService", function() { return AccommodationService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/esm5/http.js");
+
+
+
+var AccommodationService = /** @class */ (function () {
+    function AccommodationService(http) {
+        this.http = http;
+    }
+    AccommodationService.prototype.findAllTipovi = function () {
+        return this.http.get("/rest/tipovi");
+    };
+    AccommodationService.prototype.findAllUsluge = function () {
+        return this.http.get("/rest/usluge");
+    };
+    AccommodationService.prototype.add = function (smestaj, idAgent) {
+        return this.http.post("/rest/smestaj/agent/" + idAgent, smestaj);
+    };
+    AccommodationService.prototype.search = function (accommodationSearch) {
+        return this.http.post("rest/smestaj/pretraga", accommodationSearch);
+    };
+    AccommodationService.prototype.getAll = function (id) {
+        return this.http.get("/rest/agenti/" + id + "/smestaji");
+    };
+    AccommodationService.prototype.book = function (accommodationReservation) {
+        return this.http.post("/rest/rezervacije", accommodationReservation);
+    };
+    AccommodationService.prototype.getUserReservations = function (userId) {
+        return this.http.get("/rest/smestaj/" + userId + "/rezervacije");
+    };
+    AccommodationService.prototype.getReviewsForAccommodation = function (accommodationId) {
+        return this.http.get("rating/rate/room/" + accommodationId);
+    };
+    AccommodationService.prototype.getImagesForRoom = function (roomId) {
+        return this.http.get("accommodationservice/reservations/room/" + roomId);
+    };
+    AccommodationService.prototype.updateResevation = function (reservation) {
+        return this.http.get("/rest/rezervacije/" + reservation.id);
+    };
+    AccommodationService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    ], AccommodationService);
+    return AccommodationService;
 }());
 
 
@@ -10605,18 +11060,18 @@ var PorukeService = /** @class */ (function () {
     // }
     //preuzmi poruke sa kojima chetuje agent
     PorukeService.prototype.getInbox = function (userId) {
-        userId = 1;
+        //userId = 1;
         return this.http.get('/rest/agenti/' + userId + '/poruke');
     };
     //za svakog korisnika dovuci njegove poruke
     PorukeService.prototype.getMessages = function (agentId, userId) {
-        agentId = 1;
-        userId = 3;
+        //agentId = 1; 
+        //userId = 3;
         return this.http.get('/rest/agenti/' + agentId + '/poruke/' + userId);
     };
     //posalji poruku korisniku
     PorukeService.prototype.sendMessage = function (agentId, userId, message) {
-        agentId = 3;
+        //agentId = 3;
         return this.http.post('/rest/agenti/' + agentId + '/poruke?korisnik-id=' + userId, message);
     };
     PorukeService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -10746,7 +11201,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\projekatAleksa\xml1\xmlws-ocena8-1\frontAgent\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\Katarina-Glorija\git\xmlws-ocena8-1\frontAgent\src\main.ts */"./src/main.ts");
 
 
 /***/ })

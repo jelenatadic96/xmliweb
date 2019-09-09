@@ -9,6 +9,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.megatravel.agent.model.Agent;
 import com.megatravel.agent.repository.AgentRepository;
+import com.megatravel.agent.soap.generated.AgentDTO;
 
 @Service
 public class AgentService {
@@ -22,6 +23,30 @@ public class AgentService {
 			return agent.get();
 		} else {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+		}
+	}
+	
+	public Agent preuzmiPoMejlu(String email) {
+		Optional<Agent> agent = this.agentRepository.findByMejl(email);
+		if(agent.isPresent()) {
+			return agent.get();
+		} else {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+		}
+	}
+	
+	public void dodajAgentaZaSinhronizaciju(AgentDTO agentDTO) {
+		try {
+			preuzmiJednogAgent(agentDTO.getId());
+		} catch(Exception e) {
+			Agent agent = new Agent();
+			agent.setId(agentDTO.getId());
+			agent.setIme(agentDTO.getIme());
+			agent.setPrezime(agentDTO.getPrezime());
+			agent.setMejl(agentDTO.getMejl());
+			agent.setLozinka(agentDTO.getLozinka());
+			agent.setPoslovniMaticniBroj(agentDTO.getPoslovniMaticniBroj());
+			this.agentRepository.save(agent);
 		}
 	}
 	

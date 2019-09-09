@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.megatravel.agent.dto.AgentDTO;
 import com.megatravel.agent.dto.ZahtevZaLoginDTO;
 import com.megatravel.agent.service.LoginService;
 
@@ -19,9 +20,8 @@ public class LoginController {
 	private LoginService loginService;
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Void> uloguj(@RequestBody ZahtevZaLoginDTO zahtevZaLoginDTO) {
-		this.loginService.uloguj(zahtevZaLoginDTO.getMejl(), zahtevZaLoginDTO.getLozinka());
-		return new ResponseEntity<Void>(HttpStatus.OK);
+	public ResponseEntity<AgentDTO> uloguj(@RequestBody ZahtevZaLoginDTO loginDTO) {
+		return new ResponseEntity<AgentDTO>(new AgentDTO(this.loginService.uloguj(loginDTO.getMejl(), loginDTO.getLozinka())), HttpStatus.OK);
 	}
 	
 }

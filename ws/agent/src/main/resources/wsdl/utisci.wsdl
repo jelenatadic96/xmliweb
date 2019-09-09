@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://www.megatravel.com/utisakservice/soap/dto" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.megatravel.com/utisakservice/soap/dto" targetNamespace="http://www.megatravel.com/utisakservice/soap/dto">
+    <wsdl:types>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.megatravel.com/utisakservice/soap/dto">
+            <xs:element name="getStanjeBazePodatakaUtisakaRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="vreme" type="xs:dateTime"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getStanjeBazePodatakaUtisakaResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="utisci" type="tns:UtisakDTO"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:complexType name="UtisakDTO">
+                <xs:sequence>
+                    <xs:element name="id" type="xs:long"/>
+                    <xs:element name="komentar" type="xs:string"/>
+                    <xs:element name="komentarOdobren" type="xs:boolean"/>
+                    <xs:element name="ocena" type="xs:int"/>
+                    <xs:element name="rezervacijaId" type="xs:long"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="getStanjeBazePodatakaUtisakaResponse">
+        <wsdl:part element="tns:getStanjeBazePodatakaUtisakaResponse" name="getStanjeBazePodatakaUtisakaResponse">
+    </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getStanjeBazePodatakaUtisakaRequest">
+        <wsdl:part element="tns:getStanjeBazePodatakaUtisakaRequest" name="getStanjeBazePodatakaUtisakaRequest">
+    </wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="UtisciPort">
+        <wsdl:operation name="getStanjeBazePodatakaUtisaka">
+            <wsdl:input message="tns:getStanjeBazePodatakaUtisakaRequest" name="getStanjeBazePodatakaUtisakaRequest">
+    </wsdl:input>
+            <wsdl:output message="tns:getStanjeBazePodatakaUtisakaResponse" name="getStanjeBazePodatakaUtisakaResponse">
+    </wsdl:output>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="UtisciPortSoap11" type="tns:UtisciPort">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="getStanjeBazePodatakaUtisaka">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getStanjeBazePodatakaUtisakaRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getStanjeBazePodatakaUtisakaResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="UtisciPortService">
+        <wsdl:port binding="tns:UtisciPortSoap11" name="UtisciPortSoap11">
+            <soap:address location="http://localhost:8762/utisak-service/services"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

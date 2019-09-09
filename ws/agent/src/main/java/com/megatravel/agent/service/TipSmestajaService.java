@@ -10,6 +10,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.megatravel.agent.model.TipSmestaja;
 import com.megatravel.agent.repository.TipSmestajaRepository;
+import com.megatravel.agent.soap.generated.TipSmestajaDTO;
 
 @Service
 public class TipSmestajaService {
@@ -28,6 +29,17 @@ public class TipSmestajaService {
 
 	public List<TipSmestaja> preuzmiSve() {
 		return this.tipSmestajaRepository.findAll();
+	}
+
+	public void dodajZaSinhronizaciju(TipSmestajaDTO tipDTO) {
+		try {
+			this.preuzmiJedan(tipDTO.getId());
+		} catch(Exception e) {
+			TipSmestaja tip = new TipSmestaja();
+			tip.setNaziv(tipDTO.getNaziv());
+			tip.setOpis(tipDTO.getOpis());
+			this.tipSmestajaRepository.save(tip);
+		}
 	}
 	
 }
