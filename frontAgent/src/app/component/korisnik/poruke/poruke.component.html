@@ -1,0 +1,52 @@
+<div class="messaging">
+  <div class="inbox_msg">
+    <div class="inbox_people">
+      <div class="headind_srch">
+        <div>
+          <h1>Poruke</h1>
+        </div>
+      </div>
+      <div class="inbox_chat">
+          <div class="chat_list message_read" *ngFor = "let i = index; let chat of inboxKorisnika | paginate: { itemsPerPage: 10, currentPage: p }">
+            <div class="chat_people" (click) = "changeActiveChat(chat)">
+              <div class="chat_img"> <img src="assets/user.png" alt="nema"> </div>
+              <div class="chat_ib">
+                <h5>{{chat.mejl}}</h5>
+                <!-- <p *ngIf = "chat.messages != undefiend">{{chat.messages[0].caption}}</p> -->
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="mesgs">
+      <!-- <div style="border-bottom: 1px solid #cdcdcd;" class="input_msg_write" >
+        <input *ngIf = "chat.messages?.length != 0" style="font-weight: bold;"  type="text" disabled ="true" value="{{chat.messages[0].caption}}" >
+      </div> -->
+      <div class="msg_history">
+        <div *ngFor = "let i = index; let message of chat | paginate: { itemsPerPage: 20, currentPage: p }">
+          <div *ngIf = "!loggedUsersMessage(message)" class="incoming_msg">
+            
+            <div class="received_msg">
+              <div class="container">
+                  <div> <img  class="right" src="assets/inbox.jpg" alt="nema"> </div>
+                <p>{{message.sadrzaj}}</p>
+                <span class="time-left">{{message.vreme | date: 'dd/MM/yyyy hh:mm'}}</span></div>
+            </div>
+          </div>
+          <div *ngIf = "loggedUsersMessage(message)" class="outgoing_msg">
+            <div class="container darker">
+                <div> <img  class="left" src="assets/inbox.jpg" alt="nema"> </div>
+              <p>{{message.sadrzaj}}</p>
+              <span class="time-right">{{message.vreme | date: 'dd/MM/yyyy hh:mm'}}</span> </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf = "chat.messages?.length != 0" class="type_msg">
+        <div class="container">
+            <textarea style="width: 96%;" class="form-control" id="exampleFormControlTextarea1" placeholder="Type a message " [(ngModel)] = "newMessage.sadrzaj" rows="3"></textarea>
+          <button class="msg_send_btn" type="button" (click) = "sendMessage()" ><i aria-hidden="true"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
