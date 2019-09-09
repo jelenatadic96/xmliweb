@@ -23,9 +23,9 @@ export class PorukeComponent implements OnInit {
   p:any;
 
   constructor(private route: ActivatedRoute, private userService: KorisnikService, private router: Router, private authService: AuthService, private chatService: PorukeService) {
-    let res = localStorage.getItem('token');
+    let res: Korisnik = JSON.parse(localStorage.getItem('token'));
     if(res != null){
-      // this.loggedUser.mejl = this.authService.getUsername(res);
+       this.loggedUser = res; //this.authService.getUsername(res);
       // //this.chat.messages = [];
     }
    }
@@ -78,6 +78,7 @@ export class PorukeComponent implements OnInit {
 
   changeActiveChat(chat:Korisnik){  //da promeni korisnika
     this.chat = chat.porukeSaAgentom;
+    this.newMessage.korisnikDTO = chat.porukeSaAgentom[0].korisnikDTO;
     this.chatService.getMessages(this.loggedUser.id, chat.id).subscribe(
       s => {
         this.chat = s;

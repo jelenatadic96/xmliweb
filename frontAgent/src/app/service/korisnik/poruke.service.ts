@@ -23,20 +23,20 @@ export class PorukeService {
 
   //preuzmi poruke sa kojima chetuje agent
   getInbox(userId: number): Observable<Korisnik[]>{
-    userId = 1;
+    //userId = 1;
     return this.http.get<Korisnik[]>('/rest/agenti/' + userId + '/poruke');
   }
 
   //za svakog korisnika dovuci njegove poruke
   getMessages(agentId:number, userId:number): Observable<Poruka[]>{
-    agentId = 1; 
-    userId = 3;
+    //agentId = 1; 
+    //userId = 3;
     return this.http.get<Poruka[]>('/rest/agenti/' + agentId + '/poruke/' + userId);
   }
 
   //posalji poruku korisniku
   sendMessage(agentId: number, userId: number, message: Poruka): Observable<Poruka>{
-    agentId = 3;
+    //agentId = 3;
     return this.http.post<Poruka>('/rest/agenti/' + agentId + '/poruke?korisnik-id=' + userId, message);
   }
 }
