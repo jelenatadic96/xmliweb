@@ -3,6 +3,7 @@ import { Login } from 'app/model/korisnik/login';
 import { Korisnik } from 'app/model/korisnik/korisnik';
 import { AuthService } from 'app/service/korisnik/auth.service';
 import { Router } from '@angular/router';
+import { KorisnikService } from 'app/service/korisnik/korisnik.service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
 
   user: Login = new Login();
   loggedUser: Korisnik = new Korisnik();
-  constructor(private auth: AuthService, private router: Router/*, private userService: KorisnikService*/, private authService: AuthService) { 
+  constructor(private auth: AuthService, private router: Router, private userService: KorisnikService, private authService: AuthService) { 
   }
 
   ngOnInit() {
@@ -87,6 +88,36 @@ export class LoginComponent implements OnInit {
         }
       );
   }
- 
+
+  nekaFja(){
+    let ss = [];
+    let user: Korisnik = new Korisnik();
+    // this.userService.findById().subscribe(
+    //   us => {
+    //     console.log(us);
+    //     user = us;
+    //   },
+    //   err =>{
+    //     console.log("err za pronalazenje po mailu");
+    //   } 
+    // )
+
+    console.log(user);
+
+    this.userService.findAll().subscribe(
+      us => {
+        console.log(us);
+        ss = us;
+      },
+      err =>{
+        console.log("err za pronalazenje po mailu");
+      } 
+    )
+      console.log(ss);
+
+  }
+
+
+  
 
 }

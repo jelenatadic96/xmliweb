@@ -785,7 +785,115 @@
 				}
 			]
 		},
-		
+		{
+			"name": "Utisak service",
+			"item": [
+				{
+					"name": "Preuzmi sve utiske",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8762/utisak-service/rest/utisci/svi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8762",
+							"path": [
+								"utisak-service",
+								"rest",
+								"utisci",
+								"svi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Preuzmi utiske sa neodobrenim komentarima",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8762/utisak-service/rest/utisci/neodobreni",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8762",
+							"path": [
+								"utisak-service",
+								"rest",
+								"utisci",
+								"neodobreni"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ostavi utisak",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"komentar\": \"Komentar bla bla\",\r\n        \"ocena\": 4,\r\n        \"rezervacijaId\": 1\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8762/utisak-service/rest/utisci?korisnik=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8762",
+							"path": [
+								"utisak-service",
+								"rest",
+								"utisci"
+							],
+							"query": [
+								{
+									"key": "korisnik",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Odobri komentar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8762/utisak-service/rest/utisci/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8762",
+							"path": [
+								"utisak-service",
+								"rest",
+								"utisci",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
 		{
 			"name": "Agentska aplikacija",
 			"item": [
@@ -971,7 +1079,33 @@
 					],
 					"_postman_isSubFolder": true
 				},
-				
+				{
+					"name": "Utisci",
+					"item": [
+						{
+							"name": "Preuzmi sve utiske",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8763/rest/utisci/svi",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8763",
+									"path": [
+										"rest",
+										"utisci",
+										"svi"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},				
 				{
 					"name": "Rezervacije",
 					"item": [

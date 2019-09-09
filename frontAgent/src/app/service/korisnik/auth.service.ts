@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+import { environment } from 'environments/environment';
+import { Registracija } from 'app/model/korisnik/registracija';
+
 
 @Injectable()
 export class AuthService {
+  baseUrl: string = environment.baseUrl + '/korisnici-service';
 
   constructor(private http: HttpClient,
     private router: Router) { }
@@ -32,22 +36,24 @@ export class AuthService {
     login(mejl:string, lozinka:string): Observable<string>{
       const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
       return this.http
-      .post<string>('/login', {mejl, lozinka});
+        .post<string>(this.baseUrl + '/login', {mejl, lozinka});
     }
 
-   /* signup(registration: Registration): Observable<string>{
+    signup(registration: Registracija): Observable<{}>{
       return this.http
-        .post<string>('/api/signup', registration);
+        .post<{}>(this.baseUrl + '/signup', registration);
     }
 
-    registerAdmin(id: number, registration: Registration): Observable<string>{
+    registerAdmin(id: number, registration: Registracija): Observable<string>{
       return this.http
-        .post<string>(`/api/register/${id}`, registration);
-    }*/
+        .post<string>(this.baseUrl + `/users/register/${id}`, registration);
+    }
 
     logout(): void {
-      localStorage.removeItem('token');
-      localStorage.removeItem('newAccommodation');
+      // localStorage.removeItem('token');
+      // localStorage.removeItem('reservation');
+      // localStorage.removeItem('beginDate');
+      // localStorage.removeItem('endDate');
       this.router.navigate(['login']);
     }
 
