@@ -1,4 +1,5 @@
 import { Accommodation } from "./accommodation";
+import { Utisak } from "../global-parameters/utisak";
 
 export class AccommodationReservation{
     id: number;
@@ -8,6 +9,7 @@ export class AccommodationReservation{
     smestajnaJedinicaDTO: Accommodation;
     ukupnaCena: number;
     utisakId: number;
+    utisak: Utisak;
     korisnikId: number;
 
 
@@ -20,5 +22,6 @@ export class AccommodationReservation{
         this.ukupnaCena = 0;
         this.utisakId = 0;
         this.korisnikId = 0;
+        this.utisak = new Utisak();
     }
 }

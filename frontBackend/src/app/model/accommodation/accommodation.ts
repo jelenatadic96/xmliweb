@@ -16,6 +16,7 @@ export class Accommodation{
     tipDTO: TipSmestaja;
     usluge: Usluga[];
     dozvoljenoOtkazivanje: boolean;
+    trenutnaCena: number;
 
     constructor(){
         this.id = 0;
@@ -29,5 +30,6 @@ export class Accommodation{
         this.cenovnici = [];
         this.usluge = [];
         this.dozvoljenoOtkazivanje = false;
+        this.trenutnaCena = 0;
     }
 }

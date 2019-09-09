@@ -1,0 +1,18 @@
+.register{
+    margin-top: 3%;
+    padding: 3%;
+}
+.register-right{
+    background: #f8f9fa;
+    border: 1px solid;
+}
+.register .register-form{
+    padding: 10%;
+    margin-top: 10%;
+}
+.register-heading{
+    text-align: center;
+    margin-top: 8%;
+    margin-bottom: -15%;
+    color: #495057;
+}
