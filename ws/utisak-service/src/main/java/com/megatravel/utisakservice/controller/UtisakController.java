@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.megatravel.utisakservice.dto.UtisakDTO;
-import com.megatravel.utisakservice.model.Utisak;
 import com.megatravel.utisakservice.service.UtisakService;
 
 @RestController
@@ -36,13 +35,23 @@ public class UtisakController {
 		return new ResponseEntity<List<UtisakDTO>>(UtisakDTO.transformisi(this.utisakService.preuzmiNeodobreneUtiske()), HttpStatus.OK);
 	}
 	
-	@RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<UtisakDTO> ostaviUtisak(@RequestBody UtisakDTO utisakDTO,
-			@RequestParam("korisnik") Long korisnikId) {
-		return new ResponseEntity<UtisakDTO>(new UtisakDTO(this.utisakService.kreiraj(new Utisak(utisakDTO), korisnikId)), HttpStatus.CREATED);
+	@RequestMapping(method = RequestMethod.POST,
+			consumes = MediaType.APPLICATION_JSON_VALUE,
+			value = "/komentar")
+	public ResponseEntity<UtisakDTO> ostaviKomentar(@RequestParam("korisnik") Long korisnikId,
+			@RequestBody UtisakDTO utisakDTO) {
+		return new ResponseEntity<UtisakDTO>(new UtisakDTO(this.utisakService.ostaviKomentar(utisakDTO.getRezervacijaId(), korisnikId, utisakDTO.getKomentar())), HttpStatus.ACCEPTED);
 	}
 	
-	@RequestMapping(value = "/{id}", method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST,
+			consumes = MediaType.APPLICATION_JSON_VALUE,
+			value = "/ocena")
+	public ResponseEntity<UtisakDTO> ostaviOcenu(@RequestParam("korisnik") Long korisnikId,
+			@RequestBody UtisakDTO utisakDTO) {
+		return new ResponseEntity<UtisakDTO>(new UtisakDTO(this.utisakService.ostaviOcenu(utisakDTO.getRezervacijaId(), korisnikId, utisakDTO.getOcena())), HttpStatus.ACCEPTED);
+	}
+	
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<UtisakDTO> odobriKomentar(@PathVariable("id") Long id) {
 		return new ResponseEntity<UtisakDTO>(new UtisakDTO(this.utisakService.odobriKomentar(id)), HttpStatus.ACCEPTED);
 	}

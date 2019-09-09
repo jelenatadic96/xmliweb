@@ -6,7 +6,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 
 import com.megatravel.utisakservice.dto.UtisakDTO;
 
@@ -16,12 +15,11 @@ public class Utisak {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(length = 512, nullable = true, updatable = false)
+    @Column(length = 512, nullable = true)
     private String komentar;
     @Column(nullable = false)
 	private boolean komentarOdobren;
-    @Column(nullable = false, updatable = false)
-    @Min(1)
+    @Column(nullable = false)
     @Max(5)
     private int ocena;
     @Column(nullable = false, updatable = false, unique = true)
