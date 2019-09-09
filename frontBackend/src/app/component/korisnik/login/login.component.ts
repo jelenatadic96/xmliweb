@@ -64,8 +64,9 @@ export class LoginComponent implements OnInit {
         res => 
         {
           console.log(res);
-          alert("evo ga")
+          //alert("evo ga")
           localStorage.setItem('token', res);
+          this.router.navigate(['address']);
           //let role = this.auth.getRoles(res);
 
           

@@ -9,13 +9,24 @@ export class KorisnikService {
 
   constructor(private http: HttpClient) { }
 
-  baseUrl: string = environment.baseUrl + '/smestaj-service/rest/smestaj';
+  baseUrl: string = environment.baseUrl + '/korisnici-service/rest/korisnici';
 
-  findAll(): Observable<any[]> {
-    return this.http.get<any[]>(this.baseUrl);
+  findAll(): Observable<Korisnik[]> {
+    return this.http.get<Korisnik[]>(this.baseUrl);
   }
 
-  findById(): Observable<Korisnik> {
-    return this.http.get<Korisnik>(environment.baseUrl + '/korisnici-service/rest/korisnici/1');
+  findById(id: number): Observable<Korisnik> {
+    id = 1;
+    return this.http.get<Korisnik>(this.baseUrl + '/' + id);
   }
+
+  findByEmail(email: string): Observable<Korisnik> {
+    return this.http.get<Korisnik>(this.baseUrl + `/email/${email}`);
+  }
+
+  changeStateOfUser(id: number, korisnikState: string): Observable<Korisnik> {
+    return this.http.put<Korisnik>(`${this.baseUrl}/${id}?status=${korisnikState}`, {});
+  }
+
+  
 }

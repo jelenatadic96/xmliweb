@@ -3,22 +3,25 @@ import { AccommodationReservation } from "../accommodation/accommodationReservat
 import { Accommodation } from "../accommodation/accommodation";
 
 export class Review{
+
+    /*
+    private Long id;
+    private String komentar;
+	private boolean komentarOdobren;
+    private int ocena;
+    private Long rezervacijaId;
+    */
     id: number;
     ocena: number;
     komentar: string;
-    timeStamp: Date;
-    roomDTO: Accommodation;
-    //systemUserInfoDTO: Korisnik;
     komentarOdobren: boolean;
-    rezervacijaDTO: AccommodationReservation;
+    rezervacijaId: number;
 
     constructor(){
         this.id = 0;
         this.ocena = 0;
         this.komentar = "";
-        this.timeStamp = new Date();
         this.komentarOdobren = false;
-        this.rezervacijaDTO = new AccommodationReservation();
-        this.roomDTO = new Accommodation();
+        this.rezervacijaId = 0;
     }
 }
