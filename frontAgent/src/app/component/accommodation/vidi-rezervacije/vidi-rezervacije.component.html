@@ -1,0 +1,24 @@
+<div (click) = "out()" class="container">
+  <div class="container justify-content-md-center">
+    <div class="col-lg-12 p-0">
+      <a class="list-group-item" style="min-height: 220px; max-height: 350px;" *ngFor = "let i = index; let accommodationReservation of accommodationToShow">
+          <div (click) = "out()" class="col-lg-12">
+              <div style="display: inline-flex; width: 100%;">
+                <h4 class="col-lg-11">{{accommodationReservation.smestajnaJedinicaDTO.adresaDTO.zemlja}} - {{accommodationReservation.smestajnaJedinicaDTO.adresaDTO.grad}}</h4>
+                <h3 class="col-md-1" style="max-width: 25%" (click) = "orderByType('RATING')">{{accommodationReservation.smestajnaJedinicaDTO.ocena}}</h3>     
+              </div>
+              <div style="display: inline-flex; width: 100%;">
+                <h4 class="list-group-item-text col-lg-11">{{accommodationReservation.prviDanRezervacije}} - {{accommodationReservation.poslednjiDanRezervacije}}</h4>
+              </div>
+              <label class="list-group-item-text col-lg-10">{{accommodationReservation.smestajnaJedinicaDTO.opis}}</label>
+              <h4 class="list-group-item-text col-lg-12">{{accommodationReservation.smestajnaJedinicaDTO.tipDTO.naziv}}</h4>
+              <h4 class="col-lg-12" style="text-align: right;">RSD price</h4>
+              <div class="col-lg-12" style="text-align: end;">
+                <button class="btn btn-primary" (click) = "realised(accommodationReservation)" >Realised</button>
+              </div>
+          </div>
+      </a>
+    </div>
+  </div>
+</div>
+  

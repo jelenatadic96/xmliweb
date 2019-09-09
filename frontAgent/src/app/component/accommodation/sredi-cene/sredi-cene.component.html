@@ -4,10 +4,10 @@
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                     <h3 class="register-heading">Add new accommodation</h3>
-                    <div style="padding-top: 20%; margin-left: 30%; margin-right: 30%; margin-bottom: -15%;" class="form-group">
+                    <!-- <div style="padding-top: 20%; margin-left: 30%; margin-right: 30%; margin-bottom: -15%;" class="form-group">
                         <ng-multiselect-dropdown  [placeholder]="'Select year'" [settings]="dropDownSettings" [data]="years" [(ngModel)] = "selectedYear" [ngModelOptions]="{standalone: true}" (onSelect)="onSelectedYear($event)">
                         </ng-multiselect-dropdown>
-                    </div>
+                    </div> -->
                     <div class="row register-form">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -28,8 +28,8 @@
                             <div class="form-group">
                                 <input type="text" class="form-control"  placeholder="June" [(ngModel)] = "selectedPriceList[5].cenaPoNoci" value="" />
                             </div>
-                        </div>
-                        <div class="col-md-6">
+
+
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="July" [(ngModel)] = "selectedPriceList[6].cenaPoNoci" value="" />
                             </div>
@@ -49,6 +49,9 @@
                                 <input type="text" class="form-control"  placeholder="December" [(ngModel)] = "selectedPriceList[11].cenaPoNoci" value="" />
                             </div>
                             <input type="submit" class="btnRegister" (click) = "saveAccommodation()" value="Finish"/>
+                        </div>
+                        <div class="col-md-6">
+                            
                         </div>
                     </div>
                 </div>

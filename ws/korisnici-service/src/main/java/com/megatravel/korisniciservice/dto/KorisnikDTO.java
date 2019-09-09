@@ -14,6 +14,7 @@ public class KorisnikDTO {
 	private String mejl;
 	private String lozinka;
 	private StatusKorisnika status;
+	private String role;
 	
 	public KorisnikDTO() { }
 
@@ -24,8 +25,9 @@ public class KorisnikDTO {
 		this.mejl = korisnik.getMejl();
 		this.lozinka = korisnik.getLozinka();
 		this.status = korisnik.getStatusKorisnika();
+		this.role = korisnik.getRole();
 	}
-
+	
 	public Long getId() {
 		return id;
 	}
@@ -80,6 +82,14 @@ public class KorisnikDTO {
 			rezultat.add(new KorisnikDTO(korisnik));
 		}
 		return rezultat;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
 	}
 	
 }

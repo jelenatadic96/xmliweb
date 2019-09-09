@@ -13,6 +13,7 @@ public class AgentDTO {
 	private String mejl;
 	private String lozinka;
 	private String poslovniMaticniBroj;
+	private AdresaDTO adresaDTO;
 	
 	public AgentDTO() { }
 	
@@ -79,6 +80,14 @@ public class AgentDTO {
 			rezultat.add(new AgentDTO(agent));
 		}
 		return rezultat;
+	}
+
+	public AdresaDTO getAdresaDTO() {
+		return adresaDTO;
+	}
+
+	public void setAdresaDTO(AdresaDTO adresaDTO) {
+		this.adresaDTO = adresaDTO;
 	}
 	
 }

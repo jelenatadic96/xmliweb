@@ -44,5 +44,13 @@ public class SpojAgentSmestaj {
 	public void setAgent(Agent agent) {
 		this.agent = agent;
 	}
+
+	public Long getSmestajId() {
+		return smestajId;
+	}
+
+	public void setSmestajId(Long smestajId) {
+		this.smestajId = smestajId;
+	}
     
 }

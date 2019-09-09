@@ -8,9 +8,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.megatravel.korisniciservice.jwt.JwtTokenUtils;
 import com.megatravel.korisniciservice.model.Korisnik;
 import com.megatravel.korisniciservice.model.StatusKorisnika;
 import com.megatravel.korisniciservice.repository.KorisnikRepository;
+import com.megatravel.korisniciservice.security.AllowedRoles;
 
 @Service
 public class KorisnikService {
@@ -20,6 +22,9 @@ public class KorisnikService {
 
 	@Autowired
 	private EmailCheckService emailCheckService;
+	
+	@Autowired
+	private JwtTokenUtils jwtTokenUtils;
 	
 	public List<Korisnik> preuzmiSve() {
 		return this.korisnikRepository.findAll();
@@ -34,8 +39,9 @@ public class KorisnikService {
 		}
 	}
 
-	public Korisnik kreiraj(Korisnik korisnik) {
+	public Korisnik registruj(Korisnik korisnik) {
 		korisnik.setStatusKorisnika(StatusKorisnika.AKTIVAN);
+		korisnik.setRole(AllowedRoles.ROLE_OBICAN);
 		if(this.emailCheckService.mejlJeSlobodan(korisnik.getMejl())) {
 			return this.korisnikRepository.save(korisnik);
 		} else {
@@ -50,6 +56,24 @@ public class KorisnikService {
 		}
 		korisnik.setStatusKorisnika(statusKorisnika);
 		return this.korisnikRepository.save(korisnik);
+	}
+	
+	public Korisnik preuzmiPoMejlu(String mejl) {
+		Optional<Korisnik> korisnik = this.korisnikRepository.findByMejl(mejl);
+		if(korisnik.isPresent()) {
+			return korisnik.get();
+		} else {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+		}
+	}
+
+	public String uloguj(String mejl, String lozinka) {
+		Korisnik korisnik = this.preuzmiPoMejlu(mejl);
+		if(korisnik.getLozinka().equals(lozinka) && korisnik.getStatusKorisnika().equals(StatusKorisnika.AKTIVAN)) {
+			return jwtTokenUtils.createToken(mejl, korisnik.getRole());
+		} else {
+			throw new ResponseStatusException(HttpStatus.LOCKED);
+		}
 	}
 	
 }

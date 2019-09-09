@@ -11,10 +11,13 @@
 							<a class="nav-link" *ngIf = "!loggedIn" [routerLink]="['/login']">Login</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" [routerLink]="['/poruke']">Inbox</a>
+							<a class="nav-link" *ngIf = "loggedIn" [routerLink]="['/poruke']">Inbox</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" *ngIf = "loggedIn" [routerLink]="['/reservation']">Reservations</a>
+							<a class="nav-link" *ngIf = "loggedIn" [routerLink]="['/vidiRezervacije']">Reservations</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" *ngIf = "loggedIn" [routerLink]="['/vidiSmestaj']">Accommodation</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" *ngIf = "loggedIn" [routerLink]="['/addaccomodation']">Add accommodation</a>

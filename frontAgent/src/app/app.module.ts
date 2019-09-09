@@ -23,6 +23,10 @@ import { LoginComponent } from './component/korisnik/login/login.component';
 import { PorukeService } from './service/korisnik/poruke.service';
 import { KorisnikService } from './service/korisnik/korisnik.service';
 import { SrediCeneComponent } from './component/accommodation/sredi-cene/sredi-cene.component';
+import { AccommodationService } from './service/accommodation.service';
+import { VidiSmestajComponent } from './component/accommodation/vidi-smestaj/vidi-smestaj.component';
+import { DatePipe } from '@angular/common';
+import { VidiRezervacijeComponent } from './component/accommodation/vidi-rezervacije/vidi-rezervacije.component';
 
 
 
@@ -30,6 +34,8 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'poruke', component: PorukeComponent},
   { path: 'addaccomodation', component: DodavanjeSmestajaComponent},
+  { path: 'vidiSmestaj', component: VidiSmestajComponent},
+  { path: 'vidiRezervacije', component: VidiRezervacijeComponent},
   { path: 'managePrices', component: SrediCeneComponent},
   { path: '', redirectTo: 'login', pathMatch: 'full' }, 
   { path: '**', component: PageNotFoundComponent }
@@ -42,7 +48,9 @@ const appRoutes: Routes = [
     LoginComponent,
     PorukeComponent,
     DodavanjeSmestajaComponent,
-    SrediCeneComponent
+    SrediCeneComponent,
+    VidiSmestajComponent,
+    VidiRezervacijeComponent
   ],
   imports: [
     BrowserModule,
@@ -65,6 +73,8 @@ const appRoutes: Routes = [
     NgbActiveModal,
     PorukeService,
     KorisnikService,
+    AccommodationService,
+    DatePipe,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HInterceptorService,
