@@ -1,45 +1,6 @@
 <div>
 	<div>
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-				<a style="color: aliceblue;cursor: pointer;" (click) = "goToHome()" class="navbar-brand">Megatravel</a>
-				<button class="navbar-toggler" data-target="#navigation" data-control="navigation" data-toggle="collapse">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navigation" style="width: 95%;">
-					<ul class="nav navbar-nav">	
-						<li *ngIf="loggedIn && !isAdmin" class="nav-item">
-							<a class="nav-link" [routerLink]="['/inbox']">Inbox</a>
-						</li>
-						<li *ngIf="loggedIn && !isAdmin" class="nav-item">
-							<a class="nav-link" [routerLink]="['/myReservation']">My reservation</a>
-						</li>
-						<li *ngIf="loggedIn && isAdmin" class="nav-item">
-							<a class="nav-link" [routerLink]="['/registerAgent']">Register new agent</a>
-						</li>
-						<li *ngIf="loggedIn && isAdmin" class="nav-item">
-							<a class="nav-link" [routerLink]="['/users']">Users</a>
-						</li>
-						<li *ngIf="loggedIn && isAdmin" class="nav-item">
-							<a class="nav-link" [routerLink]="['/updateAccommodationSettings']">Accommodation settings</a>
-						</li>
-						<li *ngIf="loggedIn && isAdmin" class="nav-item">
-							<a class="nav-link" [routerLink]="['/viewComments']">View comments</a>
-						</li>					
-						<li *ngIf="!loggedIn" class="nav-item">
-							<a class="nav-link" [routerLink]="['/login']">Login</a>
-						</li>
-						<li *ngIf="!loggedIn" class="nav-item">
-							<a class="nav-link" [routerLink]="['/registracija']">Register</a>
-						</li>
-					</ul>
-				</div>
-				<div id="navbar" class="navbar-collapse collapse" style="width: 5%;">
-					<ul class="nav navbar-nav navbar-right">
-						<li *ngIf="loggedIn" class="nav-item" >
-							<a class="nav-link" (click) = "logOut()">Log out</a></li>
-					</ul>
-				</div>
-			</nav>
+		
 		<router-outlet></router-outlet>
 	</div>
 </div>

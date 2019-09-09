@@ -23,6 +23,14 @@ import { KorisnikService } from './service/korisnik/korisnik.service';
 import { ViewAccommodationComponent } from './component/accommodation/view-accommodation/view-accommodation.component';
 import { AccommodationService } from './service/accommodation/accommodation.service';
 import { DatePipe } from '@angular/common';
+import { SviKorisniciComponent } from './component/korisnik/svi-korisnici/svi-korisnici.component';
+import { VidiRezervacijeComponent } from './component/korisnik/vidi-rezervacije/vidi-rezervacije.component';
+import { UtisakService } from './service/utisak/utisak.service';
+import { UpravljanjeKatalogomComponent } from './component/accommodation/upravljanje-katalogom/upravljanje-katalogom.component';
+import { MeniBarComponent } from './component/korisnik/meni-bar/meni-bar.component';
+import { PorukeComponent } from './component/korisnik/poruke/poruke.component';
+import { PorukeService } from './service/korisnik/poruke.service';
+import { VidiKomentareComponent } from './component/korisnik/vidi-komentare/vidi-komentare.component';
 
 
 
@@ -32,6 +40,12 @@ const appRoutes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full' },*/
   { path: 'login', component: LoginComponent},
   { path: 'registracija', component: RegistracijaComponent},
+  { path: 'registracija/:id', component: RegistracijaComponent}, //registruj agenta
+  { path: 'users', component: SviKorisniciComponent},
+  { path: 'usersReservation', component: VidiRezervacijeComponent},
+  { path: 'upravjanjeKatalogom', component: UpravljanjeKatalogomComponent},
+  { path: 'poruke', component: PorukeComponent},
+  { path: 'vidiKomentare', component: VidiKomentareComponent},
   { path: '', redirectTo: 'address', pathMatch: 'full' },
   
   { path: '**', component: ViewAccommodationComponent }
@@ -44,6 +58,12 @@ const appRoutes: Routes = [
     LoginComponent,
     RegistracijaComponent,
     ViewAccommodationComponent,
+    SviKorisniciComponent,
+    VidiRezervacijeComponent,
+    UpravljanjeKatalogomComponent,
+    MeniBarComponent,
+    PorukeComponent,
+    VidiKomentareComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,7 +87,9 @@ const appRoutes: Routes = [
     KorisnikService,
     AccommodationService,
     AuthService,
+    PorukeService,
     DatePipe,
+    UtisakService,
 
     {
       provide: HTTP_INTERCEPTORS,
