@@ -2,7 +2,6 @@ import { Usluga } from "../global-parameters/usluge";
 import { TipSmestaja } from "../global-parameters/tipSmestaja";
 
 export class AccommodationSearch{
-
     grad: string;
     zemlja: string;
 	prviDan: string;

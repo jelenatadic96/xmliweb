@@ -11,15 +11,10 @@ import { DatePipe } from '@angular/common';
 import { AccommodationService } from 'app/service/accommodation/accommodation.service';
 import { AccommodationReservation } from 'app/model/accommodation/accommodationReservation';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
-
-const states = ['Maglic', 'Novi Sad', 'Beograd', 'Arizona', 'Arkansas', 'California', 'Colorado',
-  'Connecticut', 'Delaware', 'District Of Columbia', 'Federated States Of Micronesia', 'Florida', 'Georgia',
-  'Guam', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine',
-  'Marshall Islands', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana',
-  'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
-  'Northern Mariana Islands', 'Ohio', 'Oklahoma', 'Oregon', 'Palau', 'Pennsylvania', 'Puerto Rico', 'Rhode Island',
-  'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virgin Islands', 'Virginia',
-  'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
+import { TipSmestaja } from 'app/model/global-parameters/tipSmestaja';
+import { Korisnik } from 'app/model/korisnik/korisnik';
+import { AuthService } from 'app/service/korisnik/auth.service';
+import { KorisnikService } from 'app/service/korisnik/korisnik.service';
 
 @Component({
   selector: 'app-view-accommodation',
@@ -36,54 +31,73 @@ export class ViewAccommodationComponent implements OnInit {
   accomodationTypes = []
   additionalServices = []
 
-  userRegistration: Registracija = new Registracija();
-  userLogin: Login = new Login();
+  loggedUser: Korisnik = new Korisnik();
+
   maxLength: number = 30;
-  mailNotUnique: boolean = true;
   now: Date = new Date();
   minDate: any;
   maxDate: any;
 
-  privilegesDropDown: String[] = [];
+  categoryDropDown: String[] = [];
+  accommodationTypeDropDown: String[] = [];
+  additionalServiceDropDown: String[] = [];
+  dropdownSettingsAdditionalService = {}
   dropdownSettings = {};
-  selectedPrivilege: String;
+  selectedCategory: String;
+  selectedAccommodationType: String;
+  selectedAdditionalServices: String[] = [];
 
   patternHigh: any = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{12,}$";
 
-  search = (text$: Observable<string>) =>
-    text$.pipe(
-      debounceTime(200),
-      distinctUntilChanged(),
-      map(term => term.length < 2 ? []
-        : states.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10))
-    )
-
   getAll(){
-  }
-
-  constructor(private route: ActivatedRoute, private accomodationService: AccommodationService, private router: Router, public datepipe: DatePipe) { 
-      this.minDate = { year: this.now.getFullYear(), month: this.now.getMonth() + 1, day: this.now.getDate() };  
-      this.maxDate = { year: this.now.getFullYear() + 50, month: 1, day: 1 }; 
-    }
-
-  ngOnInit() {
-
-    /*this.accommodationSearch = JSON.parse(localStorage.getItem('search'))
-
-    let beginDateString = this.datepipe.transform(this.accommodationSearch.beginDate, 'yyyy-MM-dd');
-    let endDateString =this.datepipe.transform(this.accommodationSearch.endDate, 'yyyy-MM-dd');
-
-    let beginDateStruct = this.fromModel(beginDateString);
-    let endDateStruct = this.fromModel(endDateString);
-    this.beginDate = new NgbDate(beginDateStruct.year, beginDateStruct.month, beginDateStruct.day);
-    this.endDate = new NgbDate(endDateStruct.year, endDateStruct.month, endDateStruct.day);
-*/
-
     this.accomodationService.getAll().subscribe(
       s => {
         this.accommodationToShow = s;
       }
     )
+
+    this.accomodationService.getAllAccomodationTypes().subscribe(
+      s => {
+        this.accomodationTypes = s;
+        let pomocna: String[] = []
+        s.forEach(element => {
+          pomocna.push(element.naziv)
+        })
+
+        this.accommodationTypeDropDown = pomocna;
+      }
+    )
+
+    this.accomodationService.getAllAddiionalServices().subscribe(
+      s => {
+        this.additionalServices = s;
+        let pomocna: String[] = []
+        s.forEach(element => {
+          pomocna.push(element.naziv)
+        })
+
+        this.additionalServiceDropDown = pomocna;
+      }
+    )
+  
+    this.categoryDropDown = ['Jedna zvezdica', 'Dve zvezdice', 'Tri zvezdice', 'Cetiri zvezdice', 'Pet zvezdica'];
+
+  }
+
+  constructor(private route: ActivatedRoute, private accomodationService: AccommodationService, private router: Router, public datepipe: DatePipe, 
+          public authService: AuthService, public userService: KorisnikService) { 
+    let res = localStorage.getItem('token');
+    if(res != null){
+      this.loggedUser.mejl = this.authService.getUsername(res);
+    }
+    else {
+      this.loggedUser.mejl = ""
+    }
+  }
+
+  ngOnInit() {
+
+    this.getAll();
 
     this.dropdownSettings = {
       singleSelection: true,
@@ -91,42 +105,44 @@ export class ViewAccommodationComponent implements OnInit {
       allowSearchFilter: true
     };
 
-    this.privilegesDropDown = ['no category', 'one star', 'two star']
+    this.dropdownSettingsAdditionalService = {
+      singleSelection: false,
+      itemsShowLimit: 3,
+      allowSearchFilter: true
+    };
 
-    let accom = new Accommodation()
-
-    this.accommodationToShow.push(accom)
-    this.accommodationToShow.push(accom)
-    this.accommodationToShow.push(accom)
-    this.accommodationToShow.push(accom)
-    this.accommodationToShow.push(accom)
-    this.accommodationToShow.push(accom)
-    this.accommodationToShow.push(accom)
-
+    if(this.loggedUser.mejl != ""){
+      this.userService.findByEmail(this.loggedUser.mejl).subscribe(
+        e => {
+          this.loggedUser = e;
+        }
+      );
+    }
   }
 
-  getSelectedOptions() { // right now: ['1','3']
-    return this.additionalServices
-              .filter(opt => opt.checked)
-              .map(opt => opt.name)
-  }
+  searchAccommodations(){
+    this.accommodationSearch.prviDan = this.toModel(this.beginDate);
+    this.accommodationSearch.poslednjiDan = this.toModel(this.endDate);
 
-  advancedSearch(){
-    // console.log("otkazivanje: " + this.accommodationSearch.cancelationAllowed);
-    // console.log("razdaljina: " + this.accommodationSearch.distance);
-    // console.log("broj dana : " + this.accommodationSearch.cancellationDays);
-    // if(this.checkIfInputIsValid()){
-    //   // this.accommodationToShow.forEach(element => {
-    //   //   element.imageDTO
-    //   // });
-    //   this.accommodationSearch.beginDate = this.toModel(this.beginDate);
-    //   this.accommodationSearch.endDate = this.toModel(this.endDate);
-    //   this.accommodationSearch.additionalService = this.getSelectedOptions();
-    //   this.accommodationSearch.advance = true;
-    //   this.accomodationService.getAll().subscribe(
-    //     s => this.accommodationToShow = s
-    //   )
-    // }
+    this.accomodationTypes.forEach(element => {
+      if(element.naziv == this.selectedAccommodationType){
+        this.accommodationSearch.tipSmestajaDTO = element;
+      }
+    })
+
+    this.additionalServices.forEach(element => {
+      this.selectedAdditionalServices.forEach(selected => {
+        if(element.naziv == selected){
+          this.accommodationSearch.uslugeDTO.push(element);
+        }
+      });
+    })
+
+    this.accommodationSearch.kategorija = this.returnCategory();
+
+    this.accomodationService.search(this.accommodationSearch).subscribe(
+      s => this.accommodationToShow = s
+    )
   }
 
   orderByType(param: string){
@@ -139,22 +155,23 @@ export class ViewAccommodationComponent implements OnInit {
     // )
   }
 
-  beginBooking(accommodation: Accommodation){
-    // let reservation : AccommodationReservation = new AccommodationReservation();
-    // reservation.beginDate = new Date(this.accommodationSearch.beginDate)
-    // reservation.endDate = new Date(this.accommodationSearch.endDate)
-    // reservation.roomDTO = accommodation;
-    
-    // localStorage.setItem('beginDate', JSON.stringify(this.accommodationSearch.beginDate));
-    // localStorage.setItem('endDate', JSON.stringify(this.accommodationSearch.endDate));
-    // localStorage.setItem('reservation', JSON.stringify(reservation));
-    // let res = localStorage.getItem('token');
-    // if(res == null){
-    //   this.router.navigate(['login']);
-    // }
-    // else{
-    //   this.router.navigate(['bookAccommodation/' + accommodation.id]);
-    // }
+  book(accommodation: Accommodation){
+    let reservation : AccommodationReservation = new AccommodationReservation();
+    reservation.prviDanRezervacije = this.accommodationSearch.prviDan;
+    reservation.poslednjiDanRezervacije = this.accommodationSearch.poslednjiDan;
+    reservation.smestajnaJedinicaDTO = accommodation;
+
+    let res = localStorage.getItem('token');
+    if(res == null){
+      this.router.navigate(['login']);
+    }
+    else{
+      this.accomodationService.book(reservation, this.loggedUser.id).subscribe(
+        s => {
+
+        }
+      )
+    }
   }
 
   fromModel(date: string): NgbDateStruct {
@@ -176,44 +193,33 @@ export class ViewAccommodationComponent implements OnInit {
     }
   }
 
-  checkIfInputIsValid(){
-    if(this.accommodationSearch.grad == ""){
-      alert("Enter your destination");
-      return false;
+  returnCategory(): string{
+
+    /*['Jedna zvezdica', 'Dve zvezdice', 'Tri zvezdice', 'Cetiri zvezdice', 'Pet zvezdica'] */
+    if(this.selectedCategory == ""){
+      return "NEKATEGORISAN";
     }
-    if(this.beginDate == null){
-      alert("Enter begin date of your trip");
-      return false;
+    else if(this.selectedCategory == "Jedna zvezdica"){
+      return "JEDNA_ZVEZDICA";
     }
-    if(this.endDate == null){
-      alert("Enter end date of your trip");
-      return false;
+    else if(this.selectedCategory == "Dve zvezdice"){
+      return "DVE_ZVEZDICE";
     }
-    if(this.accommodationSearch.brojOsoba == 0){
-      alert("Enter number of people");
-      return false;
+    else if(this.selectedCategory == "Tri zvezdice"){
+      return "TRI_ZVEZDICE";
     }
-    return true;
+    else if(this.selectedCategory == "Cetiri zvezdice"){
+      return "CETIRI_ZVEZDICE";
+    }
+    else if(this.selectedCategory == "Pet zvezdica"){
+      return "PET_ZVEZDICA";
+    }
   }
 
-  convertFromRatingToCategory(rating: number): string{
-    if(rating <1 || rating===undefined){
-      return "NO STAR";
+  vratiTrenutnuCenu(accommodation: Accommodation){
+    if(accommodation.trenutnaCena == 0){
+      return 100;
     }
-    else if(rating <2){
-      return "ONE STAR";
-    }
-    else if(rating <3){
-      return "TWO STAR";
-    }
-    else if(rating <4){
-      return "THREE STAR";
-    }
-    else if(rating <5){
-      return "FOUR STAR";
-    }
-    else if(rating ==5){
-      return "FIVE STAR";
-    }
+    return accommodation.trenutnaCena;
   }
 }
