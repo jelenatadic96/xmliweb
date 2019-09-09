@@ -1,0 +1,129 @@
+a.list-group-item {
+    height:auto;
+    min-height:200px;
+}
+a.list-group-item{
+  color: black;
+  background-color: ghostwhite;
+  border-color: dimgrey;
+  margin-bottom: 10px;
+}
+.stars {
+    margin:20px auto 1px;    
+}
+
+.list-group-item-text{
+    color: darkblue !important;
+}
+
+.search-slt{
+    display: table;
+    width: 100%;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #55595c;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    height: calc(3rem + 2px) !important;
+    border-radius:0;
+}
+
+.wrn-btn{
+    width: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: capitalize;
+    height: calc(3rem + 2px) !important;
+    border-radius:0;
+    background-color: dimgrey;
+    border-color: black;
+}
+
+.book-btn{
+  width: 100%;
+  font-size: 25px;
+  font-weight: 400;
+  text-transform: capitalize;
+  height: calc(3rem + 2px) !important;
+  border-radius:0;
+  background-color: dimgrey;
+  border-color: black;
+  color: white;
+}
+
+.fiterForm {
+    border: lightgray 1px solid;
+    padding: 5px;
+}
+
+.list-group-item-heading{
+    border: 2px solid;
+    border-radius: 10px;
+    border-color: darkblue;
+    width: fit-content;
+}
+
+
+  
+h1 {
+    text-align: center;
+    font-size: 175%;
+    color: #757575;
+    font-weight: 300;
+  }
+  
+  h1, input {
+    font-family: "Open Sans", Helvetica, sans-serif;
+  }
+  
+  .input {
+    width: 75%;
+    height: 50px;
+    display: block;
+    margin: 0 auto 15px;
+    padding: 0 15px;
+    border: none;
+    border-bottom: 2px solid #ebebeb;
+  }
+  .input:focus {
+    outline: none;
+    border-bottom-color: #3CC !important;
+  }
+  .input:hover {
+    border-bottom-color: #dcdcdc;
+  }
+  .input:invalid {
+    box-shadow: none;
+  }
+  
+  .pass:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+  }
+  
+  .inputButton {
+    position: relative;
+    width: 85%;
+    height: 50px;
+    display: block;
+    margin: 30px auto 30px;
+    color: white;
+    background-color: #3CC;
+    border: none;
+    -webkit-box-shadow: 0 5px 0 #2CADAD;
+    -moz-box-shadow: 0 5px 0 #2CADAD;
+    box-shadow: 0 5px 0 #2CADAD;
+  }
+  .inputButton:hover {
+    top: 2px;
+    -webkit-box-shadow: 0 3px 0 #2CADAD;
+    -moz-box-shadow: 0 3px 0 #2CADAD;
+    box-shadow: 0 3px 0 #2CADAD;
+  }
+  .inputButton:active {
+    top: 5px;
+    box-shadow: none;
+  }
+  .inputButton:focus {
+    outline: none;
+  }
