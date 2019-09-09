@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    xmlns:mt="https://github.com/JelenaAndjela/xmliweb/semaKorisnik"
+    xmlns:mts="https://github.com/JelenaAndjela/xmliweb/semaSmestaj">
+    <xs:import namespace="https://github.com/JelenaAndjela/xmliweb/semaKorisnik"
+        schemaLocation="semaKorisnik.xsd"/>
+    <xs:import namespace="https://github.com/JelenaAndjela/xmliweb/semaSmestaj"
+        schemaLocation="semaSmestaj.xsd"/>
+    <xs:element name="Klijent">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="mt:klijent"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Procena">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="mts:Ocena"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Objekat">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="mts:Objekat"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

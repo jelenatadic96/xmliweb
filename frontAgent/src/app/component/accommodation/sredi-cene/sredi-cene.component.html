@@ -1,0 +1,59 @@
+<div class="container register">
+    <div class="row justify-content-md-center">
+        <div class="col-md-9 register-right">
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <h3 class="register-heading">Add new accommodation</h3>
+                    <div style="padding-top: 20%; margin-left: 30%; margin-right: 30%; margin-bottom: -15%;" class="form-group">
+                        <ng-multiselect-dropdown  [placeholder]="'Select year'" [settings]="dropDownSettings" [data]="years" [(ngModel)] = "selectedYear" [ngModelOptions]="{standalone: true}" (onSelect)="onSelectedYear($event)">
+                        </ng-multiselect-dropdown>
+                    </div>
+                    <div class="row register-form">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="January" [(ngModel)] = "selectedPriceList[0].cenaPoNoci" value="" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="February" [(ngModel)] = "selectedPriceList[1].cenaPoNoci" value="" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="March" [(ngModel)] = "selectedPriceList[2].cenaPoNoci" value="" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control"  placeholder="April" [(ngModel)] = "selectedPriceList[3].cenaPoNoci" value="" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control"  placeholder="May" [(ngModel)] = "selectedPriceList[4].cenaPoNoci" value="" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control"  placeholder="June" [(ngModel)] = "selectedPriceList[5].cenaPoNoci" value="" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="July" [(ngModel)] = "selectedPriceList[6].cenaPoNoci" value="" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="August" [(ngModel)] = "selectedPriceList[7].cenaPoNoci" value="" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="September" [(ngModel)] = "selectedPriceList[8].cenaPoNoci" value="" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control"  placeholder="October" [(ngModel)] = "selectedPriceList[9].cenaPoNoci" value="" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control"  placeholder="November" [(ngModel)] = "selectedPriceList[10].cenaPoNoci" value="" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control"  placeholder="December" [(ngModel)] = "selectedPriceList[11].cenaPoNoci" value="" />
+                            </div>
+                            <input type="submit" class="btnRegister" (click) = "saveAccommodation()" value="Finish"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+  </div>

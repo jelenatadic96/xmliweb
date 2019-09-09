@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    xmlns:mt="https://github.com/JelenaAndjela/xmliweb/semaKorisnik"
+    xmlns:ns1="https://github.com/JelenaAndjela/xmliweb/semaSmestaj">
+    <xs:import namespace="https://github.com/JelenaAndjela/xmliweb/semaKorisnik"
+        schemaLocation="semaKorisnik.xsd"/>
+    <xs:import namespace="https://github.com/JelenaAndjela/xmliweb/semaSmestaj"
+        schemaLocation="semaSmestaj.xsd"/>
+    <xs:element name="Poruka">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="ns1:Poruka"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
