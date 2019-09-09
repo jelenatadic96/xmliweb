@@ -1,0 +1,34 @@
+<div class="container" style="justify-content:space-around;">
+  <div class="col-md-6 col-md-offset-2">
+      <div class="panel panel-login">
+          <div class="panel-heading">
+              <h1>Login</h1>
+              <hr>
+          </div>
+          <div class="panel-body">
+              <div class="row">
+                  <div class="col-lg-12">
+                      <form style="display: block;">
+                          <div  class="form-group">
+                              <div class="input-group-prepend">
+                                  <input type="text" minlength="5" maxlength="40" class="input pass" placeholder="Email" id="tbEmail" name = "email" [(ngModel)] = "user.mejl" required>
+                              </div>         
+                          </div>
+                          <div class="form-group">
+                              <div class="input-group-prepend">
+                                  <input type="password" minlength="5" maxlength="30" class="input pass" placeholder="Password" id="tbSifre" name = "password" [(ngModel)] = "user.lozinka" required>
+                              </div>   
+                          </div>
+                          <div class="form-group">
+                              <input type="submit" value="Login" class="inputButton" id="btnGiris" (click)="login()" >    
+                          </div>
+                         
+                      </form>
+                  </div>
+              </div>
+          </div>
+          <button (click) = "nekaFja()">Klikni</button>
+      </div>
+  </div>
+</div>
+
